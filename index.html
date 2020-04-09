@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+
+        <!--APPLE ICON-->
+        <!--ICON-->
+
+        <title>Sunbathing Calculator</title>
+        <link rel="stylesheet" href="assets/css/material.min.css">
+        <script src="assets/js/material.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+        <link type="text/css" href="assets/css/argon-design-system.min.css" rel="stylesheet">
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        
+        <!-- JS -->
+        <script src="assets/js/index.js"></script>
+    </head>
+    <body>
+        <!-- Simple header with fixed tabs. -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer mdl-layout--fixed-tabs">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title">Sunbathing Calculator</span>
+                </div>
+                <!-- Tabs -->
+                <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                    <a href="#fixed-tab-1" class="mdl-layout__tab">Auto</a>
+                    <a href="#fixed-tab-2" class="mdl-layout__tab is-active">Manual</a>
+                </div>
+            </header>
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Menu</span>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="">Calculator</a>
+                    <a class="mdl-navigation__link" href="fitzpatrick.html">Fitzpatrick Calculator</a>
+                    <a class="mdl-navigation__link" href="">Settings</a>
+                    <a class="mdl-navigation__link" href="">About</a>
+                </nav>
+            </div>
+            <main class="mdl-layout__content">
+                <section class="mdl-layout__tab-panel" id="fixed-tab-1">
+                    <div class="page-content"><!-- Your content goes here --></div>
+                </section>
+                <section class="mdl-layout__tab-panel is-active" id="fixed-tab-2">
+                    <div class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 30px; margin-bottom: 30px; border-radius: 5px; background-color: #f5f5f5;">
+                        <!-- UV Index -->
+                        <div style="display: flex;">
+                            <h6 style="margin: auto;">UV Index</h6>
+                            <div class="mdl-layout-spacer"></div>
+                            <p style="margin: auto;" id="UVIndexValue">0</p>
+                            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                                <i class="material-icons">info_outline</i>
+                            </button>
+                        </div>
+                        <input class="mdl-slider mdl-js-slider" type="range" min="0" max="11" value="0" tabindex="0" id="UVIndexSlider" oninput="readValue(this)">
+                        <br>
+                        <!-- Altitude -->
+                        <div style="display: flex;">
+                            <h6 style="margin: auto;">Altitude</h6>
+                            <div class="mdl-layout-spacer"></div>
+                            <p style="margin: auto;" id="AltitudeValue">0</p>
+                            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                                <i class="material-icons">info_outline</i>
+                            </button>
+                        </div>
+                        <input class="mdl-slider mdl-js-slider" type="range" min="0" max="10000" value="0" tabindex="1" id="AltitudeSlider" oninput="readValue(this)">
+                        <br>
+                        <!-- Reflective Surface -->
+                        <div style="display: flex;">
+                            <h6 style="margin: auto;">Reflective Surface</h6>
+                            <div class="mdl-layout-spacer"></div>
+                            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                                <i class="material-icons">info_outline</i>
+                            </button>
+                        </div>
+                        <label style="text-align: center; align-content: center;" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="ReflectiveStatus">
+                            <input type="checkbox" id="ReflectiveStatus" class="mdl-switch__input" onchange="CalculateTime(this)">
+                        </label>
+                        <br><br>
+                        <!-- Skin Type -->
+                        <div style="display: flex;">
+                            <h6 style="margin: auto;">Skin Type</h6>
+                            <div class="mdl-layout-spacer"></div>
+                            <p style="margin: auto;" id="SkinTypeValue">0 : Fitzpatrick I</p>
+                            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                                <i class="material-icons">info_outline</i>
+                            </button>
+                        </div>
+                        <input class="mdl-slider mdl-js-slider" type="range" min="0" max="36" value="0" tabindex="3" id="SkinTypeSlider" oninput="readValue(this)">
+                        <br>
+                        <div style="height: 1px; background-color: #cccccc; margin: 10px auto 20px auto;"></div>
+                        <!-- Cream SPF -->
+                        <div style="display: flex;">
+                            <h6 style="margin: auto;">Cream SPF</h6>
+                            <div class="mdl-layout-spacer"></div>
+                            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                                <i class="material-icons">info</i>
+                            </button>
+                        </div>
+                        <input type="number" pattern="[0-9]*" min="1" class="form-control form-control-alternative" id="CreamSPFField" placeholder="No Cream = 1" oninput="CalculateTime(this)" onfocus="focused(this)">
+                        <br>
+                        <!-- Time -->
+                        <div style="display: flex;">
+                            <h6 style="margin: auto;">Maximum Exposure Time</h6>
+                            <div class="mdl-layout-spacer"></div>
+                            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                                <i class="material-icons">info</i>
+                            </button>
+                        </div>
+                        <div style="display: flex;">
+                            <input style="margin: 0px 2px; text-align: right;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="HoursField" placeholder="Hours"  oninput="CalculateTime(this)" onfocus="focused(this)">
+                            <input style="margin: 0px 2px;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="MinutesField" placeholder="Minutes" oninput="CalculateTime(this)" onfocus="focused(this)">
+                        </div>
+                        
+                    </div>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>
