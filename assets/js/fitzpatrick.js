@@ -5,12 +5,32 @@ $( document ).ready(function() {
     
 });
 
-
+//This function is run when any of the input fields on this page is changed
+//the element parameter of the corrisponding trigger is passed into the function
+//so that we can retrieve the id of the trigger. This will help us
+//determine which slider has been changed and which <p> has to be 
+//updated accordingly.
 function showValue(element){
+    /*
+    Now we will check which slider has been moved by checking with an id
+    system, and we will update the texts relating to the respective slider
+    accordingly.
+    ID nomenclature system on html:
+    Sliders: start with an "s" and are followed by a number that increases
+             by 1 for each slider.
+    <p>'s  : start with a "t" and are followed by a number that increases
+             by 1 for each text.
+
+             The number following the sliders' and texts' ids are the same 
+             for each slider-text pair.
+    */
+
+    //if the item we touched is the first slider (#s1)...
     if(element.id == "s1"){
+        //...if the slider value is 0...
         if(element.value == 0){
+            //...show "Many"
             $("#t1").text("Many");
-            //$("#SkinColorPreview").css("background-color", V1);
         }
         if(element.value == 1){
             $("#t1").text("Several");
@@ -147,6 +167,9 @@ function showValue(element){
     calculate();
 }
 
+
+//This function gets the value of each slider, sums them together and 
+//passes the result to changeColor function as a parameter
 function calculate(){
     var s1 = Number($("#s1").val());
     var s2 = Number($("#s2").val());
@@ -162,7 +185,11 @@ function calculate(){
     changeColor(total);
 }
 
+//Each value has a corresponding number. This function compares the "total"
+//number from the previous function and sets the corrisponding colour 
+//to the bottom bar.
 function changeColor(value){
+    //Color-Value database
     var c0 = "#ffffff";
     var c1 = "#f4f2f5";
     var c2 = "#ecebe9";
@@ -201,11 +228,16 @@ function changeColor(value){
     var c35 = "#312528";
     var c36 = "#1a1c2d";
 
+    //add "c" to the value passed in as a parameter in order to use it as
+    //a call for one of the variable
     var color = "c" + Math.round(value);
-    console.log(eval(color));
+
+    //set background to color
+    //eval() is used convert a string to a variable name
     $("#SkinColorPreview").css("background-color", eval(color));
     $("#VLNumberText").text("Von Luschan Value: "+Math.round(value)+"pts");
 
+    //Set a color for the text in order to make it readable on the background
     if(value < 18){
         $("#VLNumberText").css("color", "#5c5c5c");
     }else{

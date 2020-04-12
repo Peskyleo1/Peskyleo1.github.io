@@ -203,9 +203,11 @@ function CalculateTime(element){
         //In case of infinity or NaN set placeholder accordingly
         if(Number.isNaN(Minutes)){
             $('#MinutesField').attr("placeholder", "NaN");
+            $('#HoursField').attr("placeholder", "NaN");
         }
         if(Minutes === Infinity) {
             $('#MinutesField').attr("placeholder", "∞");
+            $('#HoursField').attr("placeholder", "∞");
         }
     }
 

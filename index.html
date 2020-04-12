@@ -41,6 +41,7 @@
                 <nav class="mdl-navigation">
                     <a class="mdl-navigation__link" href="">Calculator</a>
                     <a class="mdl-navigation__link" href="fitzpatrick.html">Fitzpatrick Calculator</a>
+                    <a class="mdl-navigation__link" href="faq.html">FAQ</a>
                     <a class="mdl-navigation__link" href="">Settings</a>
                     <a class="mdl-navigation__link" href="">About</a>
                 </nav>
@@ -50,15 +51,17 @@
                     <div class="page-content"><!-- Your content goes here --></div>
                 </section>
                 <section class="mdl-layout__tab-panel is-active" id="fixed-tab-2">
+
                     <div class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 30px; margin-bottom: 30px; border-radius: 5px; background-color: #f5f5f5;">
                         <!-- UV Index -->
                         <div style="display: flex;">
                             <h6 style="margin: auto;">UV Index</h6>
                             <div class="mdl-layout-spacer"></div>
                             <p style="margin: auto;" id="UVIndexValue">0</p>
-                            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                            <button data-toggle="modal" data-target="#ModalUV" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
                                 <i class="material-icons">info_outline</i>
                             </button>
+                            
                         </div>
                         <input class="mdl-slider mdl-js-slider" type="range" min="0" max="11" value="0" tabindex="0" id="UVIndexSlider" oninput="readValue(this)">
                         <br>
@@ -67,7 +70,7 @@
                             <h6 style="margin: auto;">Altitude</h6>
                             <div class="mdl-layout-spacer"></div>
                             <p style="margin: auto;" id="AltitudeValue">0</p>
-                            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                            <button data-toggle="modal" data-target="#ModalAltitude" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
                                 <i class="material-icons">info_outline</i>
                             </button>
                         </div>
@@ -77,7 +80,7 @@
                         <div style="display: flex;">
                             <h6 style="margin: auto;">Reflective Surface</h6>
                             <div class="mdl-layout-spacer"></div>
-                            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                            <button  data-toggle="modal" data-target="#ModalReflection" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
                                 <i class="material-icons">info_outline</i>
                             </button>
                         </div>
@@ -90,7 +93,7 @@
                             <h6 style="margin: auto;">Skin Type</h6>
                             <div class="mdl-layout-spacer"></div>
                             <p style="margin: auto;" id="SkinTypeValue">0 : Fitzpatrick I</p>
-                            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                            <button data-toggle="modal" data-target="#ModalSkinType"  class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
                                 <i class="material-icons">info_outline</i>
                             </button>
                         </div>
@@ -101,7 +104,7 @@
                         <div style="display: flex;">
                             <h6 style="margin: auto;">Cream SPF</h6>
                             <div class="mdl-layout-spacer"></div>
-                            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                            <button data-toggle="modal" data-target="#ModalSPF" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
                                 <i class="material-icons">info</i>
                             </button>
                         </div>
@@ -111,7 +114,7 @@
                         <div style="display: flex;">
                             <h6 style="margin: auto;">Maximum Exposure Time</h6>
                             <div class="mdl-layout-spacer"></div>
-                            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                            <button data-toggle="modal" data-target="#ModalTime" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
                                 <i class="material-icons">info</i>
                             </button>
                         </div>
@@ -123,6 +126,215 @@
                     </div>
                 </section>
             </main>
+            
         </div>
+        <!-- Modal -->
+        <div class="modal fade" id="ModalUV" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1900;">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">UV Index</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <b>Unit: </b>UV Index<br>
+                    <b>Type: </b>Input<br><br>
+                    <b>Usage: </b><br>
+                    <font color="green">Low: 0-2</font><br>
+                    <font color="#ecdc0b">Moderate: 3-5</font><br>
+                    <font color="orange">High: 6-7</font><br>
+                    <font color="red">Very High: 8-10</font><br>
+                    <font color="purple">Extreme: 11+</font><br><br>
+                    <b>Description: </b><br>
+                    The ultraviolet index or UV Index is an international standard measurement of the strength of sunburn-producing ultraviolet (UV) radiation at a particular place and time.
+                    The purpose of the UV Index is to help people effectively protect themselves from UV radiation.<br><br>
+                    
+
+                </div>
+                <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="mdl-button mdl-js-button">Close</button>
+                <a href="https://en.wikipedia.org/wiki/Ultraviolet_index" class="mdl-button mdl-js-button mdl-button--primary">Source</a>
+                <a href="https://weather.com/" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Find</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Modal 2 -->
+        <div class="modal fade" id="ModalAltitude" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1900;">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Altitude</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <b>Unit: </b>Meters<br>
+                    <b>Type: </b>Input<br><br>
+                    <b>Usage: </b><br>
+                    Insert your current altitude in meters. If you don't know it, use the "Find" button to find out.<br><br>
+                    <b>Description: </b><br>
+                    Your current altitude is important to determine how long you can stay in the sun as:<br> <i>"at higher altitudes, a thinner atmosphere filters less UV radiation. With every 1000 metres increase in altitude, UV levels increase by 10% to 12%."</i>  - WHO
+                </div>
+                <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="mdl-button mdl-js-button">Close</button>
+                <a href="https://www.who.int/uv/uv_and_health/en/" class="mdl-button mdl-js-button mdl-button--primary">Source</a>
+                <a href="https://whataltitude.com/" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Find</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Modal 3 -->
+        <div class="modal fade" id="ModalReflection" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1900;">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Reflective Surface</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <b>Unit: </b>Off / On<br>
+                    <b>Type: </b>Input<br><br>
+                    <b>Usage: </b><br>
+                    Ground reflection increases the radiation exposure dramatically - consider activating this switch if you plan to be in or on the water, snow or any other reflective ground!<br><br>
+                    <b>Description: </b><br>
+                    Albedo is the measure of the diffuse reflection of solar radiation. It is measured on a scale from 0 (<a href="https://en.wikipedia.org/wiki/Black_body">black body</a>) to 1 (reflects all incident radiation) <br>
+                    <b>Snow</b> albedo is highly variable, ranging from as high as 0.9 for freshly fallen snow, to about 0.4 for melting snow, and as low as 0.2 for dirty snow.<br>
+                    <b>Water</b> reflects light very differently from typical terrestrial materials. Although the reflectivity of water is <a href="https://en.wikipedia.org/wiki/Albedo#/media/File:Water_reflectivity.jpg"> very low at low and medium angles of incident light, it becomes very high at high angles of incident light </a>
+                </div>
+                <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="mdl-button mdl-js-button">Close</button>
+                <a href="https://en.wikipedia.org/wiki/Albedo#Examples_of_terrestrial_albedo_effects" class="mdl-button mdl-js-button mdl-button--primary">Source</a>
+                <button class="mdl-button mdl-js-button mdl-button--raised" disabled>Find</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Modal 4 -->
+        <div class="modal fade" id="ModalSkinType" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1900;">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Skin Type</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <b>Unit: </b>Von Luschan : Fitzpatrick<br>
+                    <b>Type: </b>Input<br><br>
+                    <b>Usage: </b><br>
+                    Insert your Von Luschan skin type through the slider. If you are unsure what your skin type is, click on the "Find" button to guide you.<br><br>
+                    <b>Description: </b><br>
+                    There are different Skin Types and there are different scales to measure Skin Types. 
+                    The Fitzpatrick scale is more common to measure skin in relation to UV exposure but the 
+                    Von Luschan scale is more precise. With the slider you will be directly entering the Von Luschan value
+                    although i will be automatically converting it to Fitzpatrick as well for you.<br><br>
+                    <i>Fitzpatrick : Von Luschan</i><br>
+                    I: 0-6 <br>
+                    II: 7-13<br>
+                    III: 14-20<br>
+                    IV: 21-27<br>
+                    V: 28-34<br>
+                    VI: 35-36<br>
+
+                </div>
+                <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="mdl-button mdl-js-button">Close</button>
+                <a href="https://en.wikipedia.org/wiki/Von_Luschan%27s_chromatic_scale" class="mdl-button mdl-js-button mdl-button--primary">Source</a>
+                <a href="fitzpatrick.html" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Find</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Modal 5 -->
+        <div class="modal fade" id="ModalSPF" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1900;">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cream SPF</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <b>Unit: </b>SPF<br>
+                    <b>Type: </b>Input/Result<br><br>
+                    <b>Usage: </b><br>
+                    This textfield can be either an Input Field (will return Maximum Exposure Time)
+                     or a result field (if left blank and the <i>Maximum Exposure Time</i> field 
+                     is filled, it will do an exposure time calculation).<br>
+                     Whichever field is <span style="background-color: #ffff98;">yellow</span> will be the <i>Result</i> field.<br><br>
+                    <b>Description: </b><br>
+                    Cream SPF stands for Sun Protection Factor of the cream. <br>
+                    Sunscreens are commonly rated and labeled with a sun protection factor (SPF) that measures the fraction of sunburn-producing UV rays that reach the skin. 
+                    For example, "SPF 15" means that ​1⁄15 of the burning radiation reaches the skin through the recommended thickness of sunscreen.<br><br>
+                    Labeling:<br>
+                    In the EU, sunscreen labels can only go up to SPF 50+ (initially listed as 30 but soon revised to 50). Australia's Therapeutic Goods Administration increased the upper limit to 50+ in 2012. In its 2007 and 2011 draft rules, the US Food and Drug Administration (FDA) proposed a maximum SPF label of 50, to limit unrealistic claims. (As of February 2017, the FDA has not adopted the SPF 50 limit.) Others have proposed restricting the active ingredients to an SPF of no more than 50, due to lack of evidence that higher dosages provide more meaningful protection.
+                </div>
+                <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="mdl-button mdl-js-button">Close</button>
+                <a href="https://en.wikipedia.org/wiki/Sunscreen" class="mdl-button mdl-js-button mdl-button--primary">Source</a>
+                <button href="fitzpatrick.html" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" disabled>Find</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Modal 6 -->
+        <div class="modal fade" id="ModalTime" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1900;">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Time</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <b>Unit: </b>Hours : Minutes<br>
+                    <b>Type: </b>Input/Result<br><br>
+                    <b>Usage: </b><br>
+                    This textfield can be either an Input Field (will return Cream SPF)
+                     or a result field (if left blank and the <i>Cream SPF</i> field 
+                     is filled, it will do a reverse calculation).<br>
+                     Whichever field is <span style="background-color: #ffff98;">yellow</span> will be the <i>Result</i> field.<br><br>
+                     <b>⚠️<span style="background-color: #ff9595;">If your maximum exposure time is more than 2 hours remember to reapply your sunscreen</span>⚠️<br></b>
+                     <br>
+                    <b>Description: </b><br>
+                    Maximum Exposure Time represents the maximum time you can be exposed to the sun. You should never expose yourself for more than the indicated time in the span of 24 hours.<br><br>
+                    <b>⚠️<span style="background-color: #ff9595;">Remember: reapply your sunscreen every 2 hours.</span>⚠️<br></b><br>
+                    <i>[Sunscreen]...must be continually reapplied as directed, usually every two hours.</i> - American Academy of Dermatology<br><br>
+                    <b>⚠️If your maximum exposure time is less than 2 hours do not stay for any longer than that.⚠️</b>
+                </div>
+                <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="mdl-button mdl-js-button">Close</button>
+                <a href="https://en.wikipedia.org/wiki/Sunscreen#Measurements_of_protection" class="mdl-button mdl-js-button mdl-button--primary">Source</a>
+                <button href="https://en.wikipedia.org/wiki/Sunscreen#Measurements_of_protection" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" disabled>Find</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Core -->
+        <script src="assets/js/core/jquery/jquery.min.js"></script>
+        <script src="assets/js/core/popper.min.js"></script>
+        <script src="assets/js/core/bootstrap.min.js"></script>
+
+        <!-- PLUGINS-->
+        <script src="assets/js/plugins/nouislider.min.js"></script>
+        <script src="assets/js/plugins/bootstrap-datepicker.min.js"></script>
+        <script src="assets/js/plugins/bootstrap-switch.js"></script>
+        <script src="assets/js/plugins/chartjs.min.js"></script>
+        <script src="assets/js/plugins/datetimepicker.js"></script>
+        <script src="assets/js/plugins/jquery.sharrre.min.js"></script>
+        <script src="assets/js/plugins/moment.min.js"></script>
+        <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
+        <!-- Theme JS -->
+        <script src="assets/js/argon-design-system.min.js"></script>
     </body>
 </html>
