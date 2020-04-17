@@ -11,6 +11,7 @@ $( document ).ready(function() {
 
 //The textbox that will display a calculated number gets this background color
 var FocusColor = "rgb(255, 255, 235)";
+var AttentionColor = "rgb(249, 182, 182)";
 
 function focused(element){
     if(element.id == "HoursField" || element.id == "MinutesField"){
@@ -67,6 +68,8 @@ function readValue(element){
         else{
             document.getElementById(rootID).innerHTML=element.value + "pts : Fitzpatrick VI";
         }
+    }else if(element.id.includes("Altitude")){
+        $('#AltitudeValue').text(element.value + "m" +" / "+ Math.round(Number(element.value)*3.28084) + "ft");
     }
     //For all other sliders / Values that are not related to SkinType
     else{
@@ -175,7 +178,8 @@ function CalculateTime(element){
         var InputTime= HoursField + MinutesField/60;
         //---------- Equations ----------
         var CalculatedSPF = (InputTime*UVIndex*AltitudeCoefficient*ReflectingGroungCoefficient)/PhototypeCoefficient;
-        $('#CreamSPFField').val(Math.round(CalculatedSPF));
+        //Round number to nearest interger (Math.ceil)
+        $('#CreamSPFField').val(Math.ceil(CalculatedSPF));
 
         //In case of infinity or NaN set placeholder accordingly
         if(Number.isNaN(CalculatedSPF)){
@@ -200,6 +204,16 @@ function CalculateTime(element){
         //Reads what is before the decimal number and posts it to the hours Field
         $('#HoursField').val(parseInt(DecimalTime, 10));
 
+        //If time is greater than 2 hours turn the box red to indicate attention is required
+        if(Number(Minutes) > 120){
+            $('#HoursField').css("background-color", AttentionColor);
+            $('#MinutesField').css("background-color", AttentionColor);
+            $('#HourInfo').text("error");
+        }else{
+            $('#HoursField').css("background-color", "white");
+            $('#MinutesField').css("background-color", "white");
+            $('#HourInfo').text("info_outline");
+        }
         //In case of infinity or NaN set placeholder accordingly
         if(Number.isNaN(Minutes)){
             $('#MinutesField').attr("placeholder", "NaN");
