@@ -1,4 +1,13 @@
 
+window.onload = function onLoad() {
+    var circle = new ProgressBar.Circle('#progress', {
+        color: '#FCB03C',
+        duration: 1000,
+        easing: 'linear'
+    });
+
+    circle.animate(1);
+};
 
 
 //This function will wait for the html document to be fully loaded 
