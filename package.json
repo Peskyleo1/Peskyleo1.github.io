@@ -1,0 +1,30 @@
+{
+  "name": "peskyleo1.github.io",
+  "version": "1.0.0",
+  "description": "Sunbathing Calculator App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Peskyleo1/Peskyleo1.github.io.git"
+  },
+  "keywords": [
+    "sunbathing",
+    "uv",
+    "skin",
+    "calculator"
+  ],
+  "author": "Leonardo Pasanisi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Peskyleo1/Peskyleo1.github.io/issues"
+  },
+  "homepage": "https://github.com/Peskyleo1/Peskyleo1.github.io#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  }
+}

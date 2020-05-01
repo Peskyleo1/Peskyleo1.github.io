@@ -31,10 +31,12 @@ function getLocation() {
     }
 }
 //This is run after having the location
-function showPosition(position) {
+async function showPosition(position) {
+
     //---------- Position Retrieval ----------
     console.log("Latitude: " + position.coords.latitude);
     console.log("Longitude: " + position.coords.longitude);
+
     //---------- Weather Retrieval ----------
     getWeather(position);
     
@@ -123,7 +125,23 @@ function getWeather(position){
 function getWeatherFromServer(position){
     console.log("Weather Data: Downloading");
     //var altitude = getAltitude(position);
-    getAltitude(position, function(altitude){
+    getAltitude(position, async function(altitude){
+            //---------- Send Position To Server => Get Response From Server ----------
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            const api_url = `weather/${latitude},${longitude}`;
+            const response = await fetch(api_url);
+            const weatherData = await response.json();
+            //Adds altidude data to weather block
+            weatherData.location.alt = altitude;
+            window.localStorage.setItem("weatherData", JSON.stringify(weatherData));
+            console.log(JSON.parse(window.localStorage.getItem("weatherData")));
+            console.log("Weather Data: DOWNLOADED");
+            //returns weatherData with altitude in the json block
+            return weatherData;
+
+
+        /*
         $.get('http://api.weatherstack.com/current?access_key={WEATHERSTACK_API_KEY}&query='+position.coords.latitude+','+position.coords.longitude+'', function(responseText) {
             
             var weatherData = responseText;
@@ -135,7 +153,7 @@ function getWeatherFromServer(position){
             return weatherData;
             
             //location.reload();
-        });
+        });*/
     })
     /*
     $.get('http://api.weatherstack.com/current?access_key=9b964313622d273fb5ba99ba046f4d3e&query='+position.coords.latitude+','+position.coords.longitude+'', function(responseText) {
