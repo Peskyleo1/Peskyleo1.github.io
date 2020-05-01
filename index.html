@@ -51,21 +51,21 @@
             <main class="mdl-layout__content">
                 <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
                     <div class="page-content">
-                        <!-- AUTO page 
-                        <!-- Time 
+                        <!-- AUTO page -->
+                        <!-- Time -->
                         <div style="display: flex;">
                             <h6 style="margin: auto;">Time</h6>
                             <div class="mdl-layout-spacer"></div>
                             <button data-toggle="modal" data-target="#ModalTime" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" style="color: red;">
-                                <i id="HourInfo" class="material-icons">info_outline</i>
+                                <i id="HourInfoAuto" class="material-icons">info_outline</i>
                             </button>
                         </div>
                         <div style="display: flex;">
-                            <input style="margin: 0px 2px; text-align: right;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="HoursField" placeholder="Hours"  oninput="CalculateTime(this)" onfocus="focused(this)">
-                            <input style="margin: 0px 2px;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="MinutesField" placeholder="Minutes" oninput="CalculateTime(this)" onfocus="focused(this)">
+                            <input style="margin: 0px 2px; text-align: right;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="AutoHoursField" placeholder="Hours"  oninput="CalculateTime(this)" onfocus="focused(this)">
+                            <input style="margin: 0px 2px;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="AutoMinutesField" placeholder="Minutes" oninput="CalculateTime(this)" onfocus="focused(this)">
                         </div>
                         
-                        <!-- Circle 
+                        <!-- Circle -->
                         <div class="progressCircle" id="progress"></div>
                         <div style="text-align: center; margin-top: -230px;">
                             <div style="display: inline-flex; margin: 0 auto;">
@@ -74,38 +74,34 @@
                                     <i class="material-icons">info_outline</i>
                                 </button>
                             </div>
-                            <h1 style="margin-top: -12px;">50</h1>
+                            <h1 id="QSText" style="margin-top: -12px;">NO</h1>
                             <div style="display: inline-flex; margin: 0 auto; margin-bottom: 8px;">
                                 <p style="margin: auto; ">🏖️☃️</p>
                                 <button  data-toggle="modal" data-target="#ModalReflection" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
                                     <i class="material-icons">info_outline</i>
                                 </button>
                             </div>
-                            <label style="text-align: center; align-content: center; margin-top: -10px; margin-left: 42%;" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="ReflectiveStatus">
-                                <input type="checkbox" id="ReflectiveStatus" class="mdl-switch__input" onchange="CalculateTime(this)">
+                            <label style="text-align: center; align-content: center; margin-top: -10px; margin-left: 42%;" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="AutoReflectiveStatus">
+                                <input type="checkbox" id="AutoReflectiveStatus" class="mdl-switch__input" onchange="CalculateTime(this)">
                             </label>
                         </div>
 
-                        <!-- Butons 
+                        <!-- Butons -->
                         <div style="margin-top: 50px; width:100%;">
-                            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-                                <i class="material-icons">add</i>
-                            </button>
-                            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-                                <i class="material-icons">add</i>
-                            </button>
-                            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-                                <i class="material-icons">add</i>
-                            </button><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-                                <i class="material-icons">add</i>
-                            </button>
-                            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-                                <i class="material-icons">add</i>
-                            </button>
+                            <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                                <div class="mdl-tabs__tab-bar" style="overflow: visible;">
+                                    <a href="#a-panel" id="QS1" class="mdl-tabs__tab is-active" onclick="QuickSelectSPF(this)">NO</a>
+                                    <a href="#b-panel" id="QS2" class="mdl-tabs__tab" onclick="QuickSelectSPF(this)">15</a>
+                                    <a href="#c-panel" id="QS3" class="mdl-tabs__tab" onclick="QuickSelectSPF(this)">30</a>
+                                    <a href="#d-panel" id="QS4" class="mdl-tabs__tab" onclick="QuickSelectSPF(this)">50</a>
+                                </div>
+                              
+                                
+                              </div>
                             
 
-                        </div> 
-                    -->
+                        </div> <br>
+                    
                         
                     </div>
                 </section>
@@ -171,7 +167,7 @@
                                 <i class="material-icons">info_outline</i>
                             </button>
                         </div>
-                        <input type="number" pattern="[0-9]*" min="1" class="form-control form-control-alternative" id="CreamSPFField" placeholder="No Cream = 1" oninput="CalculateTime(this)" onfocus="focused(this)">
+                        <input type="number" pattern="[0-9]*" min="1" class="form-control form-control-alternative" id="CreamSPFField" placeholder="No Cream = 1" oninput="readValue(this)" onfocus="focused(this)">
                         <br>
                         <!-- Time -->
                         <div style="display: flex;">
@@ -182,8 +178,8 @@
                             </button>
                         </div>
                         <div style="display: flex;">
-                            <input style="margin: 0px 2px; text-align: right;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="HoursField" placeholder="Hours"  oninput="CalculateTime(this)" onfocus="focused(this)">
-                            <input style="margin: 0px 2px;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="MinutesField" placeholder="Minutes" oninput="CalculateTime(this)" onfocus="focused(this)">
+                            <input style="margin: 0px 2px; text-align: right;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="HoursField" placeholder="Hours"  oninput="readValue(this)" onfocus="focused(this)">
+                            <input style="margin: 0px 2px;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="MinutesField" placeholder="Minutes" oninput="readValue(this)" onfocus="focused(this)">
                         </div>
                         
                     </div>
