@@ -24,8 +24,19 @@ $( document ).ready(function() {
 //When called, this function will ask user for location
 function getLocation() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-      console.log("Location: Fetching...");
+      //navigator.geolocation.getCurrentPosition(showPosition);
+      //console.log("Location: Fetching...");
+        navigator.geolocation.getCurrentPosition(function(position) {
+            //Asking for location to the user
+            console.log("Location: Fetching...");
+            showPosition(position);
+        },
+        function(error) {
+            if (error.code == error.PERMISSION_DENIED){
+                //User denied access to location
+                console.log("Location: Denied By The User. Automatic mode wont work.");
+            }
+        });
     } else {
       console.log("Geolocation is not supported by this browser");
     }
@@ -402,10 +413,23 @@ function CalculateTime(element){
     */
 }
 
+function getSPF(){
+    var spf = Number($('#QSText').text());
+    if(isNaN(spf)) {
+        console.log(1);
+        return 1;
+        
+    }else{
+        console.log(spf);
+        return spf;
+    }
+    
+}
+
 //Just a duplicate of the Calculate() function with small edits 
 function AutoCalculate(element){
     var userPrefs = JSON.parse(window.localStorage.getItem("userPrefs"));
-    var weatherData = JSON.parse(window.localStorage.getItem("userPrefs"));
+    var weatherData = JSON.parse(window.localStorage.getItem("weatherData"));
     //---------- NEW SKIN TYPE ----------
    /*
    The new skin type uses a formula to find an adequate divisor number for each
@@ -413,6 +437,7 @@ function AutoCalculate(element){
    6 old types of skin. The divisor number function is required as the divisor
    number is not constant for all values.
    */
+  //x has to be a value between 0 and 36
   var x = userPrefs.skinType;
   //The function is a 6th degree polynoial and it has been divided into 
   //smaller components that will be reassembled to keep the code clean.
@@ -436,7 +461,7 @@ function AutoCalculate(element){
   //Cream Sun Protection Factor
   //No Cream: 1
   //Very High Cream Protection: 50
-  var CreamSPF = $('#QSText').text();
+  var CreamSPF = getSPF();
 
   //---------- UV Index ----------
   //UltraViolet Index
@@ -449,7 +474,7 @@ function AutoCalculate(element){
 
   //---------- Altitude ----------
   //Altitude (in meters)
-  var Altitude = $('#AltitudeSlider').val();
+  var Altitude = weatherData.location.alt;
 
   //UV increases by 12% every 1000 meters in the atmosphere
   var AltitudeCoefficient = (((Altitude/1000)-1)*0.12)+1;
@@ -460,16 +485,16 @@ function AutoCalculate(element){
   //Ground Reflects (On Water or Snow): 2
   //TO ADD: Implement Albedo Calculator: https://en.wikipedia.org/wiki/Albedo
   //Checks if the checkbox is checked and converts bool to int (True = 2 | False = 1)
-  var ReflectingGroungCoefficient = Number($('#ReflectiveStatus').prop('checked'))+1;
+  var ReflectingGroungCoefficient = Number($('#AutoReflectiveStatus').prop('checked'))+1;
 
   //---------- Time ----------
   //Get textfield value strings and convert them to numbers
   //this will then be used to get a decimal hour value which will be fed into the equation
-  var HoursField = Number($('#HoursField').val());
-  var MinutesField = Number($('#MinutesField').val());
+  var HoursField = Number($('#AutoHoursField').val());
+  var MinutesField = Number($('#AutoMinutesField').val());
   
 
-  if(element.id == "HoursField" || element.id == "MinutesField"){
+  if(element.id == "AutoHoursField" || element.id == "AutoMinutesField"){
       //INPUT FROM HOURSFIELD OR MINUTESFIELD
       $('#CreamSPFField').css("background-color", FocusColor);
       $('#HoursField').css("background-color", "white");
@@ -551,4 +576,5 @@ function AutoCalculate(element){
 
 function QuickSelectSPF(element){
     $("#QSText").text(element.text);
+    AutoCalculate();
 }

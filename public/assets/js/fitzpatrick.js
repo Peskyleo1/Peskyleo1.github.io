@@ -5,6 +5,26 @@ $( document ).ready(function() {
     
 });
 
+function getLocation() {
+    if (navigator.geolocation) {
+      //navigator.geolocation.getCurrentPosition(showPosition);
+      //console.log("Location: Fetching...");
+        navigator.geolocation.getCurrentPosition(function(position) {
+            //Asking for location to the user
+            console.log("Location: Allowed");
+            //showPosition(position);
+        },
+        function(error) {
+            if (error.code == error.PERMISSION_DENIED){
+                //User denied access to location
+                console.log("Location: Denied By The User. Automatic mode wont work.");
+            }
+        });
+    } else {
+      console.log("Geolocation is not supported by this browser");
+    }
+}
+
 //This function is run when any of the input fields on this page is changed
 //the element parameter of the corrisponding trigger is passed into the function
 //so that we can retrieve the id of the trigger. This will help us
