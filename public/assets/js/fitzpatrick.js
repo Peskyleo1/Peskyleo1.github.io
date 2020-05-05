@@ -1,7 +1,24 @@
+var userPrefs;
+
 
 //This function will wait for the html document to be fully loaded 
 $( document ).ready(function() {
-    
+    try {
+        //try getting user preferences
+        //if there are user preferences hide first time mode items 
+        //first time mode items:
+            //-location asker box
+            //-"thank you. now input skin" box
+        userPrefs = JSON.parse(window.localStorage.getItem("userPrefs"));
+        var skinType = userPrefs.skinType;
+    }catch{
+        //if there are no user preferences set first time mode
+        //first time mode: 
+            //-ask for location
+            //-ask for skin type
+        console.log("No user info: Welcome!");
+        $("#AskForLocation").css("display","inherit");
+    }
     
 });
 
@@ -11,14 +28,31 @@ function getLocation() {
       //console.log("Location: Fetching...");
         navigator.geolocation.getCurrentPosition(function(position) {
             //Asking for location to the user
-            console.log("Location: Allowed");
+            $("#AskForLocation").css("display","none");
+            $("#LocationSuccess").css("display","inherit");
+            $("#accuracyText").children("span").text(position.coords.accuracy.toString());
+            console.log("Location Accuracy: " + position.coords.accuracy.toString());
             //showPosition(position);
         },
         function(error) {
-            if (error.code == error.PERMISSION_DENIED){
-                //User denied access to location
-                console.log("Location: Denied By The User. Automatic mode wont work.");
-            }
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                  console.log("User denied the request for Geolocation.")
+                  $("#LocationDenied").css("display","inherit");
+                  break;
+                case error.POSITION_UNAVAILABLE:
+                  console.log("Location information is unavailable.")
+                  $("#LocationUnavailable").css("display","inherit");
+                  break;
+                case error.TIMEOUT:
+                  console.log("The request to get user location timed out.")
+                  $("#LocationTimeout").css("display","inherit");
+                  break;
+                case error.UNKNOWN_ERROR:
+                  console.log("An unknown error occurred.")
+                  $("#UnknownLocationError").css("display","inherit");
+                  break;
+              }
         });
     } else {
       console.log("Geolocation is not supported by this browser");
@@ -203,6 +237,7 @@ function calculate(){
     var total = (s1+s2+s3+s4+s5+s6+s7+s8)*1.125;
 
     changeColor(total);
+    return total;
 }
 
 //Each value has a corresponding number. This function compares the "total"
@@ -262,5 +297,31 @@ function changeColor(value){
         $("#VLNumberText").css("color", "#5c5c5c");
     }else{
         $("#VLNumberText").css("color", "white");
+    }
+}
+
+function saveSkin(){
+    try{
+        //will update the skinType item only
+        userPrefs = JSON.parse(window.localStorage.getItem("userPrefs"));
+        var skinType = calculate();
+        var skinTypeRounded = Math.round(skinType);
+        userPrefs.skinType = skinTypeRounded;
+        
+        console.log(userPrefs);
+        window.localStorage.setItem("userPrefs", JSON.stringify(userPrefs));
+        window.location.href = "index.html";
+    }catch{
+        //will create the skinType "directory" and update skinType
+        userPrefs = JSON.parse(window.localStorage.getItem("userPrefs"));
+        var skinType = calculate();
+        var skinTypeRounded = Math.round(skinType);
+        userPrefs = {
+            skinType: skinTypeRounded
+        }
+        
+        console.log(userPrefs);
+        window.localStorage.setItem("userPrefs", JSON.stringify(userPrefs));
+        window.location.href = "index.html";
     }
 }

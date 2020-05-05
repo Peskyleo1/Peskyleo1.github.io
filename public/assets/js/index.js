@@ -15,9 +15,19 @@ $( document ).ready(function() {
     //Component Setup/Connections
     var UVIndexSlider = $('#UVIndexSlider');
     var UVIndexValue = $('#UVIndexValue');
-    window.localStorage.setItem("tempData",JSON.stringify({"Altitude": "0", "UVIndex": "0", "Reflective": "1", "SkinType": "0", "SPF": "", "Hours": "", "Minutes": ""}));
-    
-    getLocation();
+    //window.localStorage.setItem("tempData",JSON.stringify({"Altitude": "0", "UVIndex": "0", "Reflective": "1", "SkinType": "0", "SPF": "", "Hours": "", "Minutes": ""}));
+
+    try{
+        //try getting userPrefs
+        var skinType = JSON.parse(window.localStorage.getItem("userPrefs")).skinType;
+        //execute functions in this order (wait for previous one to finish before calling the next one)
+        getLocation();
+        
+    }catch{
+        //if first time using the app and there are no userPrefs redirect to
+        //skin.html that will act as an onboarding page
+        window.location.href = "skin.html";
+    }
 
 });
 
@@ -29,16 +39,19 @@ function getLocation() {
         navigator.geolocation.getCurrentPosition(function(position) {
             //Asking for location to the user
             console.log("Location: Fetching...");
+            $("#LoadingQuickInfo").prepend("<span>Location: Fetching...</span><br><br>");
             showPosition(position);
         },
         function(error) {
             if (error.code == error.PERMISSION_DENIED){
                 //User denied access to location
                 console.log("Location: Denied By The User. Automatic mode wont work.");
+                $("#LoadingQuickInfo").prepend("<span>Location: Denied By The User. Automatic mode wont work.</span><br><br>");
             }
         });
     } else {
       console.log("Geolocation is not supported by this browser");
+      $("#LoadingQuickInfo").prepend("<span>Geolocation is not supported by this browser</span><br><br>");
     }
 }
 //This is run after having the location
@@ -47,6 +60,8 @@ async function showPosition(position) {
     //---------- Position Retrieval ----------
     console.log("Latitude: " + position.coords.latitude);
     console.log("Longitude: " + position.coords.longitude);
+    $("#LoadingQuickInfo").prepend(`<span>Latitude: ${position.coords.latitude}</span><br><br>`);
+    $("#LoadingQuickInfo").prepend(`<span>Longitude: ${position.coords.longitude}</span><br><br>`);
 
     //---------- Weather Retrieval ----------
     getWeather(position);
@@ -63,6 +78,8 @@ function getAltitude(position, callback) {
         //Unable to fetch altitude via location services
         console.log("Altitude: Unable to fetch via location services");
         console.log("Altitude: Fetching via altitude API...")
+        $("#LoadingQuickInfo").prepend("<span>Altitude: Unable to fetch via location services</span><br><br>");
+        $("#LoadingQuickInfo").prepend("<span>Altitude: Fetching via altitude API...</span><br><br>");
 
         //Will fetch altitude by getting terrain elevation for fetched coordinates
         //(global terrain elevation data from NASA's "Aster30m" dataset. 
@@ -70,6 +87,7 @@ function getAltitude(position, callback) {
         $.get('https://cors-anywhere.herokuapp.com/https://api.opentopodata.org/v1/aster30m?locations='+position.coords.latitude+','+position.coords.longitude+'&interpolation=cubic', function(responseText) {
             //Altitude fetched from terrain data API
             console.log("Altitude: " + responseText.results[0].elevation);
+            $("#LoadingQuickInfo").prepend(`<span>Altitude: ${responseText.results[0].elevation}m</span><br><br>`);
 
             //Callback function called instead of returning. This will make sure
             //we have an altitude value before adding altitude data to Weather.Location
@@ -79,6 +97,8 @@ function getAltitude(position, callback) {
         //Altitude found via location services
         console.log("Altitude: " + position.coords.altitude);
         console.log("Location: FOUND");
+        $("#LoadingQuickInfo").prepend(`<span>Altitude: ${position.coords.altitude}</span><br><br>`);
+        $("#LoadingQuickInfo").prepend(`<span>Location: FOUND</span><br><br>`);
         
         callback(responseText.results[0].elevation);
     }
@@ -99,7 +119,8 @@ function getWeather(position){
     var success = JSON.parse(window.localStorage.getItem("weatherData"));
     if(success){
         //Data found in local storage
-        console.log("Request: Successful. Data found in Local Storage");
+        console.log("Retrieving Data: Successful. Data found in Local Storage");
+        $("#LoadingQuickInfo").prepend("<span>Retrieving Data: Successful. Data found in Local Storage</span><br><br>");
         //---------- Weather Data Age Check ----------
         //Get a new weather update from the server only if your local data is older than 20mins
         //(this should reduce number of calls from API to an acceptable UV precision)
@@ -118,23 +139,33 @@ function getWeather(position){
         if (currentDate-storedDate <= timeDifference){
             //Data is acceptably up to date. We will use the locally stored data.
             console.log("Weather Data: FOUND");
-            console.log("Time from last download: " + (currentDate-storedDate).toString() + "sec");
+            console.log("Time since last download: " + (currentDate-storedDate).toString() + "sec");
+            console.log("Time since last download: Acceptable");
             console.log(JSON.parse(window.localStorage.getItem("weatherData")));
+            $("#LoadingQuickInfo").prepend("<span>Weather Data: FOUND</span><br><br>");
+            $("#LoadingQuickInfo").prepend(`<span>Time since last download: ${(currentDate-storedDate).toString()}sec</span><br><br>`);
+            $("#LoadingQuickInfo").prepend(`<span>Time since last download: Acceptable</span><br><br>`);
+            AutoCalculate();
             return JSON.parse(window.localStorage.getItem("weatherData"));
         }else{
             //Data is too old to be reliable. New API call required. Will save new data to localStorage
             console.log("Weather Data: Outdated");
+            $("#LoadingQuickInfo").prepend("<span>Weather Data: Outdated</span><br><br>");
             getWeatherFromServer(position);
         }
     }else{
         //No data found in localstorage
-        console.log("Request: Failed. No data found in Local Storage");
+        console.log("Retrieving Local Data: Failed. No data found in Local Storage");
+        console.log("Retrieving Data: Will contact server");
+        $("#LoadingQuickInfo").prepend("<span>Retrieving Local Data: Failed. No data found in Local Storage</span><br><br>");
+        $("#LoadingQuickInfo").prepend("<span>Retrieving Data: Will contact server</span><br><br>");
         getWeatherFromServer(position);
     }
 }
 
 function getWeatherFromServer(position){
     console.log("Weather Data: Downloading");
+    $("#LoadingQuickInfo").prepend("<span>Weather Data: Downloading</span><br><br>");
     //var altitude = getAltitude(position);
     getAltitude(position, async function(altitude){
             //---------- Send Position To Server => Get Response From Server ----------
@@ -148,7 +179,9 @@ function getWeatherFromServer(position){
             window.localStorage.setItem("weatherData", JSON.stringify(weatherData));
             console.log(JSON.parse(window.localStorage.getItem("weatherData")));
             console.log("Weather Data: DOWNLOADED");
+            $("#LoadingQuickInfo").prepend("<span>Weather Data: DOWNLOADED</span><br><br>");
             //returns weatherData with altitude in the json block
+            AutoCalculate();
             return weatherData;
 
 
@@ -416,11 +449,9 @@ function CalculateTime(element){
 function getSPF(){
     var spf = Number($('#QSText').text());
     if(isNaN(spf)) {
-        console.log(1);
         return 1;
         
     }else{
-        console.log(spf);
         return spf;
     }
     
@@ -428,6 +459,7 @@ function getSPF(){
 
 //Just a duplicate of the Calculate() function with small edits 
 function AutoCalculate(element){
+    $("#LoadingContentDiv").css("display", "none");
     var userPrefs = JSON.parse(window.localStorage.getItem("userPrefs"));
     var weatherData = JSON.parse(window.localStorage.getItem("weatherData"));
     //---------- NEW SKIN TYPE ----------
@@ -493,85 +525,108 @@ function AutoCalculate(element){
   var HoursField = Number($('#AutoHoursField').val());
   var MinutesField = Number($('#AutoMinutesField').val());
   
+    try{
+        //works when the function is called by pressing a button
+        if(element.id == "AutoHoursField" || element.id == "AutoMinutesField"){
+            //Input from Time Fields (user asks for spf)
+            var InputTime= HoursField + MinutesField/60;
+            //---------- Equations ----------
+            var CalculatedSPF = (InputTime*UVIndex*AltitudeCoefficient*ReflectingGroungCoefficient)/PhototypeCoefficient;
+            //Round number to nearest interger (Math.ceil)
+            $('#QSText').text(Math.ceil(CalculatedSPF));
 
-  if(element.id == "AutoHoursField" || element.id == "AutoMinutesField"){
-      //INPUT FROM HOURSFIELD OR MINUTESFIELD
-      $('#CreamSPFField').css("background-color", FocusColor);
-      $('#HoursField').css("background-color", "white");
-      $('#MinutesField').css("background-color", "white");
+            //In case of infinity or NaN set placeholder accordingly
+            if(Number.isNaN(CalculatedSPF)){
+                $('#QSText').text("NaN");
+            }
+            if(CalculatedSPF === Infinity) {
+                $('#QSText').text("∞");
+            }
+            if(CalculatedSPF === -Infinity) {
+                $('#QSText').text("Stay in shaded areas");
+            }
+            
+        }else{
+            //Input from buttons (user asks for time)
+            //---------- Equations ----------
+            //Result from the equation gives time in Decimal Hours
+            var DecimalTime = (PhototypeCoefficient * CreamSPF) / (UVIndex * AltitudeCoefficient * ReflectingGroungCoefficient);
+            
+            //Conversion from decimal hours to minutes
+            var Minutes = DecimalTime * 60;
 
-      
-  }else if (element.id == "CreamSPFField"){
-      //INPUT FROM SPF FIELD
+            //---------- Printing Results in appropriate textfields ----------
+            $('#AutoMinutesField').val(Math.round((Number(DecimalTime-Math.trunc(DecimalTime)))*60));
+            //Reads what is before the decimal number and posts it to the hours Field
+            $('#AutoHoursField').val(parseInt(DecimalTime, 10));
 
-      $('#CreamSPFField').css("background-color", "white");
-      $('#HoursField').css("background-color", FocusColor);
-      $('#MinutesField').css("background-color", FocusColor);
-      
-  }
+            //If time is greater than 2 hours turn the box red to indicate attention is required
+            if(Number(Minutes) > 120){
+                $('#AutoHoursField').css("background-color", AttentionColor);
+                $('#AutoMinutesField').css("background-color", AttentionColor);
+                $('#AutoHourInfo').text("error");
+            }else{
+                $('#AutoHoursField').css("background-color", "white");
+                $('#AutoMinutesField').css("background-color", "white");
+                $('#AutoHourInfo').text("info_outline");
+            }
+            //In case of infinity or NaN set placeholder accordingly
+            if(Number.isNaN(Minutes)){
+                $('#AutoMinutesField').attr("placeholder", "NaN");
+                $('#AutoHoursField').attr("placeholder", "NaN");
+            }
+            if(Minutes === Infinity) {
+                $('#AutoMinutesField').attr("placeholder", "∞");
+                $('#AutoHoursField').attr("placeholder", "∞");
+            }
+        }
+    }catch{
+        //works when the function is called by loading the page
+        //Input from page load (user asks for time)
+            //---------- Equations ----------
+            //Result from the equation gives time in Decimal Hours
+            var DecimalTime = (PhototypeCoefficient * CreamSPF) / (UVIndex * AltitudeCoefficient * ReflectingGroungCoefficient);
+            
+            //Conversion from decimal hours to minutes
+            var Minutes = DecimalTime * 60;
 
-  if($('#CreamSPFField').css("background-color") == FocusColor)
-  {
-      var InputTime= HoursField + MinutesField/60;
-      //---------- Equations ----------
-      var CalculatedSPF = (InputTime*UVIndex*AltitudeCoefficient*ReflectingGroungCoefficient)/PhototypeCoefficient;
-      //Round number to nearest interger (Math.ceil)
-      $('#CreamSPFField').val(Math.ceil(CalculatedSPF));
+            //---------- Printing Results in appropriate textfields ----------
+            $('#AutoMinutesField').val(Math.round((Number(DecimalTime-Math.trunc(DecimalTime)))*60));
+            //Reads what is before the decimal number and posts it to the hours Field
+            $('#AutoHoursField').val(parseInt(DecimalTime, 10));
 
-      //In case of infinity or NaN set placeholder accordingly
-      if(Number.isNaN(CalculatedSPF)){
-          $('#CreamSPFField').attr("placeholder", "NaN");
-      }
-      if(CalculatedSPF === Infinity) {
-          $('#CreamSPFField').attr("placeholder", "∞");
-      }
-      if(CalculatedSPF === -Infinity) {
-          $('#CreamSPFField').attr("placeholder", "Stay in shaded areas");
-      }
-  }else{
-      //---------- Equations ----------
-      //Result from the equation gives time in Decimal Hours
-      var DecimalTime = (PhototypeCoefficient * CreamSPF) / (UVIndex * AltitudeCoefficient * ReflectingGroungCoefficient);
-      
-      //Conversion from decimal hours to minutes
-      var Minutes = DecimalTime * 60;
+            //If time is greater than 2 hours turn the box red to indicate attention is required
+            if(Number(Minutes) > 120){
+                $('#AutoHoursField').css("background-color", AttentionColor);
+                $('#AutoMinutesField').css("background-color", AttentionColor);
+                $('#AutoHourInfo').text("error");
+            }else{
+                $('#AutoHoursField').css("background-color", "white");
+                $('#AutoMinutesField').css("background-color", "white");
+                $('#AutoHourInfo').text("info_outline");
+            }
+            //In case of infinity or NaN set placeholder accordingly
+            if(Number.isNaN(Minutes)){
+                $('#AutoMinutesField').attr("placeholder", "NaN");
+                $('#AutoHoursField').attr("placeholder", "NaN");
+            }
+            if(Minutes === Infinity) {
+                $('#AutoMinutesField').attr("placeholder", "∞");
+                $('#AutoHoursField').attr("placeholder", "∞");
+            }
 
-      //---------- Printing Results in appropriate textfields ----------
-      $('#MinutesField').val(Math.round((Number(DecimalTime-Math.trunc(DecimalTime)))*60));
-      //Reads what is before the decimal number and posts it to the hours Field
-      $('#HoursField').val(parseInt(DecimalTime, 10));
+    }
 
-      //If time is greater than 2 hours turn the box red to indicate attention is required
-      if(Number(Minutes) > 120){
-          $('#HoursField').css("background-color", AttentionColor);
-          $('#MinutesField').css("background-color", AttentionColor);
-          $('#HourInfo').text("error");
-      }else{
-          $('#HoursField').css("background-color", "white");
-          $('#MinutesField').css("background-color", "white");
-          $('#HourInfo').text("info_outline");
-      }
-      //In case of infinity or NaN set placeholder accordingly
-      if(Number.isNaN(Minutes)){
-          $('#MinutesField').attr("placeholder", "NaN");
-          $('#HoursField').attr("placeholder", "NaN");
-      }
-      if(Minutes === Infinity) {
-          $('#MinutesField').attr("placeholder", "∞");
-          $('#HoursField').attr("placeholder", "∞");
-      }
-  }
-
-  //For Debugging
-  /*
-  console.clear();
-  console.log("UVIndex: " + UVIndex);
-  console.log("Altitude: " + Altitude);
-  console.log("Reflective: " + ReflectingGroungCoefficient);
-  console.log("SkinType: " + SkinType);
-  console.log("SPF: " + CreamSPF);
-  console.log("Minutes: " + Minutes);
-  */
+    //For Debugging
+    /*
+    console.clear();
+    console.log("UVIndex: " + UVIndex);
+    console.log("Altitude: " + Altitude);
+    console.log("Reflective: " + ReflectingGroungCoefficient);
+    console.log("SkinType: " + SkinType);
+    console.log("SPF: " + CreamSPF);
+    console.log("Minutes: " + Minutes);
+    */
 }
 
 function QuickSelectSPF(element){

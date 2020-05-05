@@ -42,7 +42,7 @@
                 <span class="mdl-layout-title">Menu</span>
                 <nav class="mdl-navigation">
                     <a class="mdl-navigation__link" href=""><i class="material-icons">developer_board</i> Calculator</a>
-                    <a class="mdl-navigation__link" href="fitzpatrick.html"><i class="material-icons">face</i> Skin Type</a>
+                    <a class="mdl-navigation__link" href="skin.html"><i class="material-icons">face</i> Skin Type</a>
                     <a class="mdl-navigation__link" href="faq.html"><i class="material-icons">question_answer</i> FAQ</a>
                     <a class="mdl-navigation__link" href=""><i class="material-icons">settings</i> Settings</a>
                     <a class="mdl-navigation__link" href=""><i class="material-icons">get_app</i> Download</a>
@@ -50,6 +50,10 @@
             </div>
             <main class="mdl-layout__content">
                 <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+                    <div id="LoadingContentDiv" class="page-content">
+                        <div style="width: 100%; text-align: center;"><div class="mdl-spinner mdl-js-spinner is-active"></div></div>
+                        <h6 style="margin: auto;"><b>Loading:</b><br><span id="LoadingQuickInfo"></span></h6>
+                    </div>
                     <div class="page-content">
                         <!-- AUTO page -->
                         <!-- Time -->
@@ -57,12 +61,12 @@
                             <h6 style="margin: auto;">Time</h6>
                             <div class="mdl-layout-spacer"></div>
                             <button data-toggle="modal" data-target="#ModalTime" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" style="color: red;">
-                                <i id="HourInfoAuto" class="material-icons">info_outline</i>
+                                <i id="AutoHourInfo" class="material-icons">info_outline</i>
                             </button>
                         </div>
                         <div style="display: flex;">
-                            <input style="margin: 0px 2px; text-align: right;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="AutoHoursField" placeholder="Hours"  oninput="CalculateTime(this)" onfocus="focused(this)">
-                            <input style="margin: 0px 2px;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="AutoMinutesField" placeholder="Minutes" oninput="CalculateTime(this)" onfocus="focused(this)">
+                            <input style="margin: 0px 2px; text-align: right;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="AutoHoursField" placeholder="Hours"  oninput="AutoCalculate(this)">
+                            <input style="margin: 0px 2px;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="AutoMinutesField" placeholder="Minutes" oninput="AutoCalculate(this)">
                         </div>
                         
                         <!-- Circle -->
@@ -82,7 +86,7 @@
                                 </button>
                             </div>
                             <label style="text-align: center; align-content: center; margin-top: -10px; margin-left: 42%;" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="AutoReflectiveStatus">
-                                <input type="checkbox" id="AutoReflectiveStatus" class="mdl-switch__input" onchange="CalculateTime(this)">
+                                <input type="checkbox" id="AutoReflectiveStatus" class="mdl-switch__input" onchange="AutoCalculate(this)">
                             </label>
                         </div>
 
@@ -309,7 +313,7 @@
                 <div class="modal-footer">
                 <button type="button" data-dismiss="modal" class="mdl-button mdl-js-button">Close</button>
                 <a href="https://en.wikipedia.org/wiki/Von_Luschan%27s_chromatic_scale" class="mdl-button mdl-js-button mdl-button--primary">Source</a>
-                <a href="fitzpatrick.html" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Find</a>
+                <a href="skin.html" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Find</a>
                 </div>
             </div>
             </div>
@@ -351,7 +355,7 @@
                 <div class="modal-footer">
                 <button type="button" data-dismiss="modal" class="mdl-button mdl-js-button">Close</button>
                 <a href="https://en.wikipedia.org/wiki/Sunscreen" class="mdl-button mdl-js-button mdl-button--primary">Source</a>
-                <button href="fitzpatrick.html" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" disabled>Find</button>
+                <button href="skin.html" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" disabled>Find</button>
                 </div>
             </div>
             </div>
