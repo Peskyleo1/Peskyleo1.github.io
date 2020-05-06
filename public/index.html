@@ -30,7 +30,7 @@
             <header class="mdl-layout__header">
                 <div class="mdl-layout__header-row">
                     <!-- Title -->
-                    <span class="mdl-layout-title">Daisy | Sunbathing Assistant</span>
+                    <span class="mdl-layout-title">Daisy</span>
                 </div>
                 <!-- Tabs -->
                 <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
@@ -41,57 +41,53 @@
             <div class="mdl-layout__drawer">
                 <span class="mdl-layout-title">Menu</span>
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href=""><i class="material-icons">developer_board</i> Calculator</a>
+                    <a class="mdl-navigation__link" href="index.html"><i class="material-icons">developer_board</i> Calculator</a>
                     <a class="mdl-navigation__link" href="skin.html"><i class="material-icons">face</i> Skin Type</a>
                     <a class="mdl-navigation__link" href="faq.html"><i class="material-icons">question_answer</i> FAQ</a>
-                    <a class="mdl-navigation__link" href=""><i class="material-icons">settings</i> Settings</a>
-                    <a class="mdl-navigation__link" href=""><i class="material-icons">get_app</i> Download</a>
+                    <a class="mdl-navigation__link" href="settings.html"><i class="material-icons">settings</i> Settings</a>
+                    <a class="mdl-navigation__link" href="download.html"><i class="material-icons">get_app</i> Download</a>
                 </nav>
             </div>
             <main class="mdl-layout__content">
                 <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+                    <!-- AUTO page -->
+                    <!-- Location Denied ERROR -->
+                    <div id="LocationDenied" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: none;">
+                        <h6 style="margin: auto;"><b>Permission Denied:</b> You have denied permission to use your location. Please allow me to use your location.</h6>
+                    </div>
+                    <!-- Location Unavailable ERROR -->
+                    <div id="LocationUnavailable" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 238, 0, 0.2); display: none;">
+                        <h6 style="margin: auto;"><b>Location Unavailable:</b> Location information is unavailable, please try again later.</h6>
+                    </div>
+                    <!-- Location Timeout ERROR -->
+                    <div id="LocationTimeout" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 238, 0, 0.2); display: none;">
+                        <h6 style="margin: auto;"><b>Location Timeout:</b> The request to get user location timed out, please try again later.</h6>
+                    </div>
+                    <!-- Unknown error: Location ERROR -->
+                    <div id="UnknownLocationError" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: none;">
+                        <h6 style="margin: auto;"><b>Unknown Location Error:</b> An unknown error has happened while getting your location.</h6>
+                    </div>
+                    <!-- Altitude not Found -->
+                    <div id="NoAltitude" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: none;">
+                        <h6 style="margin: auto;"><b>Altitude:</b> Unable to fetch. <br><br>Try again later or use "Nerd Mode" instead.</h6>
+                    </div>
                     <div id="LoadingContentDiv" class="page-content">
                         <div style="width: 100%; text-align: center;"><div class="mdl-spinner mdl-js-spinner is-active"></div></div>
                         <h6 style="margin: auto;"><b>Loading:</b><br><span id="LoadingQuickInfo"></span></h6>
                     </div>
-                    <div class="page-content">
-                        <!-- AUTO page -->
-                        <!-- Time -->
-                        <div style="display: flex;">
-                            <h6 style="margin: auto;">Time</h6>
+                    <div class="page-content" id="AutoCalculateBlock" style="display: none;">
+                        
+                        
+                        <!-- Butons -->
+                        <div style="display: flex; margin: 0 auto;">
+                            <h6 style="margin: auto">Cream</h6>
                             <div class="mdl-layout-spacer"></div>
-                            <button data-toggle="modal" data-target="#ModalTime" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" style="color: red;">
-                                <i id="AutoHourInfo" class="material-icons">info_outline</i>
+                            <button data-toggle="modal" data-target="#ModalSPF" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                                <i class="material-icons">info_outline</i>
                             </button>
                         </div>
-                        <div style="display: flex;">
-                            <input style="margin: 0px 2px; text-align: right;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="AutoHoursField" placeholder="Hours"  oninput="AutoCalculate(this)">
-                            <input style="margin: 0px 2px;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="AutoMinutesField" placeholder="Minutes" oninput="AutoCalculate(this)">
-                        </div>
                         
-                        <!-- Circle -->
-                        <div class="progressCircle" id="progress"></div>
-                        <div style="text-align: center; margin-top: -230px;">
-                            <div style="display: inline-flex; margin: 0 auto;">
-                                <p style="margin: auto auto auto 4px;">SPF</p>
-                                <button data-toggle="modal" data-target="#ModalSPF" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
-                                    <i class="material-icons">info_outline</i>
-                                </button>
-                            </div>
-                            <h1 id="QSText" style="margin-top: -12px;">NO</h1>
-                            <div style="display: inline-flex; margin: 0 auto; margin-bottom: 8px;">
-                                <p style="margin: auto; ">🏖️☃️</p>
-                                <button  data-toggle="modal" data-target="#ModalReflection" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
-                                    <i class="material-icons">info_outline</i>
-                                </button>
-                            </div>
-                            <label style="text-align: center; align-content: center; margin-top: -10px; margin-left: 42%;" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="AutoReflectiveStatus">
-                                <input type="checkbox" id="AutoReflectiveStatus" class="mdl-switch__input" onchange="AutoCalculate(this)">
-                            </label>
-                        </div>
-
-                        <!-- Butons -->
-                        <div style="margin-top: 50px; width:100%;">
+                        <div style="width:100%;">
                             <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
                                 <div class="mdl-tabs__tab-bar" style="overflow: visible;">
                                     <a href="#a-panel" id="QS1" class="mdl-tabs__tab is-active" onclick="QuickSelectSPF(this)">NO</a>
@@ -105,8 +101,44 @@
                             
 
                         </div> <br>
-                    
-                        
+                        <h3 id="QSText" style="text-align: center; margin:0; margin-bottom: 20px;">Without Sunscreen</h3>
+
+
+                        <div style="height: 1px; background-color: #e0e0e1; margin: 10px auto 20px auto;"></div>
+
+
+                        <!-- Time -->
+                        <div style="display: flex;">
+                            <h6 style="margin: auto;">Time</h6>
+                            <div class="mdl-layout-spacer"></div>
+                            <button data-toggle="modal" data-target="#ModalTime" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" style="color: red;">
+                                <i id="AutoHourInfo" class="material-icons">info_outline</i>
+                            </button>
+                        </div>
+                        <div style="display: flex;">
+                            <input style="margin: 0px 2px; text-align: right; height: 50px; font-size: 30px;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="AutoHoursField" placeholder="Hours"  oninput="AutoCalculate(this)">
+                            <span style="font-size: 30px; margin-top: 13px; color: gray;">:</span>
+                            <input style="margin: 0px 2px; height: 50px; font-size: 30px;" type="number" pattern="[0-9]*" class="form-control form-control-alternative" id="AutoMinutesField" placeholder="Minutes" oninput="AutoCalculate(this)">
+                        </div><br>
+
+
+                        <div style="height: 1px; background-color: #e0e0e1; margin: 10px auto 20px auto;"></div>
+
+
+                        <!-- Circle -->
+                        <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+                            
+                            <div style="display: flex; margin: 0 auto;">
+                                <h6 style="margin: auto">🏖️☃️</h6>
+                                <div class="mdl-layout-spacer"></div>
+                                <button data-toggle="modal" data-target="#ModalReflection" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                                    <i class="material-icons">info_outline</i>
+                                </button>
+                            </div>
+                            <label style="text-align: center; align-content: center; margin-top: -10px; margin-left: 42%;" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="AutoReflectiveStatus">
+                                <input type="checkbox" id="AutoReflectiveStatus" class="mdl-switch__input" onchange="AutoCalculate(this)">
+                            </label>
+                        </div>
                     </div>
                 </section>
                 <section class="mdl-layout__tab-panel" id="fixed-tab-2">

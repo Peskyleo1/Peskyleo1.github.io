@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+
+        <!--APPLE ICON-->
+        <!--ICON-->
+
+        <title>Daisy | Sunbathing Assistant</title>
+        <link type="text/css" href="assets/css/argon-design-system.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/material.min.css">
+        <script src="assets/js/material.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        
+        <!-- JS -->
+        <script src="assets/js/settings.js"></script>
+        
+    </head>
+    <body>
+        <!-- Simple header with fixed tabs. -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer mdl-layout--fixed-tabs">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title">Settings</span>
+                </div>
+                
+            </header>
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Menu</span>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="index.html"><i class="material-icons">developer_board</i> Calculator</a>
+                    <a class="mdl-navigation__link" href="skin.html"><i class="material-icons">face</i> Skin Type</a>
+                    <a class="mdl-navigation__link" href="faq.html"><i class="material-icons">question_answer</i> FAQ</a>
+                    <a class="mdl-navigation__link" href="settings.html"><i class="material-icons">settings</i> Settings</a>
+                    <a class="mdl-navigation__link" href="download.html"><i class="material-icons">get_app</i> Download</a>
+                </nav>
+            </div>
+            <main class="mdl-layout__content">
+                <!-- Location Found SUCCESS -->
+                <div id="SettingsSaved" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(60, 255, 0, 0.2); display: none;">
+                    <h6 id="savedText" style="margin: auto;"><b>Settings Saved</b></h6>
+                </div>
+
+                <div id="SettingsDiv" class="page-content">
+                    <!-- Language -->
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: auto"><b>Language</b></h6>
+                        <div class="mdl-layout-spacer"></div>
+                        <i class="material-icons">translate</i>
+                    </div>
+                    <input style="width: calc(100% - 20px); margin: 10px;" list="languages" name="language" class="form-control form-control-alternative" placeholder="Select">
+                    <datalist id="languages">
+                        <option value="English"></option>
+                        <option value="Italiano"></option>
+                        <option value="Français"></option>
+                        <option value="Español"></option>
+                    </datalist>
+
+                    <div style="height: 1px; background-color: #e0e0e1; margin: 10px auto 20px auto;"></div>
+
+                    <!-- Dark Mode -->
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: auto"><b>Dark Mode</b></h6>
+                        <div class="mdl-layout-spacer"></div>
+                        <i class="material-icons">brightness_4</i>
+                    </div>
+                    <label style="margin: 10px;" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
+                        <input type="checkbox" id="switch-2" class="mdl-switch__input">
+                        <span class="mdl-switch__label"></span>
+                    </label>
+
+                    <div style="height: 1px; background-color: #e0e0e1; margin: 10px auto 20px auto;"></div>
+
+                    <!-- Skin Type -->
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: auto"><b>Skin Type</b></h6>
+                        <div class="mdl-layout-spacer"></div>
+                        <i class="material-icons">face</i>
+                    </div>
+                    <!-- Colored raised button -->
+                    <a href="skin.html" style="width: calc(100% - 20px); margin: 10px;" class="mdl-button mdl-js-button mdl-button--raised">
+                        Change
+                    </a>
+                    
+
+                    <div style="height: 1px; background-color: #e0e0e1; margin: 10px auto 20px auto;"></div>
+
+                    <!-- Favorite Creams -->
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: auto"><b>Favorite Creams</b></h6>
+                        <div class="mdl-layout-spacer"></div>
+                        <i class="material-icons">favorite</i>
+                    </div>
+                    <input style="width: calc(100% - 20px); margin: 10px;" type="number" pattern="[0-9]*" min="1" class="form-control form-control-alternative" id="Favorite1" placeholder="Favorite 1" oninput="readValue(this)">
+                    <input style="width: calc(100% - 20px); margin: 10px;" type="number" pattern="[0-9]*" min="1" class="form-control form-control-alternative" id="Favorite2" placeholder="Favorite 2" oninput="readValue(this)">
+                    <input style="width: calc(100% - 20px); margin: 10px;" type="number" pattern="[0-9]*" min="1" class="form-control form-control-alternative" id="Favorite3" placeholder="Favorite 3" oninput="readValue(this)">
+
+                    <div style="height: 1px; background-color: #e0e0e1; margin: 10px auto 20px auto;"></div>
+
+                    <button style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">save</i> Save
+                    </button>
+                </div>
+            </main>
+        </div>
+        <!-- Core -->
+        <script src="assets/js/core/jquery/jquery.min.js"></script>
+        <script src="assets/js/core/popper.min.js"></script>
+        <script src="assets/js/core/bootstrap.min.js"></script>
+
+        <!-- PLUGINS-->
+        <script src="assets/js/plugins/nouislider.min.js"></script>
+        <script src="assets/js/plugins/bootstrap-datepicker.min.js"></script>
+        <script src="assets/js/plugins/bootstrap-switch.js"></script>
+        <script src="assets/js/plugins/chartjs.min.js"></script>
+        <script src="assets/js/plugins/datetimepicker.js"></script>
+        <script src="assets/js/plugins/jquery.sharrre.min.js"></script>
+        <script src="assets/js/plugins/moment.min.js"></script>
+        <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
+        <!-- Theme JS -->
+        <script src="assets/js/argon-design-system.min.js"></script>
+        <script src="assets/js/progressbar.min.js"></script>
+    </body>
+</html>

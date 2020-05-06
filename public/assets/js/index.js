@@ -43,11 +43,24 @@ function getLocation() {
             showPosition(position);
         },
         function(error) {
-            if (error.code == error.PERMISSION_DENIED){
-                //User denied access to location
-                console.log("Location: Denied By The User. Automatic mode wont work.");
-                $("#LoadingQuickInfo").prepend("<span>Location: Denied By The User. Automatic mode wont work.</span><br><br>");
-            }
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                  console.log("User denied the request for Geolocation. Auto mode wont work.")
+                  $("#LocationDenied").css("display","inherit");
+                  break;
+                case error.POSITION_UNAVAILABLE:
+                  console.log("Location information is unavailable.")
+                  $("#LocationUnavailable").css("display","inherit");
+                  break;
+                case error.TIMEOUT:
+                  console.log("The request to get user location timed out.")
+                  $("#LocationTimeout").css("display","inherit");
+                  break;
+                case error.UNKNOWN_ERROR:
+                  console.log("An unknown error occurred.")
+                  $("#UnknownLocationError").css("display","inherit");
+                  break;
+              }
         });
     } else {
       console.log("Geolocation is not supported by this browser");
@@ -70,37 +83,41 @@ async function showPosition(position) {
 }
 
 function getAltitude(position, callback) {
-    //On some browsers/devices it is not possible to retrieve the altitude via
-    //location services. The altitude will therefore be null in that case.
+    try{
+        //On some browsers/devices it is not possible to retrieve the altitude via
+        //location services. The altitude will therefore be null in that case.
 
-    //Condition to see if i'm able to retrieve the altitude or not via location services
-    if(position.coords.altitude == null){
-        //Unable to fetch altitude via location services
-        console.log("Altitude: Unable to fetch via location services");
-        console.log("Altitude: Fetching via altitude API...")
-        $("#LoadingQuickInfo").prepend("<span>Altitude: Unable to fetch via location services</span><br><br>");
-        $("#LoadingQuickInfo").prepend("<span>Altitude: Fetching via altitude API...</span><br><br>");
+        //Condition to see if i'm able to retrieve the altitude or not via location services
+        if(position.coords.altitude == null){
+            //Unable to fetch altitude via location services
+            console.log("Altitude: Unable to fetch via location services");
+            console.log("Altitude: Fetching via altitude API...")
+            $("#LoadingQuickInfo").prepend("<span>Altitude: Unable to fetch via location services</span><br><br>");
+            $("#LoadingQuickInfo").prepend("<span>Altitude: Fetching via altitude API...</span><br><br>");
 
-        //Will fetch altitude by getting terrain elevation for fetched coordinates
-        //(global terrain elevation data from NASA's "Aster30m" dataset. 
-        //hosted on opentopodata API.)
-        $.get('https://cors-anywhere.herokuapp.com/https://api.opentopodata.org/v1/aster30m?locations='+position.coords.latitude+','+position.coords.longitude+'&interpolation=cubic', function(responseText) {
-            //Altitude fetched from terrain data API
-            console.log("Altitude: " + responseText.results[0].elevation);
-            $("#LoadingQuickInfo").prepend(`<span>Altitude: ${responseText.results[0].elevation}m</span><br><br>`);
+            //Will fetch altitude by getting terrain elevation for fetched coordinates
+            //(global terrain elevation data from NASA's "Aster30m" dataset. 
+            //hosted on opentopodata API.)
+            $.get('https://cors-anywhere.herokuapp.com/https://api.opentopodata.org/v1/aster30m?locations='+position.coords.latitude+','+position.coords.longitude+'&interpolation=cubic', function(responseText) {
+                //Altitude fetched from terrain data API
+                console.log("Altitude: " + responseText.results[0].elevation);
+                $("#LoadingQuickInfo").prepend(`<span>Altitude: ${responseText.results[0].elevation}m</span><br><br>`);
 
-            //Callback function called instead of returning. This will make sure
-            //we have an altitude value before adding altitude data to Weather.Location
+                //Callback function called instead of returning. This will make sure
+                //we have an altitude value before adding altitude data to Weather.Location
+                callback(responseText.results[0].elevation);
+            });
+        }else{
+            //Altitude found via location services
+            console.log("Altitude: " + position.coords.altitude);
+            console.log("Location: FOUND");
+            $("#LoadingQuickInfo").prepend(`<span>Altitude: ${position.coords.altitude}</span><br><br>`);
+            $("#LoadingQuickInfo").prepend(`<span>Location: FOUND</span><br><br>`);
+            
             callback(responseText.results[0].elevation);
-        });
-    }else{
-        //Altitude found via location services
-        console.log("Altitude: " + position.coords.altitude);
-        console.log("Location: FOUND");
-        $("#LoadingQuickInfo").prepend(`<span>Altitude: ${position.coords.altitude}</span><br><br>`);
-        $("#LoadingQuickInfo").prepend(`<span>Location: FOUND</span><br><br>`);
-        
-        callback(responseText.results[0].elevation);
+        }
+    }catch{
+        $("#NoAltitude").css("display", "inherit");
     }
 }
 
@@ -145,6 +162,7 @@ function getWeather(position){
             $("#LoadingQuickInfo").prepend("<span>Weather Data: FOUND</span><br><br>");
             $("#LoadingQuickInfo").prepend(`<span>Time since last download: ${(currentDate-storedDate).toString()}sec</span><br><br>`);
             $("#LoadingQuickInfo").prepend(`<span>Time since last download: Acceptable</span><br><br>`);
+            $("#AutoCalculateBlock").css("display", "inherit");
             AutoCalculate();
             return JSON.parse(window.localStorage.getItem("weatherData"));
         }else{
@@ -180,8 +198,9 @@ function getWeatherFromServer(position){
             console.log(JSON.parse(window.localStorage.getItem("weatherData")));
             console.log("Weather Data: DOWNLOADED");
             $("#LoadingQuickInfo").prepend("<span>Weather Data: DOWNLOADED</span><br><br>");
-            //returns weatherData with altitude in the json block
+            $("#AutoCalculateBlock").css("display", "inherit");
             AutoCalculate();
+            //returns weatherData with altitude in the json block
             return weatherData;
 
 
