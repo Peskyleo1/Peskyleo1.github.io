@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
 
         <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/darkmode.css">
 
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -90,10 +91,10 @@
                         <div style="width:100%;">
                             <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
                                 <div class="mdl-tabs__tab-bar" style="overflow: visible;">
-                                    <a href="#a-panel" id="QS1" class="mdl-tabs__tab is-active" onclick="QuickSelectSPF(this)">NO</a>
-                                    <a href="#b-panel" id="QS2" class="mdl-tabs__tab" onclick="QuickSelectSPF(this)">15</a>
-                                    <a href="#c-panel" id="QS3" class="mdl-tabs__tab" onclick="QuickSelectSPF(this)">30</a>
-                                    <a href="#d-panel" id="QS4" class="mdl-tabs__tab" onclick="QuickSelectSPF(this)">50</a>
+                                    <a href="#qs1" id="QS1" class="mdl-tabs__tab is-active" onclick="QuickSelectSPF(this)">NO</a>
+                                    <a href="settings.html" id="QS2" class="mdl-tabs__tab" onclick="QuickSelectSPF(this)"><i href="settings.html" style="vertical-align: middle;" class="material-icons">edit</i></a>
+                                    <a href="settings.html" id="QS3" class="mdl-tabs__tab" onclick="QuickSelectSPF(this)"><i style="vertical-align: middle;" class="material-icons">edit</i></a>
+                                    <a href="settings.html" id="QS4" class="mdl-tabs__tab" onclick="QuickSelectSPF(this)"><i style="vertical-align: middle;" class="material-icons">edit</i></a>
                                 </div>
                               
                                 
@@ -104,7 +105,7 @@
                         <h3 id="QSText" style="text-align: center; margin:0; margin-bottom: 20px;">Without Sunscreen</h3>
 
 
-                        <div style="height: 1px; background-color: #e0e0e1; margin: 10px auto 20px auto;"></div>
+                        <div class="spacer" style="height: 1px;  margin: 10px auto 20px auto;"></div>
 
 
                         <!-- Time -->
@@ -122,7 +123,7 @@
                         </div><br>
 
 
-                        <div style="height: 1px; background-color: #e0e0e1; margin: 10px auto 20px auto;"></div>
+                        <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
 
 
                         <!-- Circle -->
@@ -143,7 +144,7 @@
                 </section>
                 <section class="mdl-layout__tab-panel" id="fixed-tab-2">
 
-                    <div class="page-content">
+                    <div id="ManualCalculateBlock" class="page-content">
                         <!-- NERD MODE page -->
                         <!-- UV Index -->
                         <div style="display: flex;">

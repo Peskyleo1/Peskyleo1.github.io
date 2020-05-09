@@ -12,6 +12,7 @@ window.onload = function onLoad() {
 
 //This function will wait for the html document to be fully loaded 
 $( document ).ready(function() {
+    toggleDarkMode();
     //Component Setup/Connections
     var UVIndexSlider = $('#UVIndexSlider');
     var UVIndexValue = $('#UVIndexValue');
@@ -20,7 +21,7 @@ $( document ).ready(function() {
     try{
         //try getting userPrefs
         var skinType = JSON.parse(window.localStorage.getItem("userPrefs")).skinType;
-        //execute functions in this order (wait for previous one to finish before calling the next one)
+        populateFavoriteCreams();
         getLocation();
         
     }catch{
@@ -30,6 +31,28 @@ $( document ).ready(function() {
     }
 
 });
+
+function populateFavoriteCreams(){
+    var userPrefs = JSON.parse(window.localStorage.getItem("userPrefs"));
+        if(userPrefs.favoriteCreams.c1 == ""){
+            //dont populate c1
+        }else{
+            $("#QS2").text(userPrefs.favoriteCreams.c1);
+            $("#QS2").attr("href", "#fav1");
+        }
+        if(userPrefs.favoriteCreams.c2 == ""){
+            //dont populate c2
+        }else{
+            $("#QS3").text(userPrefs.favoriteCreams.c2);
+            $("#QS3").attr("href", "#fav1");
+        }
+        if(userPrefs.favoriteCreams.c3 == ""){
+            //dont populate c3
+        }else{
+            $("#QS4").text(userPrefs.favoriteCreams.c3);
+            $("#QS4").attr("href", "#fav1");
+        }
+}
 
 //When called, this function will ask user for location
 function getLocation() {
@@ -581,8 +604,8 @@ function AutoCalculate(element){
 
             //If time is greater than 2 hours turn the box red to indicate attention is required
             if(Number(Minutes) > 120){
-                $('#AutoHoursField').css("background-color", AttentionColor);
-                $('#AutoMinutesField').css("background-color", AttentionColor);
+                $('#AutoHoursField').css("background-color", `${AttentionColor} !important`);
+                $('#AutoMinutesField').css("background-color", `${AttentionColor} !important`);
                 $('#AutoHourInfo').text("error");
             }else{
                 $('#AutoHoursField').css("background-color", "white");
@@ -651,4 +674,26 @@ function AutoCalculate(element){
 function QuickSelectSPF(element){
     $("#QSText").text(element.text);
     AutoCalculate();
+}
+
+function toggleDarkMode(){
+    $("").toggleClass("dark-mode__");
+
+    $("body").toggleClass("dark-mode__body");
+    $("#AutoCalculateBlock").toggleClass("dark-mode__Div");
+    $("#ManualCalculateBlock").toggleClass("dark-mode__Div");
+    $("#LoadingContentDiv").toggleClass("dark-mode__Div");
+
+    $("h3").toggleClass("dark-mode__h3");
+    $("h5").toggleClass("dark-mode__h5");
+    $("h6").toggleClass("dark-mode__h6");
+
+    $(".form-control").toggleClass("dark-mode__formControl");
+    $(".spacer").toggleClass("dark-mode__spacer");
+    $(".mdl-tabs__tab-bar").toggleClass("dark-mode__mdl-tabs__tab-bar");
+    $(".mdl-tabs__tab").toggleClass("dark-mode__mdl-tabs__tab");
+    $(".modal-content").toggleClass("dark-mode__modal-content");
+    $(".mdl-layout__drawer").toggleClass("dark-mode__mdl-layout__drawer");
+    $(".mdl-navigation__link").toggleClass("dark-mode__mdl-navigation__link");
+    $(".mdl-layout-title").toggleClass("dark-mode__mdl-layout-title");
 }

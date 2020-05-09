@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
 
         <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/darkmode.css">
 
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -24,7 +25,7 @@
         <script src="assets/js/settings.js"></script>
         
     </head>
-    <body>
+    <body >
         <!-- Simple header with fixed tabs. -->
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer mdl-layout--fixed-tabs">
             <header class="mdl-layout__header">
@@ -57,15 +58,15 @@
                         <div class="mdl-layout-spacer"></div>
                         <i class="material-icons">translate</i>
                     </div>
-                    <input style="width: calc(100% - 20px); margin: 10px;" list="languages" name="language" class="form-control form-control-alternative" placeholder="Select">
-                    <datalist id="languages">
-                        <option value="English"></option>
-                        <option value="Italiano"></option>
-                        <option value="Français"></option>
-                        <option value="Español"></option>
-                    </datalist>
+                    <select style="width: calc(100% - 20px); margin: 10px;" id="languages" class="form-control form-control-alternative" oninput="saveSettings()">
+                        <option value="" disabled selected>Select</option>
+                        <option value="en">🇬🇧English</option>
+                        <option value="it" disabled>🇮🇹Italiano (coming soon)</option>
+                        <option value="fr" disabled>🇫🇷Français (coming soon)</option>
+                        <option value="es" disabled>🇪🇸Español (coming soon)</option>
+                    </select>
 
-                    <div style="height: 1px; background-color: #e0e0e1; margin: 10px auto 20px auto;"></div>
+                    <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
 
                     <!-- Dark Mode -->
                     <div style="display: flex; margin: 0 auto;">
@@ -73,12 +74,12 @@
                         <div class="mdl-layout-spacer"></div>
                         <i class="material-icons">brightness_4</i>
                     </div>
-                    <label style="margin: 10px;" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
-                        <input type="checkbox" id="switch-2" class="mdl-switch__input">
+                    <label style="margin: 10px;" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="darkModeSwitch" id="darkModeSwitchParent">
+                        <input type="checkbox" id="darkModeSwitch" class="mdl-switch__input" oninput="saveSettings()">
                         <span class="mdl-switch__label"></span>
                     </label>
 
-                    <div style="height: 1px; background-color: #e0e0e1; margin: 10px auto 20px auto;"></div>
+                    <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
 
                     <!-- Skin Type -->
                     <div style="display: flex; margin: 0 auto;">
@@ -92,7 +93,7 @@
                     </a>
                     
 
-                    <div style="height: 1px; background-color: #e0e0e1; margin: 10px auto 20px auto;"></div>
+                    <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
 
                     <!-- Favorite Creams -->
                     <div style="display: flex; margin: 0 auto;">
@@ -100,13 +101,13 @@
                         <div class="mdl-layout-spacer"></div>
                         <i class="material-icons">favorite</i>
                     </div>
-                    <input style="width: calc(100% - 20px); margin: 10px;" type="number" pattern="[0-9]*" min="1" class="form-control form-control-alternative" id="Favorite1" placeholder="Favorite 1" oninput="readValue(this)">
-                    <input style="width: calc(100% - 20px); margin: 10px;" type="number" pattern="[0-9]*" min="1" class="form-control form-control-alternative" id="Favorite2" placeholder="Favorite 2" oninput="readValue(this)">
-                    <input style="width: calc(100% - 20px); margin: 10px;" type="number" pattern="[0-9]*" min="1" class="form-control form-control-alternative" id="Favorite3" placeholder="Favorite 3" oninput="readValue(this)">
+                    <input style="width: calc(100% - 20px); margin: 10px;" type="number" pattern="[0-9]*" min="1" class="form-control form-control-alternative" id="Favorite1" placeholder="Favorite 1" oninput="saveSettings()">
+                    <input style="width: calc(100% - 20px); margin: 10px;" type="number" pattern="[0-9]*" min="1" class="form-control form-control-alternative" id="Favorite2" placeholder="Favorite 2" oninput="saveSettings()">
+                    <input style="width: calc(100% - 20px); margin: 10px;" type="number" pattern="[0-9]*" min="1" class="form-control form-control-alternative" id="Favorite3" placeholder="Favorite 3" oninput="saveSettings()">
 
-                    <div style="height: 1px; background-color: #e0e0e1; margin: 10px auto 20px auto;"></div>
+                    <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
 
-                    <button style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                    <button id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="saveSettings()">
                         <i style="margin-top: -4px;" class="material-icons">save</i> Save
                     </button>
                 </div>

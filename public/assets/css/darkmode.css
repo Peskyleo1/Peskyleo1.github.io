@@ -1,0 +1,61 @@
+
+
+.dark-mode__body {
+    background-color: #424242;
+    color: #e2e2e2;
+}
+
+.dark-mode__Div {
+ background-color: #525252;
+}
+/* h */
+.dark-mode__h3 {
+    color: #e2e2e2;
+}
+.dark-mode__h4 {
+    color: #e2e2e2;
+}
+.dark-mode__h5 {
+    color: #e2e2e2;
+}
+.dark-mode__h6 {
+    color: #e2e2e2;
+}
+
+
+.dark-mode__formControl {
+    background-color: #424242 !important;
+}
+
+.dark-mode__spacer {
+    background-color: #6d6d6d;
+}
+
+.dark-mode__mdl-tabs__tab-bar {
+    border-bottom: 1px solid #6d6d6d;
+}
+.dark-mode__mdl-tabs__tab {
+    color: white;
+}
+
+.dark-mode__mdl-tabs__tab.is-active {
+    color: white !important;
+}
+.dark-mode__mdl-tabs.is-upgraded {
+    color: white !important;
+}
+
+.dark-mode__modal-content {
+    background-color: #424242;
+}
+
+.dark-mode__mdl-layout__drawer {
+    background-color: #525252;
+    border-right-color: #424242;
+}
+.dark-mode__mdl-navigation__link {
+    color: #e2e2e2 !important;
+}
+.dark-mode__mdl-layout-title {
+    color: #e2e2e2 !important;
+}
