@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
 
         <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/customsliders.css">
         <link rel="stylesheet" href="assets/css/darkmode.css">
 
         <!-- jQuery -->
@@ -31,57 +32,57 @@
             <header class="mdl-layout__header">
                 <div class="mdl-layout__header-row">
                     <!-- Title -->
-                    <span class="mdl-layout-title">Daisy</span>
+                    <span id="PageTitle" class="mdl-layout-title">Daisy</span>
                 </div>
                 <!-- Tabs -->
                 <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-                    <a href="#fixed-tab-1" class="mdl-layout__tab is-active"><i class="material-icons" style="vertical-align: -6px;">donut_large</i> Auto</a>
-                    <a href="#fixed-tab-2" class="mdl-layout__tab"><i class="material-icons" style="vertical-align: -6px;">developer_mode</i>Nerd Mode</a>
+                    <a href="#fixed-tab-1" class="mdl-layout__tab is-active"><i class="material-icons" style="vertical-align: -6px;">donut_large</i> <span id="AutoText">Auto</span></a>
+                    <a href="#fixed-tab-2" class="mdl-layout__tab"><i class="material-icons" style="vertical-align: -6px;">developer_mode</i><span id="ManualText">Nerd Mode</span></a>
                 </div>
             </header>
             <div class="mdl-layout__drawer">
                 <span class="mdl-layout-title">Menu</span>
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="index.html"><i class="material-icons">developer_board</i> Calculator</a>
-                    <a class="mdl-navigation__link" href="skin.html"><i class="material-icons">face</i> Skin Type</a>
-                    <a class="mdl-navigation__link" href="faq.html"><i class="material-icons">question_answer</i> FAQ</a>
-                    <a class="mdl-navigation__link" href="settings.html"><i class="material-icons">settings</i> Settings</a>
-                    <a class="mdl-navigation__link" href="download.html"><i class="material-icons">get_app</i> Download</a>
+                    <a class="mdl-navigation__link" href="index.html"><i class="material-icons">developer_board</i> <span id="CalculatorText"></span></a>
+                    <a class="mdl-navigation__link" href="skin.html"><i class="material-icons">face</i> <span id="SkinTypeText"></span></a>
+                    <a class="mdl-navigation__link" href="faq.html"><i class="material-icons">question_answer</i> <span id="FAQText"></span></a>
+                    <a class="mdl-navigation__link" href="settings.html"><i class="material-icons">settings</i> <span id="SettingsText"></span></a>
+                    <a class="mdl-navigation__link" href="download.html"><i class="material-icons">get_app</i> <span id="DownloadText"></span></a>
                 </nav>
             </div>
             <main class="mdl-layout__content">
                 <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
                     <!-- AUTO page -->
                     <!-- Location Denied ERROR -->
-                    <div id="LocationDenied" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: none;">
-                        <h6 style="margin: auto;"><b>Permission Denied:</b> You have denied permission to use your location. Please allow me to use your location.</h6>
+                    <div id="LocationDenied" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: inherit;">
+                        <h6 style="margin: auto;"><b><span id="PermissionDeniedTitleCalc">Permission Denied:</span></b><br><br><span id="PermissionDeniedTextCalc"> You have denied permission to use your location. Please allow me to use your location.</span></h6>
                     </div>
                     <!-- Location Unavailable ERROR -->
-                    <div id="LocationUnavailable" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 238, 0, 0.2); display: none;">
-                        <h6 style="margin: auto;"><b>Location Unavailable:</b> Location information is unavailable, please try again later.</h6>
+                    <div id="LocationUnavailable" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 238, 0, 0.2); display: inherit;">
+                        <h6 style="margin: auto;"><b><span id="LocationUnavailableTitleCalc">Location Unavailable:</span></b><br><br> <span id="LocationUnavailableTextCalc">Location information is unavailable, please try again later.</span></h6>
                     </div>
                     <!-- Location Timeout ERROR -->
-                    <div id="LocationTimeout" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 238, 0, 0.2); display: none;">
-                        <h6 style="margin: auto;"><b>Location Timeout:</b> The request to get user location timed out, please try again later.</h6>
+                    <div id="LocationTimeout" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 238, 0, 0.2); display: inherit;">
+                        <h6 style="margin: auto;"><b><span id="LocationTimeoutTitleCalc">Location Timeout:</span></b><br><br> <span id="LocationTimeoutTextCalc">The request to get user location timed out, please try again later.</span></h6>
                     </div>
                     <!-- Unknown error: Location ERROR -->
-                    <div id="UnknownLocationError" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: none;">
-                        <h6 style="margin: auto;"><b>Unknown Location Error:</b> An unknown error has happened while getting your location.</h6>
+                    <div id="UnknownLocationError" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: inherit;">
+                        <h6 style="margin: auto;"><b><span id="UnknownLocationErrorTitleCalc">Unknown Location Error:</span></b><br><br> <span id="UnknownLocationErrorTextCalc">An unknown error has happened while getting your location.</span></h6>
                     </div>
                     <!-- Altitude not Found -->
-                    <div id="NoAltitude" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: none;">
-                        <h6 style="margin: auto;"><b>Altitude:</b> Unable to fetch. <br><br>Try again later or use "Nerd Mode" instead.</h6>
+                    <div id="NoAltitude" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: inherit;">
+                        <h6 style="margin: auto;"><b><span id="NoAltitudeTitleCalc">Altitude:</span></b><br><br> <span id="NoAltitudeTextCalc">Unable to fetch. </span><br><br><span id="NoAltitudeText2Calc">Try again later or use "Nerd Mode" instead.</span></h6>
                     </div>
                     <div id="LoadingContentDiv" class="page-content">
                         <div style="width: 100%; text-align: center;"><div class="mdl-spinner mdl-js-spinner is-active"></div></div>
-                        <h6 style="margin: auto;"><b>Loading:</b><br><span id="LoadingQuickInfo"></span></h6>
+                        <h6 id="LoadingText" style="margin: auto;"><b><span id="LoadingTextTitle">Loading:</span></b><br><br> <span id="LoadingQuickInfo"></span></h6>
                     </div>
                     <div class="page-content" id="AutoCalculateBlock" style="display: none;">
                         
                         
                         <!-- Butons -->
                         <div style="display: flex; margin: 0 auto;">
-                            <h6 style="margin: auto">Cream</h6>
+                            <h6 id="CreamTextAuto" style="margin: auto">Cream</h6>
                             <div class="mdl-layout-spacer"></div>
                             <button data-toggle="modal" data-target="#ModalSPF" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
                                 <i class="material-icons">info_outline</i>
@@ -91,7 +92,7 @@
                         <div style="width:100%;">
                             <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
                                 <div class="mdl-tabs__tab-bar" style="overflow: visible;">
-                                    <a href="#qs1" id="QS1" class="mdl-tabs__tab is-active" onclick="QuickSelectSPF(this)">NO</a>
+                                    <a href="#qs1" id="QS1" class="mdl-tabs__tab is-active" onclick="QuickSelectSPF(this)"><span id="NoTextAuto">NO</span></a>
                                     <a href="settings.html" id="QS2" class="mdl-tabs__tab" onclick="QuickSelectSPF(this)"><i href="settings.html" style="vertical-align: middle;" class="material-icons">edit</i></a>
                                     <a href="settings.html" id="QS3" class="mdl-tabs__tab" onclick="QuickSelectSPF(this)"><i style="vertical-align: middle;" class="material-icons">edit</i></a>
                                     <a href="settings.html" id="QS4" class="mdl-tabs__tab" onclick="QuickSelectSPF(this)"><i style="vertical-align: middle;" class="material-icons">edit</i></a>
@@ -110,7 +111,7 @@
 
                         <!-- Time -->
                         <div style="display: flex;">
-                            <h6 style="margin: auto;">Time</h6>
+                            <h6 id="TimeTextAuto" style="margin: auto;">Time</h6>
                             <div class="mdl-layout-spacer"></div>
                             <button data-toggle="modal" data-target="#ModalTime" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" style="color: red;">
                                 <i id="AutoHourInfo" class="material-icons">info_outline</i>
@@ -130,7 +131,7 @@
                         <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
                             
                             <div style="display: flex; margin: 0 auto;">
-                                <h6 style="margin: auto">🏖️☃️</h6>
+                                <h6 id="ReflectiveTextAuto" style="margin: auto">🏖️☃️</h6>
                                 <div class="mdl-layout-spacer"></div>
                                 <button data-toggle="modal" data-target="#ModalReflection" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
                                     <i class="material-icons">info_outline</i>
@@ -148,7 +149,7 @@
                         <!-- NERD MODE page -->
                         <!-- UV Index -->
                         <div style="display: flex;">
-                            <h6 style="margin: auto;">UV Index</h6>
+                            <h6 id="UVIndexTextManual" style="margin: auto;">UV Index</h6>
                             <div class="mdl-layout-spacer"></div>
                             <p style="margin: auto;" id="UVIndexValue">0</p>
                             <button data-toggle="modal" data-target="#ModalUV" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
@@ -161,7 +162,7 @@
                         <br>
                         <!-- Altitude -->
                         <div style="display: flex;">
-                            <h6 style="margin: auto;">Altitude</h6>
+                            <h6 id="AltitudeTextManual" style="margin: auto;">Altitude</h6>
                             <div class="mdl-layout-spacer"></div>
                             <p style="margin: auto;" id="AltitudeValue">0m / 0ft</p>
                             <button data-toggle="modal" data-target="#ModalAltitude" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
@@ -173,7 +174,7 @@
                         <br>
                         <!-- Reflective Surface -->
                         <div style="display: flex;">
-                            <h6 style="margin: auto;">Reflective Surface</h6>
+                            <h6 id="ReflectiveTextManual" style="margin: auto;">Reflective Surface</h6>
                             <div class="mdl-layout-spacer"></div>
                             <button  data-toggle="modal" data-target="#ModalReflection" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
                                 <i class="material-icons">info_outline</i>
@@ -185,7 +186,7 @@
                         <br><br>
                         <!-- Skin Type -->
                         <div style="display: flex;">
-                            <h6 style="margin: auto;">Skin Type</h6>
+                            <h6 id="SkinTextManual" style="margin: auto;">Skin Type</h6>
                             <div class="mdl-layout-spacer"></div>
                             <p style="margin: auto;" id="SkinTypeValue">0 : Fitzpatrick I</p>
                             <button data-toggle="modal" data-target="#ModalSkinType"  class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
@@ -198,7 +199,7 @@
                         <div style="height: 1px; background-color: #cccccc; margin: 10px auto 20px auto;"></div>
                         <!-- Cream SPF -->
                         <div style="display: flex;">
-                            <h6 style="margin: auto;">Cream SPF</h6>
+                            <h6 id="SPFTextManual" style="margin: auto;">Cream SPF</h6>
                             <div class="mdl-layout-spacer"></div>
                             <button data-toggle="modal" data-target="#ModalSPF" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
                                 <i class="material-icons">info_outline</i>
@@ -208,7 +209,7 @@
                         <br>
                         <!-- Time -->
                         <div style="display: flex;">
-                            <h6 style="margin: auto;">Maximum Exposure Time</h6>
+                            <h6 id="TimeTextManual" style="margin: auto;">Maximum Exposure Time</h6>
                             <div class="mdl-layout-spacer"></div>
                             <button data-toggle="modal" data-target="#ModalTime" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" style="color: red;">
                                 <i id="HourInfo" class="material-icons">info_outline</i>

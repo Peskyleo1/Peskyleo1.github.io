@@ -1,0 +1,156 @@
+{
+    "en": {
+        "Daisy": "Daisy",
+        "Auto": "Auto",
+        "NerdMode": "Nerd Mode",
+        "Cream": "Cream",
+        "No": "No",
+        "WithoutSunscreen": "Without Sunscreen",
+        "Time": "Time",
+        "ReflectiveIcons": "🏖️☃️",
+        "UVIndex": "UV Index",
+        "Altitude": "Altitude",
+        "ReflectiveSurface": "Reflective Surface",
+        "SkinType": "Skin Type",
+        "CreamSPF": "Cream SPF",
+        "MaximumExposureTime": "Maximum Exposure Time",
+        "Hours": "Hours",
+        "Minutes": "Minutes",
+        "Close": "Close",
+        "Source": "Source",
+        "Find": "Find",
+        "NoCreamPlaceholder": "No Cream = 1",
+        "UVModal": {
+            "UVModalTitle": "UV Index",
+            "UVModalText": "Description"
+        },
+        "AltitudeModal": {
+            "AltitudeTitle": "Altitude",
+            "AltitudeText": "Description"
+        },
+        "ReflectiveModal": {
+            "ReflectiveTitle": "Reflective Surface",
+            "ReflectiveText": "Description"
+        },
+        "SkinModal": {
+            "SkinTitle": "Skin Type",
+            "SkinText": "Description"
+        },
+        "CreamSPFModal": {
+            "CreamSPFTitle": "Cream SPF",
+            "CreamSPFText": "Description"
+        },
+        "MaximumExposureTimeModal": {
+            "MaximumExposureTimeTitle": "Time",
+            "MaximumExposureTimeText": "Description"
+        },
+        "Menu": "Menu",
+        "Calculator": "Calculator",
+        "FAQ": "FAQ",
+        "Settings": "Settings",
+        "Download": "Download",
+        "LocationDenied": {
+            "Title": "Permission Denied:",
+            "Text": " You have denied permission to use your location. Please allow me to use your location."
+        },
+        "LocationUnavailable": {
+            "Title": "Location Unavailable:",
+            "Text": " Location information is unavailable, please try again later."
+        },
+        "LocationTimeout": {
+            "Title": "Location Timeout:",
+            "Text": " The request to get user location timed out, please try again later."
+        },
+        "UnknownLocation": {
+            "Title": "Unknown Location Error:",
+            "Text": " An unknown error has happened while getting your location."
+        },
+        "NoAltitude": {
+            "Title": "Altitude:",
+            "Text": " Unable to fetch.",
+            "Text2": "Try again later or use 'Nerd Mode' instead." 
+        },
+        "Loading": {
+            "Title": "Loading:"
+        },
+        "etc": {}
+    },
+    "it": {
+        "Daisy": "Daisy",
+        "Auto": "Auto",
+        "NerdMode": "Modalità Nerd",
+        "Cream": "Crema",
+        "No": "No",
+        "WithoutSunscreen": "Senza Crema",
+        "Time": "Tempo",
+        "ReflectiveIcons": "🏖️☃️",
+        "UVIndex": "Indice UV",
+        "Altitude": "Altitudine",
+        "ReflectiveSurface": "Superficie Riflettente",
+        "SkinType": "Tipo di Pelle",
+        "CreamSPF": "SPF della Crema",
+        "MaximumExposureTime": "Tempo Massimo d'Esposizione",
+        "Hours": "Ore",
+        "Minutes": "Minuti",
+        "Close": "Chiudi",
+        "Source": "Fonte",
+        "Find": "Trova",
+        "NoCreamPlaceholder": "Senza Crema = 1",
+        "UVModal": {
+            "UVModalTitle": "Indice UV",
+            "UVModalText": "Description"
+        },
+        "AltitudeModal": {
+            "AltitudeTitle": "Altitudine",
+            "AltitudeText": "Description"
+        },
+        "ReflectiveModal": {
+            "ReflectiveTitle": "Superficie Riflettente",
+            "ReflectiveText": "Description"
+        },
+        "SkinModal": {
+            "SkinTitle": "Tipo di Pelle",
+            "SkinText": "Description"
+        },
+        "CreamSPFModal": {
+            "CreamSPFTitle": "SPF della Crema",
+            "CreamSPFText": "Description"
+        },
+        "MaximumExposureTimeModal": {
+            "MaximumExposureTimeTitle": "Tempo",
+            "MaximumExposureTimeText": "Description"
+        },
+        "Menu": "Menu",
+        "Calculator": "Calcolatrice",
+        "FAQ": "Domande Frequenti",
+        "Settings": "Impostazioni",
+        "Download": "Scarica",
+        "LocationDenied": {
+            "Title": "Posizione Negata:",
+            "Text": " Hai negato l'accesso all'utilizzo della tua posizione. Per favore, consentimi di accedere alla tua posizione."
+        },
+        "LocationUnavailable": {
+            "Title": "Posizione Non Disponibile:",
+            "Text": " Informazioni sulla posizione non sono disponibili, riprova più tardi."
+        },
+        "LocationTimeout": {
+            "Title": "Timeout Posizione:",
+            "Text": " La richiesta di accesso alla tua posizione è scaduta, riprova più tardi."
+        },
+        "UnknownLocation": {
+            "Title": "Errore di Posizione Sconosciuto:",
+            "Text": " Si è verificato un errore sconosciuto mentre acquisivo la tua posizione."
+        },
+        "NoAltitude": {
+            "Title": "Altitudine:",
+            "Text": " Ricerca fallita.",
+            "Text2": "Riprova più tardi o usa 'Modalità Nerd'." 
+        },
+        "Loading": {
+            "Title": "Caricamento:"
+        },
+        
+        
+        "etc": {}
+    }
+}

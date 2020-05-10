@@ -12,7 +12,7 @@ window.onload = function onLoad() {
 
 //This function will wait for the html document to be fully loaded 
 $( document ).ready(function() {
-    toggleDarkMode();
+    setLanguage("it");
     //Component Setup/Connections
     var UVIndexSlider = $('#UVIndexSlider');
     var UVIndexValue = $('#UVIndexValue');
@@ -20,8 +20,13 @@ $( document ).ready(function() {
 
     try{
         //try getting userPrefs
-        var skinType = JSON.parse(window.localStorage.getItem("userPrefs")).skinType;
+        var userPrefs = JSON.parse(window.localStorage.getItem("userPrefs"));
         populateFavoriteCreams();
+        if(userPrefs.darkMode == true){
+            toggleDarkMode();
+        }else{
+            //leave page as is (day mode)
+        }
         getLocation();
         
     }catch{
@@ -672,8 +677,15 @@ function AutoCalculate(element){
 }
 
 function QuickSelectSPF(element){
-    $("#QSText").text(element.text);
-    AutoCalculate();
+    if(Number(element.text) > 1){
+        $("#QSText").text(element.text);
+        AutoCalculate();
+    }else{
+        $("#QSText").text(element.text);
+        setLanguage("it");
+        AutoCalculate();
+    }
+    
 }
 
 function toggleDarkMode(){
@@ -696,4 +708,52 @@ function toggleDarkMode(){
     $(".mdl-layout__drawer").toggleClass("dark-mode__mdl-layout__drawer");
     $(".mdl-navigation__link").toggleClass("dark-mode__mdl-navigation__link");
     $(".mdl-layout-title").toggleClass("dark-mode__mdl-layout-title");
+}
+
+function setLanguage(language){
+    var lang = language;
+    $.getJSON("../assets/data/languages.json", function(languagePack) {
+        
+        $("#PageTitle").text(languagePack[lang].Daisy);
+        $("#AutoText").text(languagePack[lang].Auto);
+        $("#ManualText").text(languagePack[lang].NerdMode);
+        //MENU
+        $("#CalculatorText").text(languagePack[lang].Calculator);
+        $("#SkinTypeText").text(languagePack[lang].SkinType);
+        $("#FAQText").text(languagePack[lang].FAQ);
+        $("#SettingsText").text(languagePack[lang].Settings);
+        $("#DownloadText").text(languagePack[lang].Download);
+        //Errors
+            //Titles
+            $("#PermissionDeniedTitleCalc").text(languagePack[lang].LocationDenied.Title);
+            $("#LocationUnavailableTitleCalc").text(languagePack[lang].LocationUnavailable.Title);
+            $("#LocationTimeoutTitleCalc").text(languagePack[lang].LocationTimeout.Title);
+            $("#UnknownLocationErrorTitleCalc").text(languagePack[lang].UnknownLocation.Title);
+            $("#NoAltitudeTitleCalc").text(languagePack[lang].NoAltitude.Title);
+            $("#LoadingTextTitle").text(languagePack[lang].Loading.Title);
+            //Texts
+            $("#PermissionDeniedTextCalc").text(languagePack[lang].LocationDenied.Text);
+            $("#LocationUnavailableTextCalc").text(languagePack[lang].LocationUnavailable.Text);
+            $("#LocationTimeoutTextCalc").text(languagePack[lang].LocationTimeout.Text);
+            $("#UnknownLocationErrorTextCalc").text(languagePack[lang].UnknownLocation.Text);
+            $("#NoAltitudeTextCalc").text(languagePack[lang].NoAltitude.Text);
+            $("#NoAltitudeText2Calc").text(languagePack[lang].NoAltitude.Text2);
+            $("#LoadingTextText").text(languagePack[lang].Loading.Text);
+        //Auto Mode
+        $("#CreamTextAuto").text(languagePack[lang].Cream);
+        $("#TimeTextAuto").text(languagePack[lang].Time);
+        $("#ReflectiveTextAuto").text(languagePack[lang].ReflectiveIcons);
+        $("#QSText").text(languagePack[lang].WithoutSunscreen);
+        //Manual Mode
+        $("#UVIndexTextManual").text(languagePack[lang].UVIndex);
+        $("#AltitudeTextManual").text(languagePack[lang].Altitude);
+        $("#ReflectiveTextManual").text(languagePack[lang].ReflectiveSurface);
+        $("#SkinTextManual").text(languagePack[lang].SkinType);
+        $("#SPFTextManual").text(languagePack[lang].CreamSPF);
+        $("#TimeTextManual").text(languagePack[lang].MaximumExposureTime);
+        $("#CreamSPFField").attr("placeholder", languagePack[lang].NoCreamPlaceholder);
+        $("#HoursField").attr("placeholder", languagePack[lang].Hours);
+        $("#MinutesField").attr("placeholder", languagePack[lang].Minutes);
+    });
+    
 }

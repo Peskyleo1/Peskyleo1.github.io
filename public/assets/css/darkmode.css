@@ -1,4 +1,6 @@
-
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
+    background-color: rgba(224, 224, 224, 0.3);
+}
 
 .dark-mode__body {
     background-color: #424242;
@@ -6,7 +8,7 @@
 }
 
 .dark-mode__Div {
- background-color: #525252;
+ background-color: #525252 !important;
 }
 /* h */
 .dark-mode__h3 {

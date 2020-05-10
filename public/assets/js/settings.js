@@ -1,6 +1,6 @@
 
 $( document ).ready(function() {
-    toggleDarkMode();
+    
     try{
         //get all info and populate page
         console.log("load.try");
@@ -13,6 +13,7 @@ $( document ).ready(function() {
         $('#darkModeSwitch').prop('checked', userPrefs.darkMode);
         if(userPrefs.darkMode == true){
             $('#darkModeSwitchParent').addClass("is-checked");
+            toggleDarkMode();
         }else{
             //not checked by default
         }
@@ -40,7 +41,7 @@ $( document ).ready(function() {
             $('#darkModeSwitch').prop('checked', userPrefs.darkMode);
             if(userPrefs.darkMode == true){
                 $('#darkModeSwitchParent').addClass("is-checked");
-                $("body").toggleClass("dark-mode");
+                toggleDarkMode();
             }else{
                 //not checked by default
             }
@@ -96,4 +97,10 @@ function toggleDarkMode(){
     $("h6").toggleClass("dark-mode__h6");
     $(".form-control").toggleClass("dark-mode__formControl");
     $(".spacer").toggleClass("dark-mode__spacer");
+    $(".mdl-tabs__tab-bar").toggleClass("dark-mode__mdl-tabs__tab-bar");
+    $(".mdl-tabs__tab").toggleClass("dark-mode__mdl-tabs__tab");
+    $(".modal-content").toggleClass("dark-mode__modal-content");
+    $(".mdl-layout__drawer").toggleClass("dark-mode__mdl-layout__drawer");
+    $(".mdl-navigation__link").toggleClass("dark-mode__mdl-navigation__link");
+    $(".mdl-layout-title").toggleClass("dark-mode__mdl-layout-title");
 }

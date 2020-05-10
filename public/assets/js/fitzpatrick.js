@@ -3,7 +3,6 @@ var userPrefs;
 
 //This function will wait for the html document to be fully loaded 
 $( document ).ready(function() {
-    toggleDarkMode();
     try {
         //try getting user preferences
         //if there are user preferences hide first time mode items 
@@ -11,7 +10,11 @@ $( document ).ready(function() {
             //-location asker box
             //-"thank you. now input skin" box
         userPrefs = JSON.parse(window.localStorage.getItem("userPrefs"));
-        var skinType = userPrefs.skinType;
+        if(userPrefs.darkMode == true){
+            toggleDarkMode();
+        }else{
+            //leave page as is (day mode)
+        }
     }catch{
         //if there are no user preferences set first time mode
         //first time mode: 
