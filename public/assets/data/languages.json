@@ -22,27 +22,58 @@
         "NoCreamPlaceholder": "No Cream = 1",
         "UVModal": {
             "UVModalTitle": "UV Index",
-            "UVModalText": "Description"
+            "UVModalText1": "If unsure, click on the 'Find' button to guide you.",
+            "UVModalText2": "The ultraviolet index or UV Index is an international standard measurement of the strength of sunburn-producing ultraviolet (UV) radiation at a particular place and time. The purpose of the UV Index is to help people effectively protect themselves from UV radiation."
         },
         "AltitudeModal": {
-            "AltitudeTitle": "Altitude",
-            "AltitudeText": "Description"
+            "AltitudeTitle": "Altitudine",
+            "AltitudeText1": "Insert your current altitude in meters.",
+            "AltitudeText2": "If unsure, use the 'Find' button to find out.",
+            "AltitudeText3": "Your current altitude is important to determine how long you can stay in the sun as:",
+            "AltitudeText4": "at higher altitudes, a thinner atmosphere filters less UV radiation. With every 1000 metres increase in altitude, UV levels increase by 10% to 12%.",
+            "AltitudeText5": "- WHO"
         },
         "ReflectiveModal": {
             "ReflectiveTitle": "Reflective Surface",
-            "ReflectiveText": "Description"
+            "ReflectiveUnit": "Off / On",
+            "ReflectiveText1": "Activate if you're at the beach or on snow.",
+            "ReflectiveText2": "Albedo is the measure of the diffuse reflection of solar radiation. It is measured on a scale from 0 (black body) to 1 (reflects all incident radiation)",
+            "ReflectiveText3": "Snow",
+            "ReflectiveText4": "albedo is highly variable, ranging from as high as 0.9 for freshly fallen snow, to about 0.4 for melting snow, and as low as 0.2 for dirty snow.",
+            "ReflectiveText5": "Water",
+            "ReflectiveText6": "reflects light very differently from typical terrestrial materials. Although the reflectivity of water is very low at low and medium angles of incident light, it becomes very high at high angles of incident light."
         },
         "SkinModal": {
-            "SkinTitle": "Skin Type",
-            "SkinText": "Description"
+            "SkinTitle": "Tipo di Pelle",
+            "SkinText1": "If unsure, click on the 'Find' button to guide you.",
+            "SkinText2": "There are different Skin Types and there are different scales to measure Skin Types. The Fitzpatrick scale is more common to measure skin in relation to UV exposure but the Von Luschan scale is more precise. Both scales will be simultaneously displayed to you."
         },
         "CreamSPFModal": {
             "CreamSPFTitle": "Cream SPF",
-            "CreamSPFText": "Description"
+            "CreamSPFUnit": "Sun Protection Factor",
+            "CreamSPFText1": "Common SPFs",
+            "CreamSPFText2": "Insert your cream's Sun Protection Factor (SPF) here.",
+            "CreamSPFText3": "Fill in 'Maximum Exposure Time' to find out required minimum SPF.",
+            "CreamSPFText4": "Cream SPF stands for Sun Protection Factor of the cream.For example, 'SPF 15' means that ​1⁄15 of the burning radiation reaches the skin through the recommended thickness of sunscreen.Several countries banned the use of SPFs higher than 50, due to lack of evidence that higher dosages provide more meaningful protection.",
+            "CreamSPFText5": "This will only prevent sunburn, not skin cancer or early skin aging.",
+            "NoProt": "No Protection",
+            "LowProt": "Low Protection",
+            "MedProt": "Medium Protection",
+            "HiProt": "High Protection",
+            "VHiProt": "Very High Protection"
         },
         "MaximumExposureTimeModal": {
             "MaximumExposureTimeTitle": "Time",
-            "MaximumExposureTimeText": "Description"
+            "MaximumExposureTimeUnit": "Hours : Minutes",
+            "MaximumExposureTimeText1": "If your maximum exposure time is longer than 2 hours remember to reapply your sunscreen",
+            "MaximumExposureTimeText2": "Insert your desired sunbathing time here.",
+            "MaximumExposureTimeText3": "Select 'Cream SPF' to find out 'Maximum Exposure Time'.",
+            "MaximumExposureTimeText4": "The time displayed is the maximum theoretical time you can stay in the sun. This is calculated with a mathematical formula. There is a difference between theory and practice though. In theory with some creams you may be able to stay in the sun for extended periods. In practice there are some effects such as sweat, humidity, diving in water, and friction against objects which may render long theoretical times not really useful in practice. Keep this in mind as a general rule of thumb:",
+            "MaximumExposureTimeText5": "Reapply your sunscreen every 2 hours.",
+            "MaximumExposureTimeText6": "You should also reapply your suncreen if: you spend time in water, you sweat, you rub against things (example: towels, clothing, etc...)",
+            "MaximumExposureTimeText7": "You should never expose yourself for more than the indicated time in the span of 24 hours.",
+            "MaximumExposureTimeText8": "[Sunscreen]...must be continually reapplied as directed, usually every two hours.",
+            "MaximumExposureTimeText9": "- American Academy of Dermatology"
         },
         "Menu": "Menu",
         "Calculator": "Calculator",
@@ -73,7 +104,19 @@
         "Loading": {
             "Title": "Loading:"
         },
-        "etc": {}
+        "Unit": "Unit:",
+        "Type": "Type:",
+        "Usage": "Usage:",
+        "Description": "Descrizione:",
+        "Input": "Input",
+        "InputResult": "Input / Result",
+        "orText": "...oppure...",
+        "Low": "Low",
+        "Moderate": "Moderate",
+        "High": "High",
+        "VeryHigh": "Very High",
+        "Extreme": "Extreme"
+        
     },
     "it": {
         "Daisy": "Daisy",
@@ -98,27 +141,58 @@
         "NoCreamPlaceholder": "Senza Crema = 1",
         "UVModal": {
             "UVModalTitle": "Indice UV",
-            "UVModalText": "Description"
+            "UVModalText1": "Se incerto, clicca sul bottone 'Trova' per aiutarti a trovare l'indice UV locale.",
+            "UVModalText2": "L'indice universale della radiazione UV solare, detto più semplicemente indice UV, descrive il livello di radiazione ultravioletta solare che raggiunge la superficie terrestre in una certa area. Lo scopo dell'indice UV è di aiutare le persone a capire come proteggersi dalle radiazioni UV."
         },
         "AltitudeModal": {
             "AltitudeTitle": "Altitudine",
-            "AltitudeText": "Description"
+            "AltitudeText1": "Inserisci la tua altitudine in metri o piedi.",
+            "AltitudeText2": "Se incerto, usa il bottone 'Trova' per scoprirla.",
+            "AltitudeText3": "La tua altitudine attuale è importante per determinare quanto puoi stare al sole dato che:",
+            "AltitudeText4": "a quote piu alte, un atmosfera piu sottile filtra meno radiazione ultravioletta. Per ogni 1000 metri di aumento di quota, i livelli UV aumentano del 10-12%.",
+            "AltitudeText5": "- OMS"
         },
         "ReflectiveModal": {
             "ReflectiveTitle": "Superficie Riflettente",
-            "ReflectiveText": "Description"
+            "ReflectiveUnit": "Disattivo / Attivo",
+            "ReflectiveText1": "Attiva se sei in spiaggia o sulla neve.",
+            "ReflectiveText2": "L'albedo di una superficie è la frazione di radiazione solare che viene riflessa. L'albedo massima è 1 (quando viene riflessa tutta la luce) e la minima è 0 (quando tutta la luce viene assorbita).",
+            "ReflectiveText3": "Neve:",
+            "ReflectiveText4": "l'albedo della neve è variabile e va da 0,9 per la neve fresca fino a 0,2 per la neve sporca.",
+            "ReflectiveText5": "Acqua:",
+            "ReflectiveText6": "l'acqua riflette la luce in modo diverso rispetto a molti altri materiali. Anche se la riflettività dell'acqua è bassa ad angoli di incidenza bassi, diventa molto riflettente ad alti angoli di incidenza di luce."
         },
         "SkinModal": {
             "SkinTitle": "Tipo di Pelle",
-            "SkinText": "Description"
+            "SkinText1": "Se incerto, clicca sul bottone 'Trova' per aiutarti a trovare il tuo tipo di pelle.",
+            "SkinText2": "Ci sono diversi tipi di pelle e diverse scale per misurarli. La scala Fitzpatrick è più comunemente utilizzata per misurare il tipo di pelle in relazione all'esposizione UV ma la scala Von Luschan è piu precisa. A te verranno mostrate entrambe le scale."
         },
         "CreamSPFModal": {
             "CreamSPFTitle": "SPF della Crema",
-            "CreamSPFText": "Description"
+            "CreamSPFUnit": "Fattore di Protezione Solare",
+            "CreamSPFText1": "SPF comuni",
+            "CreamSPFText2": "Inserisci il fattore di protezione solare (SPF) qui.",
+            "CreamSPFText3": "Completa il campo 'Tempo Massimo d'Esposizione' per scoprire il minimo SPF richiesto.",
+            "CreamSPFText4": "L'SPF della crema sta per 'Sun Protection Factor' (Fattore di Protezione Solare in Italiano). Per esempio, 'SPF 15' significa che 1/15 della radiazione arriverà sulla pelle. Alcuni paesi hanno abolito la vendita di creme con SPF superiore a 50, in quanto mancano prove riguardo l'efficacia delle creme con SPF più alti.",
+            "CreamSPFText5": "Possono solo prevenire bruciature solari, non tumori alla pelle o invecchiamento precoce della pelle.",
+            "NoProt": "Protezione Assente",
+            "LowProt": "Protezione Bassa",
+            "MedProt": "Protezione Media",
+            "HiProt": "Protezione Alta",
+            "VHiProt": "Protezione Molto Alta"
         },
         "MaximumExposureTimeModal": {
             "MaximumExposureTimeTitle": "Tempo",
-            "MaximumExposureTimeText": "Description"
+            "MaximumExposureTimeUnit": "Ore : Minuti",
+            "MaximumExposureTimeText1": "Se il tempo di esposizione massimo è superiore a 2 ore, ricorda di applicare nuovamente la protezione solare",
+            "MaximumExposureTimeText2": "Inserisci il tempo di esposizione solare desiderato qui.",
+            "MaximumExposureTimeText3": "Seleziona 'SPF della Crema' per scoprire il tuo 'Tempo Massimo d'Esposizione'.",
+            "MaximumExposureTimeText4": "Il tempo visualizzato è il tempo teorico massimo in cui puoi stare al sole. Questo viene calcolato con una formula matematica. Tuttavia, esiste una differenza tra teoria e pratica. In teoria con alcune creme potresti essere in grado di rimanere al sole per lunghi periodi. In pratica ci sono alcuni effetti come il sudore, l'umidità, l'immersione in acqua e l'attrito contro gli oggetti che possono rendere lunghi tempi teorici non molto utili nella pratica. Tieni a mente il seguente come regola generale:",
+            "MaximumExposureTimeText5": "Riapplica la crema solare ogni 2 ore.",
+            "MaximumExposureTimeText6": "Dovresti anche riapplicare la tua crema solare se: trascorri del tempo in acqua, sudi, strofini contro alcune cose (esempio: asciugamani, abbigliamento, ecc...)",
+            "MaximumExposureTimeText7": "Non dovresti mai esporti per più del tempo indicato nell'arco di 24 ore.",
+            "MaximumExposureTimeText8": "[La Crema Solare]...deve essere continuamente riapplicata come indicato, di solito ogni due ore.",
+            "MaximumExposureTimeText9": "- American Academy of Dermatology"
         },
         "Menu": "Menu",
         "Calculator": "Calcolatrice",
@@ -149,8 +223,18 @@
         "Loading": {
             "Title": "Caricamento:"
         },
+        "Unit": "Unità:",
+        "Type": "Tipo:",
+        "Usage": "Utilizzo:",
+        "Description": "Descrizione:",
+        "Input": "Input",
+        "InputResult": "Input / Risultato",
+        "orText": "...oppure...",
+        "Low": "Basso",
+        "Moderate": "Medio",
+        "High": "Alto",
+        "VeryHigh": "Molto Alto",
+        "Extreme": "Estremo"
         
-        
-        "etc": {}
     }
 }

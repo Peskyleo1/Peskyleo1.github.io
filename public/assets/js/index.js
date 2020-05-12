@@ -754,6 +754,76 @@ function setLanguage(language){
         $("#CreamSPFField").attr("placeholder", languagePack[lang].NoCreamPlaceholder);
         $("#HoursField").attr("placeholder", languagePack[lang].Hours);
         $("#MinutesField").attr("placeholder", languagePack[lang].Minutes);
+        //Modal Common
+        $(".UnitText").text(languagePack[lang].Unit);
+        $(".TypeText").text(languagePack[lang].Type);
+        $(".UsageText").text(languagePack[lang].Usage);
+        $(".DescriptionText").text(languagePack[lang].Description);
+        $(".closeButton").text(languagePack[lang].Close);
+        $(".sourceButton").text(languagePack[lang].Source);
+        $(".findButton").text(languagePack[lang].Find);
+
+        $(".InputTypeText").text(languagePack[lang].Input);
+        $(".InputResult").text(languagePack[lang].InputResult);
+        $(".orText").text(languagePack[lang].orText);
+        //Modal Titles
+        $("#UVModalTitle").text(languagePack[lang].UVModal.UVModalTitle);
+        $("#AltitudeModalTitle").text(languagePack[lang].Altitude);
+        $("#ReflectiveModalTitle").text(languagePack[lang].ReflectiveSurface);
+        $("#SkinTypeModalTitle").text(languagePack[lang].SkinType);
+        $("#SPFModalTitle").text(languagePack[lang].CreamSPF);
+        $("#TimeModalTitle").text(languagePack[lang].Time);
+        //UVModal
+        $("#UVUnit").text(languagePack[lang].UVIndex);
+        $("#LowText").text(languagePack[lang].Low);
+        $("#ModerateText").text(languagePack[lang].Moderate);
+        $("#HighText").text(languagePack[lang].High);
+        $("#VeryHighText").text(languagePack[lang].VeryHigh);
+        $("#ExtremeText").text(languagePack[lang].Extreme);
+        $("#UVText1").text(languagePack[lang].UVModal.UVModalText1);
+        $("#UVText2").text(languagePack[lang].UVModal.UVModalText2);
+        //AltitudeModal
+        $("#MetersUnit").text(languagePack[lang].UVIndex);
+        $("#AltitudeModalText1").text(languagePack[lang].AltitudeModal.AltitudeText1);
+        $("#AltitudeModalText2").text(languagePack[lang].AltitudeModal.AltitudeText2);
+        $("#AltitudeModalText3").text(languagePack[lang].AltitudeModal.AltitudeText3);
+        $("#AltitudeModalText4").text(languagePack[lang].AltitudeModal.AltitudeText4);
+        $("#AltitudeModalText5").text(languagePack[lang].AltitudeModal.AltitudeText5);
+        //ReflectiveModal
+        $("#ReflectiveUnit").text(languagePack[lang].ReflectiveModal.ReflectiveUnit);
+        $("#ReflectiveModalText1").text(languagePack[lang].ReflectiveModal.ReflectiveText1);
+        $("#ReflectiveModalText2").text(languagePack[lang].ReflectiveModal.ReflectiveText2);
+        $("#ReflectiveModalText3").text(languagePack[lang].ReflectiveModal.ReflectiveText3);
+        $("#ReflectiveModalText4").text(languagePack[lang].ReflectiveModal.ReflectiveText4);
+        $("#ReflectiveModalText5").text(languagePack[lang].ReflectiveModal.ReflectiveText5);
+        $("#ReflectiveModalText6").text(languagePack[lang].ReflectiveModal.ReflectiveText6);
+        //SkinModal
+        $("#SkinModalText1").text(languagePack[lang].SkinModal.SkinText1);
+        $("#SkinModalText2").text(languagePack[lang].SkinModal.SkinText2);
+        //SPFModal
+        $("#SPFModalUnit").text(languagePack[lang].CreamSPFModal.CreamSPFUnit);
+        $("#SPFModalText1").text(languagePack[lang].CreamSPFModal.CreamSPFText1);
+        $("#SPFModalText2").text(languagePack[lang].CreamSPFModal.CreamSPFText2);
+        $("#SPFModalText3").text(languagePack[lang].CreamSPFModal.CreamSPFText3);
+        $("#SPFModalText4").text(languagePack[lang].CreamSPFModal.CreamSPFText4);
+        $("#SPFModalText5").text(languagePack[lang].CreamSPFModal.CreamSPFText5);
+        $(".SPFModalNoProt").text(languagePack[lang].CreamSPFModal.NoProt);
+        $(".SPFModalLowProt").text(languagePack[lang].CreamSPFModal.LowProt);
+        $(".SPFModalMedProt").text(languagePack[lang].CreamSPFModal.MedProt);
+        $(".SPFModalHiProt").text(languagePack[lang].CreamSPFModal.HiProt);
+        $(".SPFModalVHiProt").text(languagePack[lang].CreamSPFModal.VHiProt);
+        //TimeModal
+        $("#TimeModalUnit").text(languagePack[lang].MaximumExposureTimeModal.MaximumExposureTimeUnit);
+        $("#TimeModalText1").text(languagePack[lang].MaximumExposureTimeModal.MaximumExposureTimeText1);
+        $("#TimeModalText2").text(languagePack[lang].MaximumExposureTimeModal.MaximumExposureTimeText2);
+        $("#TimeModalText3").text(languagePack[lang].MaximumExposureTimeModal.MaximumExposureTimeText3);
+        $("#TimeModalText4").text(languagePack[lang].MaximumExposureTimeModal.MaximumExposureTimeText4);
+        $("#TimeModalText5").text(languagePack[lang].MaximumExposureTimeModal.MaximumExposureTimeText5);
+        $("#TimeModalText6").text(languagePack[lang].MaximumExposureTimeModal.MaximumExposureTimeText6);
+        $("#TimeModalText7").text(languagePack[lang].MaximumExposureTimeModal.MaximumExposureTimeText7);
+        $("#TimeModalText8").text(languagePack[lang].MaximumExposureTimeModal.MaximumExposureTimeText8);
+        $("#TimeModalText9").text(languagePack[lang].MaximumExposureTimeModal.MaximumExposureTimeText9);
+
     });
     
 }
