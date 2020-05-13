@@ -12,6 +12,7 @@
         "Altitude": "Altitude",
         "ReflectiveSurface": "Reflective Surface",
         "SkinType": "Skin Type",
+        "Location": "Location",
         "CreamSPF": "Cream SPF",
         "MaximumExposureTime": "Maximum Exposure Time",
         "Hours": "Hours",
@@ -101,8 +102,94 @@
             "Text": " Unable to fetch.",
             "Text2": "Try again later or use 'Nerd Mode' instead." 
         },
+        "LocationFound": {
+            "Title": "Location Found:",
+            "Text1": "I have access to your location with an accuracy of:", 
+            "Text2": "Please continue by answering skin related questions. Then click on the Save button.", 
+            "Text3": "The quiz takes no more than one minute."       
+        },
         "Loading": {
             "Title": "Loading:"
+        },
+        "Welcome": {
+            "Title": "Welcome!",
+            "Text1": "Hello! My name is Daisy.", 
+            "Text2": "I'm your sunbathing assistant.", 
+            "Text3": "I don't have any information about you.",
+            "Text4": "In order to help you I require only two things: your",
+            "Text5": "and your"
+        },
+        "Skin": {
+            "Title": "Genetic Disposition",
+            "Title2": "Reaction to Extended Sun Exposure",
+            "Text1": "How many freckles do you have on unexposed areas of your skin?", 
+            "Text2": "Your natural hair colour is:", 
+            "Text3": "Your eye colour is:",
+            "Text4": "Your natural skin colour (non-exposed areas) is:", 
+            "Text5": "Does your skin tan?", 
+            "Text6": "How does your skin respond to the sun?", 
+            "Text7": "How sensitive is your face to the sun?",
+            "Text8": "How deeply do you tan?",
+            "KeepGoing": "...keep going! Just 4 more questions...",
+            "SaveSkin": "Save Skin"
+        },
+        "SkinOptions": {
+            "Q1": {
+                "O1": "Many",
+                "O2": "Several",
+                "O3": "A Few",
+                "O4": "Very Few",
+                "O5": "None"
+            },
+            "Q2": {
+                "O1": "Red or Light Blonde",
+                "O2": "Blonde",
+                "O3": "Dark Blonde or Light Brown",
+                "O4": "Dark Brown",
+                "O5": "Black"
+            },
+            "Q3": {
+                "O1": "Light Blue, Light Gray or Light Green",
+                "O2": "Blue, Gray or Green",
+                "O3": "Light Brown",
+                "O4": "Dark Brown",
+                "O5": "Black"
+            },
+            "Q4": {
+                "O1": "Ivory White",
+                "O2": "Fair or Pale",
+                "O3": "Fair to Beige, with golden undertone",
+                "O4": "Olive or Light Brown",
+                "O5": "Dark Brown or Black"
+            },
+            "Q5": {
+                "O1": "Never, I always burn",
+                "O2": "Rarely",
+                "O3": "Sometimes",
+                "O4": "Often",
+                "O5": "Always"
+            },
+            "Q6": {
+                "O1": "Always burns, blisters and peels",
+                "O2": "Often burns, blisters and peels",
+                "O3": "Burns Moderately",
+                "O4": "Burns Rarely, if at all",
+                "O5": "Never burns"
+            },
+            "Q7": {
+                "O1": "Very Sensitive",
+                "O2": "Sensitive",
+                "O3": "Normal",
+                "O4": "Resistant",
+                "O5": "Very resistant / Never has a problem"
+            },
+            "Q8": {
+                "O1": "Not at all or very little",
+                "O2": "Lightly",
+                "O3": "Moderately",
+                "O4": "Deeply",
+                "O5": "My skin is naturally dark"
+            }
         },
         "Unit": "Unit:",
         "Type": "Type:",
@@ -131,6 +218,7 @@
         "Altitude": "Altitudine",
         "ReflectiveSurface": "Superficie Riflettente",
         "SkinType": "Tipo di Pelle",
+        "Location": "Posizione",
         "CreamSPF": "SPF della Crema",
         "MaximumExposureTime": "Tempo Massimo d'Esposizione",
         "Hours": "Ore",
@@ -201,27 +289,115 @@
         "Download": "Scarica",
         "LocationDenied": {
             "Title": "Posizione Negata:",
-            "Text": " Hai negato l'accesso all'utilizzo della tua posizione. Per favore, consentimi di accedere alla tua posizione."
+            "Text": "Hai negato l'accesso all'utilizzo della tua posizione. Per favore, consentimi di accedere alla tua posizione."
         },
         "LocationUnavailable": {
             "Title": "Posizione Non Disponibile:",
-            "Text": " Informazioni sulla posizione non sono disponibili, riprova più tardi."
+            "Text": "Informazioni sulla posizione non sono disponibili, riprova più tardi.",
+            "Text2": "Nel frattempo puoi continuare a compilare le informazioni sul tipo di pelle."
         },
         "LocationTimeout": {
             "Title": "Timeout Posizione:",
-            "Text": " La richiesta di accesso alla tua posizione è scaduta, riprova più tardi."
+            "Text": "La richiesta di accesso alla tua posizione è scaduta, riprova più tardi.",
+            "Text2": "Nel frattempo puoi continuare a compilare le informazioni sul tipo di pelle."
         },
         "UnknownLocation": {
             "Title": "Errore di Posizione Sconosciuto:",
-            "Text": " Si è verificato un errore sconosciuto mentre acquisivo la tua posizione."
+            "Text": "Si è verificato un errore sconosciuto mentre acquisivo la tua posizione."
         },
         "NoAltitude": {
             "Title": "Altitudine:",
-            "Text": " Ricerca fallita.",
+            "Text": "Ricerca fallita.",
             "Text2": "Riprova più tardi o usa 'Modalità Nerd'." 
+        },
+        "LocationFound": {
+            "Title": "Posizione Trovata:",
+            "Text1": "Ho accesso alla tua posizione con una precisione di:", 
+            "Text2": "Continua rispondendo alle domande relative alla pelle. Poi clicca il pulsante Salva.", 
+            "Text3": "Il quiz non richiede più di un minuto."       
         },
         "Loading": {
             "Title": "Caricamento:"
+        },
+        "Welcome": {
+            "Title": "Benvenuto!",
+            "Text1": "Ciao! Sono Daisy.", 
+            "Text2": "Sono il tuo assistente d'abbronzatura.", 
+            "Text3": "Non ho informazioni su di te.",
+            "Text4": "Per aiutarti ho bisogno di due cose: la tua",
+            "Text5": "e il tuo"       
+        },
+        "Skin": {
+            "Title": "Disposizione Genetica",
+            "Title2": "Reazione all'Esposizione Solare Prolungata",
+            "Text1": "Quante lentiggini hai su aree non esposte della tua pelle?", 
+            "Text2": "Il colore naturale dei tuoi capelli è:", 
+            "Text3": "Il colore dei tuoi occhi è:",
+            "Text4": "Il tuo colore naturale della pelle (aree non esposte) è:", 
+            "Text5": "La tua pelle si abbronza?", 
+            "Text6": "Come risponde la tua pelle al sole?", 
+            "Text7": "Quanto è sensibile il tuo viso al sole?",
+            "Text8": "Quanto ti abbronzi?",
+            "KeepGoing": "...continua così! Sole altre 4 domande...",
+            "SaveSkin": "Salva Pelle"
+        },
+        "SkinOptions": {
+            "Q1": {
+                "O1": "Molte",
+                "O2": "Varie",
+                "O3": "Poche",
+                "O4": "Pochissime",
+                "O5": "Zero"
+            },
+            "Q2": {
+                "O1": "Rossi o Biondo Chiarissimo",
+                "O2": "Biondi",
+                "O3": "Biondo Scuro o Castano Chiaro",
+                "O4": "Castano Scuro",
+                "O5": "Neri"
+            },
+            "Q3": {
+                "O1": "Blu Chiari, Grigi Chiari o Verdi Chiari",
+                "O2": "Blu, Grigi o Verdi",
+                "O3": "Marrone Chiaro",
+                "O4": "Marrone Scuro",
+                "O5": "Neri"
+            },
+            "Q4": {
+                "O1": "Bianco Avorio",
+                "O2": "Chiara o Pallida",
+                "O3": "Chiara o Beige, con un tono d'orato",
+                "O4": "Olivastra o Marrone Chiaro",
+                "O5": "Marrone Scuro o Nero"
+            },
+            "Q5": {
+                "O1": "Mai, mi brucio sempre",
+                "O2": "Raramente",
+                "O3": "Alcune Volte",
+                "O4": "Spesso",
+                "O5": "Sempre"
+            },
+            "Q6": {
+                "O1": "Brucia sempre, si riempie di bolle e si spella",
+                "O2": "Spesso si brucia, si riempie di bolle e si spella",
+                "O3": "Si brucia moderatamente",
+                "O4": "Si brucia raramente",
+                "O5": "Non si brucia mai"
+            },
+            "Q7": {
+                "O1": "Molto Sensibile",
+                "O2": "Sensibile",
+                "O3": "Normale",
+                "O4": "Resistente",
+                "O5": "Molto Resistente / Non ha mai problemi"
+            },
+            "Q8": {
+                "O1": "Per niente o molto poco",
+                "O2": "Leggermente",
+                "O3": "Moderatamente",
+                "O4": "Tanto",
+                "O5": "La mia pelle è scura di natura"
+            }
         },
         "Unit": "Unità:",
         "Type": "Tipo:",
@@ -235,6 +411,5 @@
         "High": "Alto",
         "VeryHigh": "Molto Alto",
         "Extreme": "Estremo"
-        
     }
 }

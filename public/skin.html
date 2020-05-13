@@ -46,109 +46,114 @@
             </div>
             <main class="mdl-layout__content">
                 <!-- Location Denied ERROR -->
-                <div id="LocationDenied" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: none;">
-                    <h6 style="margin: auto;"><b>Permission Denied:</b> You have denied permission to use your location. Please allow me to use your location.</h6>
+                <div id="LocationDenied" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: inherit;">
+                    <h6 style="margin: auto;"><b><span id="PermissionDeniedTitleCalc">Permission Denied:</span></b><br><br><span id="PermissionDeniedTextCalc"> You have denied permission to use your location. Please allow me to use your location.</span></h6>
                 </div>
                 <!-- Location Unavailable ERROR -->
-                <div id="LocationUnavailable" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 238, 0, 0.2); display: none;">
-                    <h6 style="margin: auto;"><b>Location Unavailable:</b> Location information is unavailable, please try again later. In the meantime you can still continue filling in your skin type information.</h6>
+                <div id="LocationUnavailable" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 238, 0, 0.2); display: inherit;">
+                    <h6 style="margin: auto;"><b><span id="LocationUnavailableTitleCalc">Location Unavailable:</span></b><br><br> <span id="LocationUnavailableTextCalc">Location information is unavailable, please try again later.</span> <span id="LocationUnavailableText2Calc">In the meantime you can still continue filling in your skin type information.</span></h6>
                 </div>
                 <!-- Location Timeout ERROR -->
-                <div id="LocationTimeout" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 238, 0, 0.2); display: none;">
-                    <h6 style="margin: auto;"><b>Location Timeout:</b> The request to get user location timed out, please try again later. In the meantime you can still continue filling in your skin type information.</h6>
+                <div id="LocationTimeout" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 238, 0, 0.2); display: inherit;">
+                    <h6 style="margin: auto;"><b><span id="LocationTimeoutTitleCalc">Location Timeout:</span></b><br><br> <span id="LocationTimeoutTextCalc">The request to get user location timed out, please try again later.</span> <span id="LocationTimeoutText2Calc">In the meantime you can still continue filling in your skin type information.</span></h6>
                 </div>
                 <!-- Unknown error: Location ERROR -->
-                <div id="UnknownLocationError" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: none;">
-                    <h6 style="margin: auto;"><b>Unknown Location Error:</b> An unknown error has happened while getting your location.</h6>
+                <div id="UnknownLocationError" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: inherit;">
+                    <h6 style="margin: auto;"><b><span id="UnknownLocationErrorTitleCalc">Unknown Location Error:</span></b><br><br> <span id="UnknownLocationErrorTextCalc">An unknown error has happened while getting your location.</span></h6>
                 </div>
                 <!-- Location Found SUCCESS -->
-                <div id="LocationSuccess" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(60, 255, 0, 0.2); display: none;">
-                    <h6 id="accuracyText" style="margin: auto;"><b>Location Found:</b> I have access to your location with an accuracy of: <span></span>m. <br><br>Please continue by answering skin related questions. Then click on the Save button. <br><br>The quiz takes no more than one minute.</h6>
+                <div id="LocationSuccess" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(60, 255, 0, 0.2); display: inherit;">
+                    <h6 id="accuracyText" style="margin: auto;"><b><span id="LocationFoundTitle">Location Found:</span> </b><span id="LocationFoundText1">I have access to your location with an accuracy of:</span> <span id="LocationFoundData"></span>m.<br><br><span id="LocationFoundText2">Please continue by answering skin related questions. Then click on the Save button.</span><br><br><span id="LocationFoundText3">The quiz takes no more than one minute.</span></h6>
                 </div>
                 <!-- Ask For Location -->
-                <div id="AskForLocation" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: #f5f5f5; display: none;">
-                    <h4>Welcome!</h4>
+                <div id="AskForLocation" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: #f5f5f5; display: inherit;">
+                    <h4><span id="LocationWelcome">Welcome!</span></h4>
                     <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
                     
                     
-                    <h6 style="margin: auto;">Hello! My name is Daisy.<br><br> I'm your sunbathing assistant.<br><br>
-                        I don't have any information about you.<br><br> In order to help you I require 
-                        only two things: your <b>location</b> and your <b>skin type</b>.</h6><br>
+                    <h6 style="margin: auto;">
+                        <span id="WelcomeText1">Hello! My name is Daisy.</span><br><br> 
+                        <span id="WelcomeText2">I'm your sunbathing assistant.</span><br><br>
+                        <span id="WelcomeText3">I don't have any information about you.</span><br><br>
+                        <span id="WelcomeText4">In order to help you I require only two things: your</span> <b>
+                            <span class="LocationText">Location</span> </b>
+                        <span id="WelcomeText5">and your</span> <b>
+                            <span class="SkinTypeText">Skin Type</span></b>.</h6><br>
                         <span style="box-shadow: 0px 2px 2px 0px rgb(179, 179, 179);" class="mdl-chip mdl-chip--contact"  data-toggle="modal" data-target="#LocationModal">
                             <span class="mdl-chip__contact mdl-color--orange mdl-color-text--white"><i style="margin-top: 4px;" class="material-icons">my_location</i></span>
-                            <span class="mdl-chip__text">Location</span>
+                            <span class="mdl-chip__text"><span class="LocationText">Location</span></span>
                         </span>
                         <span style="box-shadow: 0px 2px 2px 0px rgb(179, 179, 179);" class="mdl-chip mdl-chip--contact" data-toggle="modal" data-target="#SkinModal">
                             <span class="mdl-chip__contact mdl-color--orange mdl-color-text--white"><i style="margin-top: 4px;" class="material-icons">face</i></span>
-                            <span class="mdl-chip__text">Skin Type</span>
+                            <span class="mdl-chip__text"><span class="SkinTypeText">Skin Type</span></span>
                         </span>
                     <br>
                     <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
                     <button style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="getLocation()">
-                        <i style="margin-top: -4px;" class="material-icons">near_me</i> Allow Location 
-                      </button>
+                        <i style="margin-top: -4px;" class="material-icons">near_me</i> <span id="AllowLocationButton">Allow Location</span> 
+                    </button>
                     
                 </div>
                 <div id="SelectSkin" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 80px;  border-radius: 5px; background-color: #f5f5f5;">
-                    <h4>Genetic Disposition</h4>
+                    <h4><span id="Part1Text">Genetic Disposition</span></h4>
                     <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
                     
                     <!-- 1 -->
-                    <h6 style="margin: auto;">How many freckles do you have on unexposed areas of your skin?</h6>
+                    <h6 style="margin: auto;"><span id="Q1">How many freckles do you have on unexposed areas of your skin?</span></h6>
                     <p style="margin: 20px auto; text-align: center;" id="t1">Many</p>
                     <input class="mdl-slider mdl-js-slider" type="range" min="0" max="4" value="0" tabindex="0" id="s1" oninput="showValue(this)">
                     <br>
                     <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
                     <!-- 2 -->
-                    <h6 style="margin: auto;">Your natural hair colour is:</h6>
+                    <h6 style="margin: auto;"><span id="Q2">Your natural hair colour is:</span></h6>
                     <p style="margin: 20px auto; text-align: center;" id="t2">Red or Light Blonde</p>
                     <input class="mdl-slider mdl-js-slider" type="range" min="0" max="4" value="0" tabindex="0" id="s2" oninput="showValue(this)">
                     <br>
                     <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
                     <!-- 3 -->
-                    <h6 style="margin: auto;">Your eye colour is:</h6>
+                    <h6 style="margin: auto;"><span id="Q3">Your eye colour is:</span></h6>
                     <p style="margin: 20px auto; text-align: center;" id="t3">Light Blue, Light Gray or Light Green</p>
                     <input class="mdl-slider mdl-js-slider" type="range" min="0" max="4" value="0" tabindex="0" id="s3" oninput="showValue(this)">
                     <br>
                     <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
                     <!-- 4 -->
-                    <h6 style="margin: auto;">Your natural skin colour (non-exposed areas) is:</h6>
+                    <h6 style="margin: auto;"><span id="Q4">Your natural skin colour (non-exposed areas) is:</span></h6>
                     <p style="margin: 20px auto; text-align: center;" id="t4">Ivory White</p>
                     <input class="mdl-slider mdl-js-slider" type="range" min="0" max="4" value="0" tabindex="0" id="s4" oninput="showValue(this)">
                     <br>
                     <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
                     
-                    <p style="margin: 20px auto; text-align: center; margin-top: 100px;"><i>...keep going! Just 4 more questions...</i></p>
-                    <h4 style="margin-top: 100px;">Reaction to Extended Sun Exposure</h4>
+                    <p style="margin: 20px auto; text-align: center; margin-top: 100px;"><i><span id="keepGoingText">...keep going! Just 4 more questions...</span></i></p>
+                    <h4 style="margin-top: 100px;"><span id="Part2Text">Reaction to Extended Sun Exposure</span></h4>
                     <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
                     
                     <!-- 5 -->
-                    <h6 style="margin: auto;">Does your skin tan?</h6>
+                    <h6 style="margin: auto;"><span id="Q5">Does your skin tan?</span></h6>
                     <p style="margin: 20px auto; text-align: center;" id="t5">Never, I always burn</p>
                     <input class="mdl-slider mdl-js-slider" type="range" min="0" max="4" value="0" tabindex="0" id="s5" oninput="showValue(this)">
                     <br>
                     <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
                     <!-- 6 -->
-                    <h6 style="margin: auto;">How does your skin respond to the sun?</h6>
+                    <h6 style="margin: auto;"><span id="Q6">How does your skin respond to the sun?</span></h6>
                     <p style="margin: 20px auto; text-align: center;" id="t6">Always burns, blisters and peels</p>
                     <input class="mdl-slider mdl-js-slider" type="range" min="0" max="4" value="0" tabindex="0" id="s6" oninput="showValue(this)">
                     <br>
                     <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
                     <!-- 7 -->
-                    <h6 style="margin: auto;">How sensitive is your face to the sun?</h6>
+                    <h6 style="margin: auto;"><span id="Q7">How sensitive is your face to the sun?</span></h6>
                     <p style="margin: 20px auto; text-align: center;" id="t7">Very Sensitive</p>
                     <input class="mdl-slider mdl-js-slider" type="range" min="0" max="4" value="0" tabindex="0" id="s7" oninput="showValue(this)">
                     <br>
                     <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
                     <!-- 8 -->
-                    <h6 style="margin: auto;">How deeply do you tan?</h6>
+                    <h6 style="margin: auto;"><span id="Q8">How deeply do you tan?</span></h6>
                     <p style="margin: 20px auto; text-align: center;" id="t8">Not at all or very little</p>
                     <input class="mdl-slider mdl-js-slider" type="range" min="0" max="4" value="0" tabindex="0" id="s8" oninput="showValue(this)">
                     <br>
                     <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
                     
                     <button onclick="saveSkin()" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-                        <i style="margin-top: -4px;" class="material-icons">save</i> Save Skin
+                        <i style="margin-top: -4px;" class="material-icons">save</i> <span id="SaveSkinButton">Save Skin</span>>
                     </button>
 
                 </div>

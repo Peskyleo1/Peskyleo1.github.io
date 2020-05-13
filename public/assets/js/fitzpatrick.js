@@ -3,6 +3,7 @@ var userPrefs;
 
 //This function will wait for the html document to be fully loaded 
 $( document ).ready(function() {
+    setLanguage("it");
     try {
         //try getting user preferences
         //if there are user preferences hide first time mode items 
@@ -34,7 +35,7 @@ function getLocation() {
             //Asking for location to the user
             $("#AskForLocation").css("display","none");
             $("#LocationSuccess").css("display","inherit");
-            $("#accuracyText").children("span").text(position.coords.accuracy.toString());
+            $("#LocationFoundData").text(position.coords.accuracy.toString());
             console.log("Location Accuracy: " + position.coords.accuracy.toString());
             //showPosition(position);
         },
@@ -83,143 +84,145 @@ function showValue(element){
              for each slider-text pair.
     */
 
+    var language = JSON.parse(window.localStorage.getItem("language"));
+    console.log(language);
     //if the item we touched is the first slider (#s1)...
     if(element.id == "s1"){
         //...if the slider value is 0...
         if(element.value == 0){
             //...show "Many"
-            $("#t1").text("Many");
+            $("#t1").text(language.SkinOptions.Q1.O1);
         }
         if(element.value == 1){
-            $("#t1").text("Several");
+            $("#t1").text(language.SkinOptions.Q1.O2);
         }
         if(element.value == 2){
-            $("#t1").text("A Few");
+            $("#t1").text(language.SkinOptions.Q1.O3);
         }
         if(element.value == 3){
-            $("#t1").text("Very Few");
+            $("#t1").text(language.SkinOptions.Q1.O4);
         }
         if(element.value == 4){
-            $("#t1").text("None");
+            $("#t1").text(language.SkinOptions.Q1.O5);
         }
     }
     if(element.id == "s2"){
         if(element.value == 0){
-            $("#t2").text("Red or Light Blonde");
+            $("#t2").text(language.SkinOptions.Q2.O1);
         }
         if(element.value == 1){
-            $("#t2").text("Blonde");
+            $("#t2").text(language.SkinOptions.Q2.O2);
         }
         if(element.value == 2){
-            $("#t2").text("Dark Blonde or Light Brown");
+            $("#t2").text(language.SkinOptions.Q2.O3);
         }
         if(element.value == 3){
-            $("#t2").text("Dark Brown");
+            $("#t2").text(language.SkinOptions.Q2.O4);
         }
         if(element.value == 4){
-            $("#t2").text("Black");
+            $("#t2").text(language.SkinOptions.Q2.O5);
         }
     }
     if(element.id == "s3"){
         if(element.value == 0){
-            $("#t3").text("Light Blue, Light Gray or Light Green");
+            $("#t3").text(language.SkinOptions.Q3.O1);
         }
         if(element.value == 1){
-            $("#t3").text("Blue, Gray or Green");
+            $("#t3").text(language.SkinOptions.Q3.O2);
         }
         if(element.value == 2){
-            $("#t3").text("Light Brown");
+            $("#t3").text(language.SkinOptions.Q3.O3);
         }
         if(element.value == 3){
-            $("#t3").text("Dark Brown");
+            $("#t3").text(language.SkinOptions.Q3.O4);
         }
         if(element.value == 4){
-            $("#t3").text("Brownish Black");
+            $("#t3").text(language.SkinOptions.Q3.O5);
         }
     }
     if(element.id == "s4"){
         if(element.value == 0){
-            $("#t4").text("Ivory White");
+            $("#t4").text(language.SkinOptions.Q4.O1);
         }
         if(element.value == 1){
-            $("#t4").text("Fair or Pale");
+            $("#t4").text(language.SkinOptions.Q4.O2);
         }
         if(element.value == 2){
-            $("#t4").text("Fair to Beige, with golden undertone");
+            $("#t4").text(language.SkinOptions.Q4.O3);
         }
         if(element.value == 3){
-            $("#t4").text("Olive or Light Brown");
+            $("#t4").text(language.SkinOptions.Q4.O4);
         }
         if(element.value == 4){
-            $("#t4").text("Dark Brown or Black");
+            $("#t4").text(language.SkinOptions.Q4.O5);
         }
     }
     if(element.id == "s5"){
         if(element.value == 0){
-            $("#t5").text("Never, I always burn");
+            $("#t5").text(language.SkinOptions.Q5.O1);
         }
         if(element.value == 1){
-            $("#t5").text("Rarely");
+            $("#t5").text(language.SkinOptions.Q5.O2);
         }
         if(element.value == 2){
-            $("#t5").text("Sometimes");
+            $("#t5").text(language.SkinOptions.Q5.O3);
         }
         if(element.value == 3){
-            $("#t5").text("Often");
+            $("#t5").text(language.SkinOptions.Q5.O4);
         }
         if(element.value == 4){
-            $("#t5").text("Always");
+            $("#t5").text(language.SkinOptions.Q5.O5);
         }
     }
     if(element.id == "s6"){
         if(element.value == 0){
-            $("#t6").text("Always burns, blisters and peels");
+            $("#t6").text(language.SkinOptions.Q6.O1);
         }
         if(element.value == 1){
-            $("#t6").text("Often burns, blisters and peels");
+            $("#t6").text(language.SkinOptions.Q6.O2);
         }
         if(element.value == 2){
-            $("#t6").text("Burns Moderately");
+            $("#t6").text(language.SkinOptions.Q6.O3);
         }
         if(element.value == 3){
-            $("#t6").text("Burns Rarely, if at all");
+            $("#t6").text(language.SkinOptions.Q6.O4);
         }
         if(element.value == 4){
-            $("#t6").text("Never burns");
+            $("#t6").text(language.SkinOptions.Q6.O5);
         }
     }
     if(element.id == "s7"){
         if(element.value == 0){
-            $("#t7").text("Very Sensitive");
+            $("#t7").text(language.SkinOptions.Q7.O1);
         }
         if(element.value == 1){
-            $("#t7").text("Sensitive");
+            $("#t7").text(language.SkinOptions.Q7.O2);
         }
         if(element.value == 2){
-            $("#t7").text("Normal");
+            $("#t7").text(language.SkinOptions.Q7.O3);
         }
         if(element.value == 3){
-            $("#t7").text("Resistant");
+            $("#t7").text(language.SkinOptions.Q7.O4);
         }
         if(element.value == 4){
-            $("#t7").text("Very resistant / Never has a problem");
+            $("#t7").text(language.SkinOptions.Q7.O5);
         }
     }
     if(element.id == "s8"){
         if(element.value == 0){
-            $("#t8").text("Not at all or very little");
+            $("#t8").text(language.SkinOptions.Q8.O1);
         }
         if(element.value == 1){
-            $("#t8").text("Lightly");
+            $("#t8").text(language.SkinOptions.Q8.O2);
         }
         if(element.value == 2){
-            $("#t8").text("Moderately");
+            $("#t8").text(language.SkinOptions.Q8.O3);
         }
         if(element.value == 3){
-            $("#t8").text("Deeply");
+            $("#t8").text(language.SkinOptions.Q8.O4);
         }
         if(element.value == 4){
-            $("#t8").text("My skin is naturally dark");
+            $("#t8").text(language.SkinOptions.Q8.O5);
         }
     }
     calculate();
@@ -357,4 +360,70 @@ function toggleDarkMode(){
     $(".mdl-layout__drawer").toggleClass("dark-mode__mdl-layout__drawer");
     $(".mdl-navigation__link").toggleClass("dark-mode__mdl-navigation__link");
     $(".mdl-layout-title").toggleClass("dark-mode__mdl-layout-title");
+}
+
+function setLanguage(language){
+    var lang = language;
+    $.getJSON("../assets/data/languages.json", function(languagePack) {
+        window.localStorage.setItem("language", JSON.stringify(languagePack[lang]));
+        $("#PageTitle").text(languagePack[lang].Daisy);
+        $("#AutoText").text(languagePack[lang].Auto);
+        $("#ManualText").text(languagePack[lang].NerdMode);
+        //MENU
+        $("#CalculatorText").text(languagePack[lang].Calculator);
+        $("#SkinTypeText").text(languagePack[lang].SkinType);
+        $("#FAQText").text(languagePack[lang].FAQ);
+        $("#SettingsText").text(languagePack[lang].Settings);
+        $("#DownloadText").text(languagePack[lang].Download);
+        //Errors
+            //Titles
+            $("#PermissionDeniedTitleCalc").text(languagePack[lang].LocationDenied.Title);
+            $("#LocationUnavailableTitleCalc").text(languagePack[lang].LocationUnavailable.Title);
+            $("#LocationTimeoutTitleCalc").text(languagePack[lang].LocationTimeout.Title);
+            $("#UnknownLocationErrorTitleCalc").text(languagePack[lang].UnknownLocation.Title);
+            $("#NoAltitudeTitleCalc").text(languagePack[lang].NoAltitude.Title);
+            $("#LocationFoundTitle").text(languagePack[lang].LocationFound.Title);
+            $("#LocationWelcome").text(languagePack[lang].Welcome.Title);
+            $("#Part1Text").text(languagePack[lang].Skin.Title);
+            $("#Part2Text").text(languagePack[lang].Skin.Title2);
+            
+            //Texts
+            $("#PermissionDeniedTextCalc").text(languagePack[lang].LocationDenied.Text);
+            $("#LocationUnavailableTextCalc").text(languagePack[lang].LocationUnavailable.Text);
+            $("#LocationTimeoutTextCalc").text(languagePack[lang].LocationTimeout.Text);
+            $("#LocationUnavailableText2Calc").text(languagePack[lang].LocationUnavailable.Text2);
+            $("#LocationTimeoutText2Calc").text(languagePack[lang].LocationTimeout.Text2);
+            $("#UnknownLocationErrorTextCalc").text(languagePack[lang].UnknownLocation.Text);
+            $("#LocationFoundText1").text(languagePack[lang].LocationFound.Text1);
+            $("#LocationFoundText2").text(languagePack[lang].LocationFound.Text2);
+            $("#LocationFoundText3").text(languagePack[lang].LocationFound.Text3);
+            $("#WelcomeText1").text(languagePack[lang].Welcome.Text1);
+            $("#WelcomeText2").text(languagePack[lang].Welcome.Text2);
+            $("#WelcomeText3").text(languagePack[lang].Welcome.Text3);
+            $("#WelcomeText4").text(languagePack[lang].Welcome.Text4);
+            $("#WelcomeText5").text(languagePack[lang].Welcome.Text5);
+            $(".LocationText").text(languagePack[lang].Location);
+            $(".SkinTypeText").text(languagePack[lang].SkinType);
+
+            $("#Q1").text(languagePack[lang].Skin.Text1);
+            $("#Q2").text(languagePack[lang].Skin.Text2);
+            $("#Q3").text(languagePack[lang].Skin.Text3);
+            $("#Q4").text(languagePack[lang].Skin.Text4);
+            $("#Q5").text(languagePack[lang].Skin.Text5);
+            $("#Q6").text(languagePack[lang].Skin.Text6);
+            $("#Q7").text(languagePack[lang].Skin.Text7);
+            $("#Q8").text(languagePack[lang].Skin.Text8);
+            $("#keepGoingText").text(languagePack[lang].Skin.KeepGoing);
+            $("#SaveSkinButton").text(languagePack[lang].Skin.SaveSkin);
+        
+            $("#t1").text(languagePack[lang].SkinOptions.Q1.O1);
+            $("#t2").text(languagePack[lang].SkinOptions.Q2.O1);
+            $("#t3").text(languagePack[lang].SkinOptions.Q3.O1);
+            $("#t4").text(languagePack[lang].SkinOptions.Q4.O1);
+            $("#t5").text(languagePack[lang].SkinOptions.Q5.O1);
+            $("#t6").text(languagePack[lang].SkinOptions.Q6.O1);
+            $("#t7").text(languagePack[lang].SkinOptions.Q7.O1);
+            $("#t8").text(languagePack[lang].SkinOptions.Q8.O1);
+    });
+    
 }
