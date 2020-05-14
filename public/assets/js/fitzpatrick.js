@@ -11,17 +11,19 @@ $( document ).ready(function() {
             //-location asker box
             //-"thank you. now input skin" box
         userPrefs = JSON.parse(window.localStorage.getItem("userPrefs"));
+        var skinType = userPrefs.skinType;
         if(userPrefs.darkMode == true){
             toggleDarkMode();
         }else{
             //leave page as is (day mode)
         }
-    }catch{
+    }catch (e){
         //if there are no user preferences set first time mode
         //first time mode: 
             //-ask for location
             //-ask for skin type
-        $("#pageTitle").text("Welcome");
+        var welcome = JSON.parse(window.localStorage.getItem("language")).Welcome.Title;
+        $("#pageTitle").text(welcome);
         $("#AskForLocation").css("display","inherit");
     }
     
@@ -318,7 +320,7 @@ function saveSkin(){
         console.log(userPrefs);
         window.localStorage.setItem("userPrefs", JSON.stringify(userPrefs));
         window.location.href = "index.html";
-    }catch{
+    }catch (e){
         //will create the skinType "directory" and update skinType
         userPrefs = JSON.parse(window.localStorage.getItem("userPrefs"));
         var skinType = calculate();
@@ -366,9 +368,7 @@ function setLanguage(language){
     var lang = language;
     $.getJSON("../assets/data/languages.json", function(languagePack) {
         window.localStorage.setItem("language", JSON.stringify(languagePack[lang]));
-        $("#PageTitle").text(languagePack[lang].Daisy);
-        $("#AutoText").text(languagePack[lang].Auto);
-        $("#ManualText").text(languagePack[lang].NerdMode);
+        $("#PageTitle").text(languagePack[lang].SkinType);
         //MENU
         $("#CalculatorText").text(languagePack[lang].Calculator);
         $("#SkinTypeText").text(languagePack[lang].SkinType);
@@ -424,6 +424,29 @@ function setLanguage(language){
             $("#t6").text(languagePack[lang].SkinOptions.Q6.O1);
             $("#t7").text(languagePack[lang].SkinOptions.Q7.O1);
             $("#t8").text(languagePack[lang].SkinOptions.Q8.O1);
+
+        //Modal Common
+        $(".closeButton").text(languagePack[lang].Close);
+
+        //SkinTypeModal
+        $("#SkinTypeModalTitle").text(languagePack[lang].WhySkinModal.Title);
+        $("#SkinTypeModalTitle2").text(languagePack[lang].WhySkinModal.Title2);
+        $("#SkinTypeModalText1").text(languagePack[lang].WhySkinModal.Text1);
+        $("#SkinTypeModalText2").text(languagePack[lang].WhySkinModal.Text2);
+
+        //Location Modal
+        $("#LocationModalTitle").text(languagePack[lang].WhyLocationModal.Title);
+        $("#LocationModalTitle2").text(languagePack[lang].WhyLocationModal.Title2);
+        $("#LocationModalText1").text(languagePack[lang].WhyLocationModal.Text1);
+        $("#LocationModalText2").text(languagePack[lang].WhyLocationModal.Text2);
+        $("#LocationModalText3").text(languagePack[lang].WhyLocationModal.Text3);
+        $("#LocationModalText4").text(languagePack[lang].WhyLocationModal.Text4);
+        $("#LocationModalText5").text(languagePack[lang].WhyLocationModal.Text5);
+        $("#LocationModalText6").text(languagePack[lang].WhyLocationModal.Text6);
+        $("#LocationModalText7").text(languagePack[lang].WhyLocationModal.Text7);
+        $("#LocationModalText8").text(languagePack[lang].WhyLocationModal.Text8);
+        
+
     });
     
 }

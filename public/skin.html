@@ -30,43 +30,43 @@
             <header class="mdl-layout__header">
                 <div class="mdl-layout__header-row">
                     <!-- Title -->
-                    <span id="pageTitle" class="mdl-layout-title">Skin Type</span>
+                    <span id="pageTitle" class="mdl-layout-title"><span id="PageTitle">Skin Type</span></span>
                 </div>
                 
             </header>
             <div class="mdl-layout__drawer">
                 <span class="mdl-layout-title">Menu</span>
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="index.html"><i class="material-icons">developer_board</i> Calculator</a>
-                    <a class="mdl-navigation__link" href="skin.html"><i class="material-icons">face</i> Skin Type</a>
-                    <a class="mdl-navigation__link" href="faq.html"><i class="material-icons">question_answer</i> FAQ</a>
-                    <a class="mdl-navigation__link" href="settings.html"><i class="material-icons">settings</i> Settings</a>
-                    <a class="mdl-navigation__link" href="download.html"><i class="material-icons">get_app</i> Download</a>
+                    <a class="mdl-navigation__link" href="index.html"><i class="material-icons">developer_board</i> <span id="CalculatorText"></span></a>
+                    <a class="mdl-navigation__link" href="skin.html"><i class="material-icons">face</i> <span id="SkinTypeText"></span></a>
+                    <a class="mdl-navigation__link" href="faq.html"><i class="material-icons">question_answer</i> <span id="FAQText"></span></a>
+                    <a class="mdl-navigation__link" href="settings.html"><i class="material-icons">settings</i> <span id="SettingsText"></span></a>
+                    <a class="mdl-navigation__link" href="download.html"><i class="material-icons">get_app</i> <span id="DownloadText"></span></a>
                 </nav>
             </div>
             <main class="mdl-layout__content">
                 <!-- Location Denied ERROR -->
-                <div id="LocationDenied" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: inherit;">
+                <div id="LocationDenied" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: none;">
                     <h6 style="margin: auto;"><b><span id="PermissionDeniedTitleCalc">Permission Denied:</span></b><br><br><span id="PermissionDeniedTextCalc"> You have denied permission to use your location. Please allow me to use your location.</span></h6>
                 </div>
                 <!-- Location Unavailable ERROR -->
-                <div id="LocationUnavailable" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 238, 0, 0.2); display: inherit;">
+                <div id="LocationUnavailable" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 238, 0, 0.2); display: none;">
                     <h6 style="margin: auto;"><b><span id="LocationUnavailableTitleCalc">Location Unavailable:</span></b><br><br> <span id="LocationUnavailableTextCalc">Location information is unavailable, please try again later.</span> <span id="LocationUnavailableText2Calc">In the meantime you can still continue filling in your skin type information.</span></h6>
                 </div>
                 <!-- Location Timeout ERROR -->
-                <div id="LocationTimeout" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 238, 0, 0.2); display: inherit;">
+                <div id="LocationTimeout" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 238, 0, 0.2); display: none;">
                     <h6 style="margin: auto;"><b><span id="LocationTimeoutTitleCalc">Location Timeout:</span></b><br><br> <span id="LocationTimeoutTextCalc">The request to get user location timed out, please try again later.</span> <span id="LocationTimeoutText2Calc">In the meantime you can still continue filling in your skin type information.</span></h6>
                 </div>
                 <!-- Unknown error: Location ERROR -->
-                <div id="UnknownLocationError" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: inherit;">
+                <div id="UnknownLocationError" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(255, 0, 0, 0.2); display: none;">
                     <h6 style="margin: auto;"><b><span id="UnknownLocationErrorTitleCalc">Unknown Location Error:</span></b><br><br> <span id="UnknownLocationErrorTextCalc">An unknown error has happened while getting your location.</span></h6>
                 </div>
                 <!-- Location Found SUCCESS -->
-                <div id="LocationSuccess" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(60, 255, 0, 0.2); display: inherit;">
+                <div id="LocationSuccess" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(60, 255, 0, 0.2); display: none;">
                     <h6 id="accuracyText" style="margin: auto;"><b><span id="LocationFoundTitle">Location Found:</span> </b><span id="LocationFoundText1">I have access to your location with an accuracy of:</span> <span id="LocationFoundData"></span>m.<br><br><span id="LocationFoundText2">Please continue by answering skin related questions. Then click on the Save button.</span><br><br><span id="LocationFoundText3">The quiz takes no more than one minute.</span></h6>
                 </div>
                 <!-- Ask For Location -->
-                <div id="AskForLocation" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: #f5f5f5; display: inherit;">
+                <div id="AskForLocation" class="page-content" style="padding: 30px; max-width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: #f5f5f5; display: none;">
                     <h4><span id="LocationWelcome">Welcome!</span></h4>
                     <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
                     
@@ -153,7 +153,7 @@
                     <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
                     
                     <button onclick="saveSkin()" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-                        <i style="margin-top: -4px;" class="material-icons">save</i> <span id="SaveSkinButton">Save Skin</span>>
+                        <i style="margin-top: -4px;" class="material-icons">save</i> <span id="SaveSkinButton">Save Skin</span>
                     </button>
 
                 </div>
@@ -169,22 +169,22 @@
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Why Share Skin Type?</h5>
+                <h5 class="modal-title" id="exampleModalLabel"><span id="SkinTypeModalTitle">Why Share Skin Type?</span></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                    People have different skin types. Therefore it is not sufficient to take only UV Index into
+                    <span id="SkinTypeModalText1">People have different skin types. Therefore it is not sufficient to take only UV Index into
                     account when calculating how much time you can stay in the sun, i need to account for your skin's
-                    resistance to UV exposure.<br><br>
-                    <b>PRIVACY NOTE</b><br>
-                    Your skin type is stored locally on your device and it will not be sent to any external server.
+                    resistance to UV exposure.</span><br><br>
+                    <b><span id="SkinTypeModalTitle2">PRIVACY NOTE</span></b><br>
+                    <span id="SkinTypeModalText2">Your skin type is stored locally on your device and it will not be sent to any external server.</span>
                     
 
                 </div>
                 <div class="modal-footer">
-                <button type="button" data-dismiss="modal" class="mdl-button mdl-js-button">Close</button>
+                <button type="button" data-dismiss="modal" class="mdl-button mdl-js-button closeButton">Close</button>
                 </div>
             </div>
             </div>
@@ -194,25 +194,25 @@
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Why Share Location?</h5>
+                <h5 class="modal-title" id="exampleModalLabel"><span id="LocationModalTitle">Why Share Location?</span></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                    I need your location in order to get weather information for your current position.
-                    Specifically, with your location i will obtain:<br> 
-                    -<b>UV Index</b> at your position<br>
-                    -Your <b>Altitude</b>.<br>
-                    Which are both essential for my calculations.<br><br>
-                    <b>PRIVACY NOTE</b><br>
-                    Your location will be securely and anonymously sent to the <a href="https://weatherstack.com/">WeatherStack</a> server
-                    in order to obtain accurate weather information for your position.
+                    <span id="LocationModalText1">I need your location in order to get weather information for your current position.
+                    Specifically, with your location i will obtain:</span><br> 
+                    -<b><span id="LocationModalText2">UV Index</span></b> <span id="LocationModalText3">at your position</span><br>
+                    -<span id="LocationModalText4">Your</span> <b><span id="LocationModalText5">Altitude</span></b>.<br>
+                    <span id="LocationModalText6">Which are both essential for my calculations</span>.<br><br>
+                    <b><span id="LocationModalTitle2">Why Share Skin Type?</span></b><br>
+                    <span id="LocationModalText7">Your location will be securely and anonymously sent to the</span> <a href="https://weatherstack.com/">WeatherStack</a> <span id="LocationModalText8">server
+                        in order to obtain accurate weather information for your position</span>.
                     
 
                 </div>
                 <div class="modal-footer">
-                <button type="button" data-dismiss="modal" class="mdl-button mdl-js-button">Close</button>
+                <button type="button" data-dismiss="modal" class="mdl-button mdl-js-button closeButton">Close</button>
                 </div>
             </div>
             </div>

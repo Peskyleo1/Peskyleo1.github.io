@@ -1,6 +1,6 @@
 
 $( document ).ready(function() {
-    
+    setLanguage("it");
     try{
         //get all info and populate page
         console.log("load.try");
@@ -17,13 +17,13 @@ $( document ).ready(function() {
         }else{
             //not checked by default
         }
-    }catch{
+    }catch (e){
         //unable to get all info. Try to populate with what you can.
         try{
             //getting the language
             $("#languages").val(userPrefs.language);
             console.log("language: " + userPrefs.language);
-        }catch{
+        }catch (e){
             //dont do anything
             console.log("failed getting language");
         }
@@ -32,7 +32,7 @@ $( document ).ready(function() {
             $("#Favorite1").val(userPrefs.favoriteCreams.c1);
             $("#Favorite2").val(userPrefs.favoriteCreams.c2);
             $("#Favorite3").val(userPrefs.favoriteCreams.c3);
-        }catch{
+        }catch (e){
             //dont do anything
             console.log("failed getting favorite creams");
         }
@@ -46,7 +46,7 @@ $( document ).ready(function() {
                 //not checked by default
             }
             console.log("darkmode: " + userPrefs.darkMode);
-        }catch{
+        }catch (e){
             //dont do anything
             console.log("failed getting darkmode");
         }
@@ -56,6 +56,8 @@ $( document ).ready(function() {
 });
 
 function saveSettings(){
+    var save = JSON.parse(window.localStorage.getItem("language")).Save;
+    var saved = JSON.parse(window.localStorage.getItem("language")).Saved;
     try{
         //Will update existing options
         userPrefs = JSON.parse(window.localStorage.getItem("userPrefs"));
@@ -64,10 +66,10 @@ function saveSettings(){
         userPrefs.darkMode = $('#darkModeSwitch').prop('checked');
         console.log(userPrefs);
         window.localStorage.setItem("userPrefs", JSON.stringify(userPrefs));
-        $("#SaveButton").html("<i style='margin-top: -4px;' class='material-icons'>check</i> Saved");
-        setTimeout(function(){ $("#SaveButton").html("<i style='margin-top: -4px;' class='material-icons'>save</i> Save"); }, 2000);
+        $("#SaveButton").html(`<i style='margin-top: -4px;' class='material-icons'>check</i> ${saved}`);
+        setTimeout(function(){ $("#SaveButton").html(`<i style='margin-top: -4px;' class='material-icons'>save</i> ${save}`); }, 2000);
         
-    }catch{
+    }catch (e){
         //If some options don't exist yet, they will be created and saved
         userPrefs = JSON.parse(window.localStorage.getItem("userPrefs"));
         userPrefs = {
@@ -83,8 +85,8 @@ function saveSettings(){
         
         console.log(userPrefs);
         window.localStorage.setItem("userPrefs", JSON.stringify(userPrefs));
-        $("#SaveButton").html("<i style='margin-top: -4px;' class='material-icons'>check</i> Saved");
-        setTimeout(function(){ $("#SaveButton").html("<i style='margin-top: -4px;' class='material-icons'>save</i> Save"); }, 2000);
+        $("#SaveButton").html(`<i style='margin-top: -4px;' class='material-icons'>check</i> ${saved}`);
+        setTimeout(function(){ $("#SaveButton").html(`<i style='margin-top: -4px;' class='material-icons'>save</i> ${save}`); }, 2000);
         
     }
 }
@@ -103,4 +105,31 @@ function toggleDarkMode(){
     $(".mdl-layout__drawer").toggleClass("dark-mode__mdl-layout__drawer");
     $(".mdl-navigation__link").toggleClass("dark-mode__mdl-navigation__link");
     $(".mdl-layout-title").toggleClass("dark-mode__mdl-layout-title");
+}
+
+function setLanguage(language){
+    var lang = language;
+    $.getJSON("../assets/data/languages.json", function(languagePack) {
+        window.localStorage.setItem("language", JSON.stringify(languagePack[lang]));
+        
+        $("#PageTitle").text(languagePack[lang].Settings);
+        //MENU
+        $("#CalculatorText").text(languagePack[lang].Calculator);
+        $("#SkinTypeText").text(languagePack[lang].SkinType);
+        $("#FAQText").text(languagePack[lang].FAQ);
+        $("#SettingsText").text(languagePack[lang].Settings);
+        $("#DownloadText").text(languagePack[lang].Download);
+        //Page Main Section Titles
+        $("#LanguageText").text(languagePack[lang].Language);
+        $("#SelectText").text(languagePack[lang].Select);
+        $("#DarkModeText").text(languagePack[lang].DarkMode);
+        $("#SkinTypeText").text(languagePack[lang].SkinType);
+        $("#FavoriteCreamsText").text(languagePack[lang].FavoriteCreams);
+        //Buttons
+        $("#SaveText").text(languagePack[lang].Save);
+        $("#ChangeText").text(languagePack[lang].Change);
+        
+
+    });
+    
 }

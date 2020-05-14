@@ -29,7 +29,7 @@ $( document ).ready(function() {
         }
         getLocation();
         
-    }catch{
+    }catch (e){
         //if first time using the app and there are no userPrefs redirect to
         //skin.html that will act as an onboarding page
         window.location.href = "skin.html";
@@ -144,7 +144,7 @@ function getAltitude(position, callback) {
             
             callback(responseText.results[0].elevation);
         }
-    }catch{
+    }catch (e){
         $("#NoAltitude").css("display", "inherit");
     }
 }
@@ -627,7 +627,7 @@ function AutoCalculate(element){
                 $('#AutoHoursField').attr("placeholder", "∞");
             }
         }
-    }catch{
+    }catch (e){
         //works when the function is called by loading the page
         //Input from page load (user asks for time)
             //---------- Equations ----------
@@ -665,7 +665,7 @@ function AutoCalculate(element){
     }
 
     //For Debugging
-    /*
+    
     console.clear();
     console.log("UVIndex: " + UVIndex);
     console.log("Altitude: " + Altitude);
@@ -673,7 +673,7 @@ function AutoCalculate(element){
     console.log("SkinType: " + SkinType);
     console.log("SPF: " + CreamSPF);
     console.log("Minutes: " + Minutes);
-    */
+    
 }
 
 function QuickSelectSPF(element){

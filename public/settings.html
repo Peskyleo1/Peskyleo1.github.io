@@ -31,18 +31,18 @@
             <header class="mdl-layout__header">
                 <div class="mdl-layout__header-row">
                     <!-- Title -->
-                    <span class="mdl-layout-title">Settings</span>
+                    <span class="mdl-layout-title"><span id="PageTitle">Settings</span>
                 </div>
                 
             </header>
             <div class="mdl-layout__drawer">
                 <span class="mdl-layout-title">Menu</span>
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="index.html"><i class="material-icons">developer_board</i> Calculator</a>
-                    <a class="mdl-navigation__link" href="skin.html"><i class="material-icons">face</i> Skin Type</a>
-                    <a class="mdl-navigation__link" href="faq.html"><i class="material-icons">question_answer</i> FAQ</a>
-                    <a class="mdl-navigation__link" href="settings.html"><i class="material-icons">settings</i> Settings</a>
-                    <a class="mdl-navigation__link" href="download.html"><i class="material-icons">get_app</i> Download</a>
+                    <a class="mdl-navigation__link" href="index.html"><i class="material-icons">developer_board</i> <span id="CalculatorText"></span></a>
+                    <a class="mdl-navigation__link" href="skin.html"><i class="material-icons">face</i> <span id="SkinTypeText"></span></a>
+                    <a class="mdl-navigation__link" href="faq.html"><i class="material-icons">question_answer</i> <span id="FAQText"></span></a>
+                    <a class="mdl-navigation__link" href="settings.html"><i class="material-icons">settings</i> <span id="SettingsText"></span></a>
+                    <a class="mdl-navigation__link" href="download.html"><i class="material-icons">get_app</i> <span id="DownloadText"></span></a>
                 </nav>
             </div>
             <main class="mdl-layout__content">
@@ -54,12 +54,12 @@
                 <div id="SettingsDiv" class="page-content">
                     <!-- Language -->
                     <div style="display: flex; margin: 0 auto;">
-                        <h6 style="margin: auto"><b>Language</b></h6>
+                        <h6 style="margin: auto"><b><span id="LanguageText">Language</span></b></h6>
                         <div class="mdl-layout-spacer"></div>
                         <i class="material-icons">translate</i>
                     </div>
                     <select style="width: calc(100% - 20px); margin: 10px;" id="languages" class="form-control form-control-alternative" oninput="saveSettings()">
-                        <option value="" disabled selected>Select</option>
+                        <option value="" disabled selected><span id="SelectText">------</span></option>
                         <option value="en">🇬🇧English</option>
                         <option value="it" disabled>🇮🇹Italiano (coming soon)</option>
                         <option value="fr" disabled>🇫🇷Français (coming soon)</option>
@@ -70,7 +70,7 @@
 
                     <!-- Dark Mode -->
                     <div style="display: flex; margin: 0 auto;">
-                        <h6 style="margin: auto"><b>Dark Mode</b></h6>
+                        <h6 style="margin: auto"><b><span id="DarkModeText">Dark Mode</span></b></h6>
                         <div class="mdl-layout-spacer"></div>
                         <i class="material-icons">brightness_4</i>
                     </div>
@@ -83,13 +83,13 @@
 
                     <!-- Skin Type -->
                     <div style="display: flex; margin: 0 auto;">
-                        <h6 style="margin: auto"><b>Skin Type</b></h6>
+                        <h6 style="margin: auto"><b><span id="SkinTypeText">Skin Type</span></b></h6>
                         <div class="mdl-layout-spacer"></div>
                         <i class="material-icons">face</i>
                     </div>
                     <!-- Colored raised button -->
                     <a href="skin.html" style="width: calc(100% - 20px); margin: 10px;" class="mdl-button mdl-js-button mdl-button--raised">
-                        Change
+                        <span id="ChangeText">Change</span>
                     </a>
                     
 
@@ -97,7 +97,7 @@
 
                     <!-- Favorite Creams -->
                     <div style="display: flex; margin: 0 auto;">
-                        <h6 style="margin: auto"><b>Favorite Creams</b></h6>
+                        <h6 style="margin: auto"><b><span id="FavoriteCreamsText">Favorite Creams</span></b></h6>
                         <div class="mdl-layout-spacer"></div>
                         <i class="material-icons">favorite</i>
                     </div>
@@ -108,7 +108,7 @@
                     <div class="spacer" style="height: 1px; margin: 10px auto 20px auto;"></div>
 
                     <button id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="saveSettings()">
-                        <i style="margin-top: -4px;" class="material-icons">save</i> Save
+                        <i style="margin-top: -4px;" class="material-icons">save</i> <span id="SaveText">Save</span>
                     </button>
                 </div>
             </main>

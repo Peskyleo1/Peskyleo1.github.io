@@ -21,6 +21,13 @@
         "Source": "Source",
         "Find": "Find",
         "NoCreamPlaceholder": "No Cream = 1",
+        "Language": "Language",
+        "DarkMode": "Dark Mode",
+        "FavoriteCreams": "Favorite Creams",
+        "Save": "Save",
+        "Saved": "Saved",
+        "Select": "Select",
+        "Change": "Change",
         "UVModal": {
             "UVModalTitle": "UV Index",
             "UVModalText1": "If unsure, click on the 'Find' button to guide you.",
@@ -191,6 +198,24 @@
                 "O5": "My skin is naturally dark"
             }
         },
+        "WhySkinModal": {
+            "Title": "Why Share Skin Type?",
+            "Title2": "PRIVACY NOTE",
+            "Text1": "People have different skin types. Therefore it is not sufficient to take only UV Index into account when calculating how much time you can stay in the sun, i need to account for your skin's resistance to UV exposure.",
+            "Text2": "Your skin type is stored locally on your device and it will not be sent to any external server."
+        },
+        "WhyLocationModal": {
+            "Title": "Why Share Location?",
+            "Title2": "PRIVACY NOTE",
+            "Text1": "I need your location in order to get weather information for your current position. Specifically, with your location i will obtain:",
+            "Text2": "UV Index",
+            "Text3": "at your position",
+            "Text4": "your",
+            "Text5": "Altitude",
+            "Text6": "Which are both essential for my calculations.",
+            "Text7": "Your location will be securely and anonymously sent to the",
+            "Text8": "server in order to obtain accurate weather information for your position"
+        },
         "Unit": "Unit:",
         "Type": "Type:",
         "Usage": "Usage:",
@@ -227,6 +252,13 @@
         "Source": "Fonte",
         "Find": "Trova",
         "NoCreamPlaceholder": "Senza Crema = 1",
+        "Language": "Lingua",
+        "DarkMode": "Modalita Scura",
+        "FavoriteCreams": "Creme Preferite",
+        "Save": "Salva",
+        "Saved": "Salvato",
+        "Select": "Seleziona",
+        "Change": "Cambia",
         "UVModal": {
             "UVModalTitle": "Indice UV",
             "UVModalText1": "Se incerto, clicca sul bottone 'Trova' per aiutarti a trovare l'indice UV locale.",
@@ -398,6 +430,24 @@
                 "O4": "Tanto",
                 "O5": "La mia pelle è scura di natura"
             }
+        },
+        "WhySkinModal": {
+            "Title": "Perchè condividere il tipo di pelle?",
+            "Title2": "NOTA SULLA PRIVACY",
+            "Text1": "Le persone hanno diversi tipi di pelle. Pertanto, non è sufficiente prendere in considerazione solo l'indice UV quando si calcola quanto tempo si può stare al sole, devo tenere conto della resistenza della pelle all'esposizione ai raggi UV.",
+            "Text2": "Il tipo di pelle è memorizzato localmente sul dispositivo e non verrà inviato a nessun server esterno."
+        },
+        "WhyLocationModal": {
+            "Title": "Perchè condividere la mia posizione?",
+            "Title2": "NOTA SULLA PRIVACY",
+            "Text1": "Ho bisogno della tua posizione per ottenere informazioni meteo per la tua posizione attuale. In particolare, con la tua posizione otterrò:",
+            "Text2": "Indice UV",
+            "Text3": "della tua posizione",
+            "Text4": "La tua",
+            "Text5": "Altitudine",
+            "Text6": "Che sono entrambi essenziali per i miei calcoli",
+            "Text7": "La tua posizione verrà inviata in modo sicuro e anonimo al server",
+            "Text8": "al fine di ottenere informazioni meteorologiche accurate per la tua posizione"
         },
         "Unit": "Unità:",
         "Type": "Tipo:",
