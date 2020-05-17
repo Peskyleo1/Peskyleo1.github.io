@@ -162,7 +162,7 @@ function getAltitude(position, callback) {
             callback(responseText.results[0].elevation);
         }
     }catch (e){
-        $("#NoAltitude").css("display", "inherit");
+        callback(position.coords.altitude);
     }
 }
 
