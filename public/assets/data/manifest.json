@@ -1,0 +1,16 @@
+{
+    "name": "Daisy | Sunbathing Assistant",
+    "short_name": "Daisy",
+    "start_url": "../../index.html",
+    "display": "standalone",
+    "background_color": "#f44337",
+    "theme_color": "#f44337", 
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "/assets/img/logo-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }

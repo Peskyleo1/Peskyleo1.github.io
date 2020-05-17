@@ -2,8 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
         <!--APPLE ICON-->
         <!--ICON-->
 
@@ -23,6 +22,17 @@
         
         <!-- JS -->
         <script src="assets/js/settings.js"></script>
+
+        <!-- Manifest -->
+        <link rel="manifest" href="assets/data/manifest.json">
+        <!-- Meta Tags -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="theme-color" content="#f44337">
+        <link rel="apple-touch-icon" href="single-page-icon.png">
+        <link rel="apple-touch-startup-image" href="launch.png">
+        <meta name="apple-mobile-web-app-title" content="Daisy">
+        
         
     </head>
     <body >
@@ -38,11 +48,11 @@
             <div class="mdl-layout__drawer">
                 <span class="mdl-layout-title">Menu</span>
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="index.html"><i class="material-icons">developer_board</i> <span id="CalculatorText"></span></a>
-                    <a class="mdl-navigation__link" href="skin.html"><i class="material-icons">face</i> <span id="SkinTypeText"></span></a>
-                    <a class="mdl-navigation__link" href="faq.html"><i class="material-icons">question_answer</i> <span id="FAQText"></span></a>
-                    <a class="mdl-navigation__link" href="settings.html"><i class="material-icons">settings</i> <span id="SettingsText"></span></a>
-                    <a class="mdl-navigation__link" href="download.html"><i class="material-icons">get_app</i> <span id="DownloadText"></span></a>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'index.html'"><i class="material-icons">developer_board</i> <span id="CalculatorText"></span></div>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'skin.html'"><i class="material-icons">face</i> <span id="SkinTypeText"></span></div>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'faq.html'"><i class="material-icons">question_answer</i> <span id="FAQText"></span></div>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'settings.html'"><i class="material-icons">settings</i> <span id="SettingsText"></span></div>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'download.html'"><i class="material-icons">get_app</i> <span id="DownloadText"></span></div>
                 </nav>
             </div>
             <main class="mdl-layout__content">

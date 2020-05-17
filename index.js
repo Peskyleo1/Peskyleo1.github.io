@@ -8,7 +8,8 @@ require('dotenv').config();
 
 //Server will listen on a dedicated port and serve whatever is in the
 //public folder to the client.
-app.listen(3000, () => console.log('listening at 3000'));
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Starting server at ${port}`));
 app.use(express.static('public'));
 app.use(express.json({ limit: '10mb'}));
 

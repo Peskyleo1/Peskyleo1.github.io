@@ -103,7 +103,7 @@ function getLocation() {
     }
 }
 //This is run after having the location
-async function showPosition(position) {
+function showPosition(position) {
 
     //---------- Position Retrieval ----------
     console.log("Latitude: " + position.coords.latitude);
