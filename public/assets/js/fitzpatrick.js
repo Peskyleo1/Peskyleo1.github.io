@@ -3,7 +3,18 @@ var userPrefs;
 
 //This function will wait for the html document to be fully loaded 
 $( document ).ready(function() {
-    setLanguage("it");
+    try{
+        //setting language
+        var language = JSON.parse(window.localStorage.getItem("userPrefs")).language;
+        if(language == ""){
+            setLanguage("en");
+        }else{
+            setLanguage(language);
+        }
+    }catch (e){
+        //set english as default
+        setLanguage("en");
+    }
     try {
         //try getting user preferences
         //if there are user preferences hide first time mode items 
@@ -22,8 +33,8 @@ $( document ).ready(function() {
         //first time mode: 
             //-ask for location
             //-ask for skin type
-        var welcome = JSON.parse(window.localStorage.getItem("language")).Welcome.Title;
-        $("#pageTitle").text(welcome);
+        //var welcome = JSON.parse(window.localStorage.getItem("language")).Welcome.Title;
+        $("#pageTitle").text("Welcome");
         $("#AskForLocation").css("display","inherit");
     }
     
@@ -33,6 +44,7 @@ function getLocation() {
     if (navigator.geolocation) {
       //navigator.geolocation.getCurrentPosition(showPosition);
       //console.log("Location: Fetching...");
+      $("#loadingSpinner").css("display", "inherit");
         navigator.geolocation.getCurrentPosition(function(position) {
             //Asking for location to the user
             $("#AskForLocation").css("display","none");

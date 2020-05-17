@@ -21,8 +21,17 @@ app.get('/weather/:latitudelongitude', async (request, response) => {
     const longitude = latitudelongitude[1];
     console.log(latitude, longitude);
     const weather_api_key = process.env.WEATHER_API_KEY;
-    const weather_url = `http://api.weatherstack.com/current?access_key=${weather_api_key}&query=${latitude},${longitude}`;
-    const weather_response = await fetch(weather_url);
+    //const weather_url = `http://api.weatherstack.com/current?access_key=${weather_api_key}&query=${latitude},${longitude}`;
+    //const weather_response = await fetch(weather_url);
+
+    const weather_url = `https://api.openuv.io/api/v1/uv?lat=${latitude}&lng=${longitude}`;
+    var headers = {
+        'content-type': 'application/json',
+        'x-access-token': weather_api_key
+    };
+    const weather_response = await fetch(weather_url, {method: 'GET', headers: headers});
+    
     const weatherData = await weather_response.json();
+    console.log(weatherData);
     response.json(weatherData);
 })

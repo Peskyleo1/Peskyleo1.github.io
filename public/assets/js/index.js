@@ -12,12 +12,19 @@ window.onload = function onLoad() {
 
 //This function will wait for the html document to be fully loaded 
 $( document ).ready(function() {
-    setLanguage("it");
-    //Component Setup/Connections
-    var UVIndexSlider = $('#UVIndexSlider');
-    var UVIndexValue = $('#UVIndexValue');
-    //window.localStorage.setItem("tempData",JSON.stringify({"Altitude": "0", "UVIndex": "0", "Reflective": "1", "SkinType": "0", "SPF": "", "Hours": "", "Minutes": ""}));
-
+    
+    try{
+        //setting language
+        var language = JSON.parse(window.localStorage.getItem("userPrefs")).language;
+        if(language == ""){
+            setLanguage("en");
+        }else{
+            setLanguage(language);
+        }
+    }catch (e){
+        //set english
+        setLanguage("en");
+    }
     try{
         //try getting userPrefs
         var userPrefs = JSON.parse(window.localStorage.getItem("userPrefs"));
@@ -126,15 +133,25 @@ function getAltitude(position, callback) {
             //Will fetch altitude by getting terrain elevation for fetched coordinates
             //(global terrain elevation data from NASA's "Aster30m" dataset. 
             //hosted on opentopodata API.)
-            $.get('https://cors-anywhere.herokuapp.com/https://api.opentopodata.org/v1/aster30m?locations='+position.coords.latitude+','+position.coords.longitude+'&interpolation=cubic', function(responseText) {
-                //Altitude fetched from terrain data API
-                console.log("Altitude: " + responseText.results[0].elevation);
-                $("#LoadingQuickInfo").prepend(`<span>Altitude: ${responseText.results[0].elevation}m</span><br><br>`);
+            try{
+                $.get('https://cors-anywhere.herokuapp.com/https://api.opentopodata.org/v1/aster30m?locations='+position.coords.latitude+','+position.coords.longitude+'&interpolation=cubic', function(responseText) {
+                    //Altitude fetched from terrain data API
+                    console.log("Altitude: " + responseText.results[0].elevation);
+                    $("#LoadingQuickInfo").prepend(`<span>Altitude: ${responseText.results[0].elevation}m</span><br><br>`);
 
-                //Callback function called instead of returning. This will make sure
-                //we have an altitude value before adding altitude data to Weather.Location
-                callback(responseText.results[0].elevation);
-            });
+                    //Callback function called instead of returning. This will make sure
+                    //we have an altitude value before adding altitude data to Weather.Location
+                    callback(responseText.results[0].elevation);
+                }).fail(function() {
+                    $("#NoAltitude").css("display", "inherit");
+                    console.log("no alt");
+                    callback(Number("0"));
+                });
+            }catch (e){
+                $("#NoAltitude").css("display", "inherit");
+                console.log("no alt");
+                callback(Number("0"));
+            }
         }else{
             //Altitude found via location services
             console.log("Altitude: " + position.coords.altitude);
@@ -173,13 +190,13 @@ function getWeather(position){
         //converting "20" minutes to seconds, as we will be adressing time as "epoch"
         var timeDifference = 20 * 60;
         //the weather API gives us an UTC offset for the location we fetched weather for. And it must be factored in the age
-        var utcOffset = JSON.parse(window.localStorage.getItem("weatherData")).location.utc_offset;
+        //var utcOffset = JSON.parse(window.localStorage.getItem("weatherData")).location.utc_offset;
         //getting the current date will give us an "epoch" in milliseconds
         var currentDatems = new Date().getTime().toString();
         //we will convert the millisecond "epoch" in seconds by slicing it
         var currentDate = Number(currentDatems.slice(0, -3));
         //we will get the storedDate by factoring in the UTC offset
-        var storedDate = JSON.parse(window.localStorage.getItem("weatherData")).location.localtime_epoch - (utcOffset*60*60);
+        var storedDate = JSON.parse(window.localStorage.getItem("weatherData")).DownloadTime;
         //verify is stored data is older than 1200seconds (20 minutes)
         if (currentDate-storedDate <= timeDifference){
             //Data is acceptably up to date. We will use the locally stored data.
@@ -220,8 +237,15 @@ function getWeatherFromServer(position){
             const api_url = `weather/${latitude},${longitude}`;
             const response = await fetch(api_url);
             const weatherData = await response.json();
-            //Adds altidude data to weather block
-            weatherData.location.alt = altitude;
+
+            //Will add altitude and Time of download to Object
+            weatherData.alt = altitude;
+            //getting the current date will give us an "epoch" in milliseconds
+            var currentDatems = new Date().getTime().toString();
+            //we will convert the millisecond "epoch" in seconds by slicing it
+            var currentDate = Number(currentDatems.slice(0, -3));
+            weatherData.DownloadTime = currentDate;
+            console.log(weatherData);
             window.localStorage.setItem("weatherData", JSON.stringify(weatherData));
             console.log(JSON.parse(window.localStorage.getItem("weatherData")));
             console.log("Weather Data: DOWNLOADED");
@@ -549,11 +573,12 @@ function AutoCalculate(element){
   //High: 6-7
   //Very High: 8-10
   //Extreme: 11+
-  var UVIndex = weatherData.current.uv_index;
+  //trunc-ed uv seems to be more reliable considering the API
+  var UVIndex = Math.trunc(weatherData.result.uv);
 
   //---------- Altitude ----------
   //Altitude (in meters)
-  var Altitude = weatherData.location.alt;
+  var Altitude = weatherData.alt;
 
   //UV increases by 12% every 1000 meters in the atmosphere
   var AltitudeCoefficient = (((Altitude/1000)-1)*0.12)+1;
@@ -665,7 +690,7 @@ function AutoCalculate(element){
     }
 
     //For Debugging
-    
+    /*
     console.clear();
     console.log("UVIndex: " + UVIndex);
     console.log("Altitude: " + Altitude);
@@ -673,7 +698,7 @@ function AutoCalculate(element){
     console.log("SkinType: " + SkinType);
     console.log("SPF: " + CreamSPF);
     console.log("Minutes: " + Minutes);
-    
+    */
 }
 
 function QuickSelectSPF(element){

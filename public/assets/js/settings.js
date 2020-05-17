@@ -1,6 +1,17 @@
 
 $( document ).ready(function() {
-    setLanguage("it");
+    try{
+        //setting language
+        var language = JSON.parse(window.localStorage.getItem("userPrefs")).language;
+        if(language == ""){
+            setLanguage("en");
+        }else{
+            setLanguage(language);
+        }
+    }catch (e){
+        //set english as default
+        setLanguage("en");
+    }
     try{
         //get all info and populate page
         console.log("load.try");
@@ -66,6 +77,7 @@ function saveSettings(){
         userPrefs.darkMode = $('#darkModeSwitch').prop('checked');
         console.log(userPrefs);
         window.localStorage.setItem("userPrefs", JSON.stringify(userPrefs));
+        setLanguage(userPrefs.language);
         $("#SaveButton").html(`<i style='margin-top: -4px;' class='material-icons'>check</i> ${saved}`);
         setTimeout(function(){ $("#SaveButton").html(`<i style='margin-top: -4px;' class='material-icons'>save</i> ${save}`); }, 2000);
         
@@ -82,7 +94,7 @@ function saveSettings(){
             language: $("#languages").val(),
             darkMode: $('#darkModeSwitch').prop('checked')
         }
-        
+        setLanguage(userPrefs.language);
         console.log(userPrefs);
         window.localStorage.setItem("userPrefs", JSON.stringify(userPrefs));
         $("#SaveButton").html(`<i style='margin-top: -4px;' class='material-icons'>check</i> ${saved}`);
@@ -123,7 +135,7 @@ function setLanguage(language){
         $("#LanguageText").text(languagePack[lang].Language);
         $("#SelectText").text(languagePack[lang].Select);
         $("#DarkModeText").text(languagePack[lang].DarkMode);
-        $("#SkinTypeText").text(languagePack[lang].SkinType);
+        $("#SkinTypeText1").text(languagePack[lang].SkinType);
         $("#FavoriteCreamsText").text(languagePack[lang].FavoriteCreams);
         //Buttons
         $("#SaveText").text(languagePack[lang].Save);
