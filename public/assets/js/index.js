@@ -257,7 +257,7 @@ function getWeatherFromServer(position){
 
 
         /*
-        $.get('http://api.weatherstack.com/current?access_key={WEATHERSTACK_API_KEY}&query='+position.coords.latitude+','+position.coords.longitude+'', function(responseText) {
+        $.get('https://api.weatherstack.com/current?access_key={WEATHERSTACK_API_KEY}&query='+position.coords.latitude+','+position.coords.longitude+'', function(responseText) {
             
             var weatherData = responseText;
             weatherData.location.alt = altitude;
@@ -271,7 +271,7 @@ function getWeatherFromServer(position){
         });*/
     })
     /*
-    $.get('http://api.weatherstack.com/current?access_key=9b964313622d273fb5ba99ba046f4d3e&query='+position.coords.latitude+','+position.coords.longitude+'', function(responseText) {
+    $.get('https://api.weatherstack.com/current?access_key=9b964313622d273fb5ba99ba046f4d3e&query='+position.coords.latitude+','+position.coords.longitude+'', function(responseText) {
             
             var weatherData = responseText;
             weatherData.location.alt = altitude;
