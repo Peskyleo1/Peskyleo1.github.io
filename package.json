@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Peskyleo1/Peskyleo1.github.io#readme",
   "dependencies": {
+    "compression": "^1.7.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "node-fetch": "^2.6.0",
