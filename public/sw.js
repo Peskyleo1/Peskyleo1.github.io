@@ -18,7 +18,7 @@ const assets = [
     '/assets/js/progressbar.min.js',
     '/assets/js/settings.js',
     'https://fonts.googleapis.com/icon?family=Material+Icons',
-    'http://fonts.googleapis.com/css?family=Roboto:300,400,500,700',
+    'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700',
     'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js',
     'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'
 ];
