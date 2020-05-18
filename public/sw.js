@@ -45,8 +45,13 @@ self.addEventListener('activate', evt => {
 // fetch event
 self.addEventListener('fetch', evt => {
   evt.respondWith(
-    caches.match(evt.request).then(cacheRes => {
-      return cacheRes || fetch(evt.request);
-    })
+    caches.match(evt.request)
+      .then(function(response) {
+        if(response) {
+          return response;
+        }
+        //else make request to the network
+        return fetch(evt.request);
+      })
   );
 });
