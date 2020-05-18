@@ -733,6 +733,7 @@ function toggleDarkMode(){
     $(".mdl-layout__drawer").toggleClass("dark-mode__mdl-layout__drawer");
     $(".mdl-navigation__link").toggleClass("dark-mode__mdl-navigation__link");
     $(".mdl-layout-title").toggleClass("dark-mode__mdl-layout-title");
+    $(".mdl-layout__content").toggleClass("dark-mode__mdl-layout__content");
 }
 
 function setLanguage(language){

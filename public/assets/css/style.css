@@ -2,6 +2,11 @@ body {
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
+    background-color: red;
+}
+
+.mdl-layout__content {
+    background-color: white;
 }
 
 .page-content{

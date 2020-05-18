@@ -7,6 +7,10 @@
     color: #e2e2e2;
 }
 
+.dark-mode__mdl-layout__content {
+    background-color: #424242;
+}
+
 .dark-mode__Div {
  background-color: #525252 !important;
 }
