@@ -227,7 +227,11 @@
         "Moderate": "Moderate",
         "High": "High",
         "VeryHigh": "Very High",
-        "Extreme": "Extreme"
+        "Extreme": "Extreme",
+        "NotFound": "Page Not Found",
+        "Whoops": "Whoops!",
+        "SWR": "Something went wrong. The requested content can't be found. Check if you're online or try again later.",
+        "BackToApp": "Back to App"
         
     },
     "it": {
@@ -460,6 +464,11 @@
         "Moderate": "Medio",
         "High": "Alto",
         "VeryHigh": "Molto Alto",
-        "Extreme": "Estremo"
+        "Extreme": "Estremo",
+        "NotFound": "Pagina Non Trovata",
+        "Whoops": "Oops!",
+        "SWR": "Qualcosa è andato storto. Il contenuto richiesto non è stato trovato. Verifica se sei online, altrimenti riprova più tardi.",
+        "BackToApp": "Torna all'App"
+        
     }
 }

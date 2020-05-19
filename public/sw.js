@@ -4,6 +4,7 @@ const assets = [
     '/index.html',
     '/settings.html',
     '/skin.html',
+    '/fallback.html',
     '/assets/css/argon-design-system.min.css',
     '/assets/css/customsliders.css',
     '/assets/css/darkmode.css',
@@ -17,6 +18,7 @@ const assets = [
     '/assets/js/material.min.js',
     '/assets/js/progressbar.min.js',
     '/assets/js/settings.js',
+    '/assets/js/fallback.js',
     'https://fonts.googleapis.com/icon?family=Material+Icons',
     'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700',
     'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js',
@@ -52,6 +54,13 @@ self.addEventListener('fetch', evt => {
         }
         //else make request to the network
         return fetch(evt.request);
+      })
+      .catch(() => {
+        //if we request an html offline but it is unavailable
+        if(evt.request.url.indexOf('.html') > -1){
+          //show the fallback page
+          return caches.match('/fallback.html')
+        }
       })
   );
 });

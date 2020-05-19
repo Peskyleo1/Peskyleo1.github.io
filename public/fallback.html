@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <!--APPLE ICON-->
+        <!--ICON-->
+
+        <title>Daisy | Sunbathing Assistant</title>
+        <link type="text/css" href="assets/css/argon-design-system.min.css" rel="stylesheet preload">
+        <link rel="stylesheet preload" href="assets/css/material.min.css">
+        <script rel="preload" src="assets/js/material.min.js"></script>
+        <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet preload" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+        <link rel="stylesheet preload" href="assets/css/style.css">
+        <link rel="stylesheet preload" href="assets/css/darkmode.css">
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        
+        <!-- JS -->
+        <script src="assets/js/fallback.js"></script>
+
+        <!-- Manifest -->
+        <link rel="manifest" href="assets/data/manifest.json">
+        <!-- Meta Tags -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="theme-color" content="#f44337">
+        <link rel="apple-touch-icon" href="assets/img/logo-512x512.png">
+        <link rel="apple-touch-startup-image" href="launch.png">
+        <meta name="apple-mobile-web-app-title" content="Daisy">
+        
+         <!-- Service Worker Setup -->
+         <script src="assets/js/app.js"></script>
+
+    </head>
+    <body >
+        <!-- Simple header with fixed tabs. -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer mdl-layout--fixed-tabs">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title"><span id="PageTitle">Not Found</span>
+                </div>
+                
+            </header>
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Menu</span>
+                <nav class="mdl-navigation">
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'index.html'"><i class="material-icons">developer_board</i> <span id="CalculatorText"></span></div>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'skin.html'"><i class="material-icons">face</i> <span id="SkinTypeText"></span></div>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'faq.html'"><i class="material-icons">question_answer</i> <span id="FAQText"></span></div>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'settings.html'"><i class="material-icons">settings</i> <span id="SettingsText"></span></div>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'download.html'"><i class="material-icons">get_app</i> <span id="DownloadText"></span></div>
+                </nav>
+            </div>
+            <main class="mdl-layout__content">
+                <!-- Location Found SUCCESS -->
+                <div id="SettingsSaved" class="page-content" style="padding: 30px; max-width: 500px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;  border-radius: 5px; background-color: rgba(60, 255, 0, 0.2); display: none;">
+                    <h6 id="savedText" style="margin: auto;"><b>Settings Saved</b></h6>
+                </div>
+
+                <div id="SettingsDiv" class="page-content">
+                    <!-- Language -->
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: auto"><b><span id="Title1">Whoops!</span></b></h6>
+                        <div class="mdl-layout-spacer"></div>
+                        <i class="material-icons">find_in_page</i>
+                    </div><br><br>
+                    <p id="infoText">Something went wrong. The requested content can't be found. Check if you're online or try again later.</p>
+                    <a href="index.html" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">exit_to_app</i> <span id="SaveText">Back to App</span>
+                    </a>
+                </div>
+            </main>
+        </div>
+        <!-- Core -->
+        <script src="assets/js/core/jquery/jquery.min.js"></script>
+        <script src="assets/js/core/popper.min.js"></script>
+        <script src="assets/js/core/bootstrap.min.js"></script>
+
+        <!-- PLUGINS-->
+        <script src="assets/js/plugins/nouislider.min.js"></script>
+        <script src="assets/js/plugins/bootstrap-datepicker.min.js"></script>
+        <script src="assets/js/plugins/bootstrap-switch.js"></script>
+        <script src="assets/js/plugins/chartjs.min.js"></script>
+        <script src="assets/js/plugins/datetimepicker.js"></script>
+        <script src="assets/js/plugins/jquery.sharrre.min.js"></script>
+        <script src="assets/js/plugins/moment.min.js"></script>
+        <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
+        <!-- Theme JS -->
+        <script src="assets/js/argon-design-system.min.js"></script>
+    </body>
+</html>
