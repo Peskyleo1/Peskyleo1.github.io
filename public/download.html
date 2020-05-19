@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+
+        <!--APPLE ICON-->
+        <!--ICON-->
+
+        <title>Daisy | Sunbathing Assistant</title>
+        <link type="text/css" href="assets/css/argon-design-system.min.css" rel="stylesheet preload">
+        <link rel="stylesheet preload" href="assets/css/material.min.css">
+        <script rel="preload" src="assets/js/material.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+        <link rel="stylesheet preload" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/customsliders.css">
+        <link rel="stylesheet preload" href="assets/css/darkmode.css">
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        
+        <!-- JS -->
+        <script src="assets/js/download.js"></script>
+
+        <!-- Manifest -->
+        <link rel="manifest" href="assets/data/manifest.json">
+        <!-- Meta Tags -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="theme-color" content="#f44337">
+        <link rel="apple-touch-icon" href="assets/img/logo-512x512.png">
+        <link rel="apple-touch-startup-image" href="launch.png">
+        <meta name="apple-mobile-web-app-title" content="Daisy">
+
+        <!-- Service Worker Setup -->
+        <script src="assets/js/app.js"></script>
+
+    </head>
+    <body>
+        <!-- Simple header with fixed tabs. -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer mdl-layout--fixed-tabs">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span id="PageTitle" class="mdl-layout-title">Download</span>
+                </div>
+                <!-- Tabs -->
+                <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                    <a href="#fixed-tab-1" class="mdl-layout__tab is-active"><i class="material-icons" style="vertical-align: -6px;">perm_device_information</i> <span>iOS</span></a>
+                    <a href="#fixed-tab-2" class="mdl-layout__tab"><i class="material-icons" style="vertical-align: -6px;">android</i> <span>Android</span></a>
+                </div>
+            </header>
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Menu</span>
+                <nav class="mdl-navigation">
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'index.html'"><i class="material-icons">developer_board</i> <span id="CalculatorText"></span></div>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'skin.html'"><i class="material-icons">face</i> <span id="SkinTypeText"></span></div>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'faq.html'"><i class="material-icons">question_answer</i> <span id="FAQText"></span></div>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'settings.html'"><i class="material-icons">settings</i> <span id="SettingsText"></span></div>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'download.html'"><i class="material-icons">get_app</i> <span id="DownloadText"></span></div>
+                </nav>
+            </div>
+            <main class="mdl-layout__content">
+                <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+                    
+                    <div id="AutoCalculateBlock" class="page-content">
+                        <div style="width: 100%;">
+                            <img src="assets/img/iOS_addto_home.gif" alt="this slowpoke moves" style="width: calc(100% - 0px);"/>
+                        </div>
+                    </div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+
+                    <div id="ManualCalculateBlock" class="page-content">
+                        <div style="width: 100%;">
+                            <img src="assets/img/android_addto_home.gif" alt="this slowpoke moves" style="width: calc(100% - 0px);"/>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            
+        </div>
+        
+        <!-- Core -->
+        <script src="assets/js/core/jquery/jquery.min.js"></script>
+        <script src="assets/js/core/popper.min.js"></script>
+        <script src="assets/js/core/bootstrap.min.js"></script>
+
+        <!-- PLUGINS-->
+        <script src="assets/js/plugins/nouislider.min.js"></script>
+        <script src="assets/js/plugins/bootstrap-datepicker.min.js"></script>
+        <script src="assets/js/plugins/bootstrap-switch.js"></script>
+        <script src="assets/js/plugins/chartjs.min.js"></script>
+        <script src="assets/js/plugins/datetimepicker.js"></script>
+        <script src="assets/js/plugins/jquery.sharrre.min.js"></script>
+        <script src="assets/js/plugins/moment.min.js"></script>
+        <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
+        <!-- Theme JS -->
+        <script src="assets/js/argon-design-system.min.js"></script>
+    </body>
+</html>
