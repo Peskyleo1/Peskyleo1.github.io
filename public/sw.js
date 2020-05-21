@@ -21,10 +21,12 @@ const assets = [
     '/assets/js/settings.js',
     '/assets/js/fallback.js',
     '/assets/js/download.js',
+    '/assets/js/core/bootstrap.min.js',
     'https://fonts.googleapis.com/icon?family=Material+Icons',
     'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700',
     'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js',
-    'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'
+    'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js',
+    '/assets/js/app.js'
 ];
 // install event
 self.addEventListener('install', evt => {
