@@ -2,7 +2,6 @@
 //Server is required to store API_KEY and make requests on behalf of
 //the client. There is no safe way to store API_KEYs on the client.
 const express = require('express');
-const enforce = require('express-sslify');
 const app = express();
 const fetch = require('node-fetch');
 const compression = require('compression');
@@ -10,16 +9,27 @@ require('dotenv').config();
 
 //Server will listen on a dedicated port and serve whatever is in the
 //public folder to the client.
+function forceHTTPS(req, res, next) {
+    if (!req.secure) {
 
-const port = process.env.PORT || 3000;
+
+        var hostname = req.hostname;
 
 
+        var destination = ['https://', hostname,':', app.get('httpsPort'), req.url].join('');
 
-app.use(enforce.HTTPS());
+        return res.redirect(destination);
+    }
+    next();
+}
+
 app.use(compression());
-app.use(express.static('public'));
 app.use(express.json({ limit: '10mb'}));
+app.use(forceHTTPS);
+app.use(express.static('public'));
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Starting server at ${port}`));
+
 
 
 
