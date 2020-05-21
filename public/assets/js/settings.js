@@ -12,6 +12,18 @@ $( document ).ready(function() {
         //set english as default
         setLanguage("en");
     }
+    try {
+        //getting info
+        var userPrefs = JSON.parse(window.localStorage.getItem("userPrefs"));
+        if (userPrefs.skinType == ""){
+            window.location.href = "skin.html";
+        }else{
+            //we have data
+        }
+    }catch (e){
+        //redirect
+        window.location.href = "skin.html";
+    }
     try{
         //get all info and populate page
         console.log("load.try");

@@ -11,6 +11,8 @@ require('dotenv').config();
 
 //Server will listen on a dedicated port and serve whatever is in the
 //public folder to the client.
+
+//Use "enforce.https" only when deploying. For localhost, comment it out.
 app.use(enforce.HTTPS({ trustProtoHeader: true }));
 app.use(compression());
 app.use(express.json({ limit: '10mb'}));
