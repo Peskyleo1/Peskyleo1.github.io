@@ -737,7 +737,7 @@ function toggleDarkMode(){
 }
 
 function setLanguage(language){
-    var lang = language;
+    var lang = language || "en";
     $.getJSON("../assets/data/languages.json", function(languagePack) {
         
         $("#PageTitle").text(languagePack[lang].Daisy);

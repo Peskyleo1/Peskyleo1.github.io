@@ -133,7 +133,7 @@ function toggleDarkMode(){
 }
 
 function setLanguage(language){
-    var lang = language;
+    var lang = language || "en";
     $.getJSON("../assets/data/languages.json", function(languagePack) {
         window.localStorage.setItem("language", JSON.stringify(languagePack[lang]));
         
