@@ -9,23 +9,9 @@ require('dotenv').config();
 
 //Server will listen on a dedicated port and serve whatever is in the
 //public folder to the client.
-function forceHTTPS(req, res, next) {
-    if (!req.secure) {
-
-
-        var hostname = req.hostname;
-
-
-        var destination = ['https://', hostname,':', app.get('httpsPort'), req.url].join('');
-
-        return res.redirect(destination);
-    }
-    next();
-}
 
 app.use(compression());
 app.use(express.json({ limit: '10mb'}));
-app.use(forceHTTPS);
 app.use(express.static('public'));
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Starting server at ${port}`));
