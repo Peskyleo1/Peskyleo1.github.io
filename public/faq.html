@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <!--APPLE ICON-->
+        <!--ICON-->
+        <link rel="icon" href="assets/img/logo-512x512.png">
+
+        <title>Daisy | Sunbathing Assistant</title>
+        <link type="text/css" href="assets/css/argon-design-system.min.css" rel="stylesheet preload">
+        <link rel="stylesheet preload" href="assets/css/material.min.css">
+        <script rel="preload" src="assets/js/material.min.js"></script>
+        <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet preload" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+        <link rel="stylesheet preload" href="assets/css/style.css">
+        <link rel="stylesheet preload" href="assets/css/darkmode.css">
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        
+        <!-- JS -->
+        <script src="assets/js/faq.js"></script>
+
+        <!-- Manifest -->
+        <link rel="manifest" href="assets/data/manifest.json">
+        <!-- Meta Tags -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="theme-color" content="#f44337">
+        <link rel="apple-touch-icon" href="assets/img/logo-512x512.png">
+        <link rel="apple-touch-startup-image" href="launch.png">
+        <meta name="apple-mobile-web-app-title" content="Daisy">
+        
+         <!-- Service Worker Setup -->
+         <script src="assets/js/app.js"></script>
+
+    </head>
+    <body >
+        <!-- Simple header with fixed tabs. -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer mdl-layout--fixed-tabs">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title"><span id="PageTitle">FAQ</span>
+                </div>
+                
+            </header>
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Menu</span>
+                <nav class="mdl-navigation">
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'index.html'"><i class="material-icons">developer_board</i> <span id="CalculatorText"></span></div>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'skin.html'"><i class="material-icons">face</i> <span id="SkinTypeText"></span></div>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'faq.html'"><i class="material-icons">question_answer</i> <span id="FAQText"></span></div>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'settings.html'"><i class="material-icons">settings</i> <span id="SettingsText"></span></div>
+                    <div class="mdl-navigation__link" onclick="window.location.href = 'download.html'"><i class="material-icons">get_app</i> <span id="DownloadText"></span></div>
+                </nav>
+            </div>
+            <main class="mdl-layout__content">
+
+                <!-- Question 1-->
+                <div class="page-content QuestionDiv">
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: 0px"><b><span id="Title1">Why is my time infinite?</span></b></h6>
+                    </div><br>
+                    <p id="Answer1-1">This happens when the UV Index value is zero. If the sun has set, you can stay as long as you want outside.</p>
+                    <a href="disclaimer.html" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">error_outline</i> <span class="Disclaimer">Disclaimer</span>
+                    </a>
+                </div>
+
+                <!-- Question 2-->
+                <div class="page-content QuestionDiv">
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: 0px"><b><span id="Title2">Can I really stay that long in the sun?</span></b></h6>
+                    </div><br>
+                    <p id="Answer2-1">Often times when new users use this app as soon as they add a sunscreen they will notice that their exposure time will skyrocket. The app may even tell you you can stay several hours, if not days in the sun. So is this real? In theory yes, if you had a constantly perfect sunscreen application that would be the case. In reality though, sunscreen fades off with time due to sweating, water, friction, etc... So the answer is ONLY IF YOU REAPPLY SUNSCREEN EVERY 2 HOURS.</p>
+                    <a href="disclaimer.html" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">error_outline</i> <span class="Disclaimer">Disclaimer</span>
+                    </a>
+                </div>
+
+                <!-- Question 3-->
+                <div class="page-content QuestionDiv">
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: 0px"><b><span id="Title3">Whats the purpose of sunscreen?</span></b></h6>
+                    </div><br>
+                    <p id="Answer3-1">Sunscreens are used to protect the skin from the harmful effects of the sun. They help to prevent sunburn and premature aging (such as wrinkles, leathery skin). Sunscreens also help to decrease the risk of skin cancer and also of sunburn-like skin reactions (sun sensitivity) caused by some medications (including tetracyclines, sulfa drugs, phenothiazines such as chlorpromazine).</p>
+                    <a href="https://www.webmd.com/drugs/2/drug-366/sunscreen-topical/details" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">language</i> <span class="Source1">Source</span>
+                    </a>
+                </div>
+
+                <!-- Question 4-->
+                <div class="page-content QuestionDiv">
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: 0px"><b><span id="Title4">Can I stay longer in the sun if I wear higher sunscreen?</span></b></h6>
+                    </div><br>
+                    <p><i id="Answer4-1">Sunscreen should never be used to prolong the duration of sun exposure.</i> <span id="Answer4-2">- WHO</span></p>
+                    <br>
+                    <p><i id="Answer4-1">Wearing sunscreen does not mean that you can stay out longer in the sun. Sunscreens cannot protect against all of the sun's radiation.</i> <span id="Answer4-4">- WebMD</span></p>
+                    <a href="https://www.who.int/uv/sun_protection/en/" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">language</i> <span class="Source1">Source</span>
+                    </a>
+                </div>
+
+                <!-- Question 5-->
+                <div class="page-content QuestionDiv">
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: 0px"><b><span id="Title5">How much sunscreen should I wear?</span></b></h6>
+                    </div><br>
+                    <p id="Answer5-1">Most people wear 25-50% of the recommended amount, which is why undesirable sunburns and tanning can occur despite sunscreen application. To achieve the Sun Protection Factor (SPF, which protects against the sun’s UVB radiation) reflected on a bottle of sunscreen, you should use approximately two milligrams of sunscreen per square centimeter of skin. In practice, this means applying the equivalent of a shot glass.</p>
+                    <a href="https://www.skincancer.org/blog/ask-the-expert-how-much-sunscreen-should-i-be-using-on-my-face-and-body/" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">language</i> <span class="Source1">Source</span>
+                    </a>
+                </div>
+
+                <!-- Question 6-->
+                <div class="page-content QuestionDiv">
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: 0px"><b><span id="Title6">How often should I reapply sunscreen?</span></b></h6>
+                    </div><br>
+                    <p id="Answer6-1">Apply it 30 minutes before sunbathing.
+                        Repply it every 2 hours.
+                        If you have undergone an activity that has potentially removed it (sweating, swimming, rubbing on a towel) reapply it immediately.</p>
+                    <a href="https://www.skincancer.org/skin-cancer-prevention/sun-protection/sunscreen/" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">language</i> <span class="Source1">Source</span>
+                    </a>
+                </div>
+
+                <!-- Question 7-->
+                <div class="page-content QuestionDiv">
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: 0px"><b><span id="Title7">Can I tan with sunscreen applied?</span></b></h6>
+                    </div><br>
+                    <p id="Answer7-1">You can still get a tan with sunscreen on, because while sun creams block many damaging skin-burning rays, they're not as great at filtering out the milder rays, which penetrate deeper into the skin.</p>
+                    <a href="https://www.businessinsider.com/how-often-sunscreen-according-to-dermatologist-2018-4?IR=T" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">language</i> <span class="Source1">Source</span>
+                    </a>
+                </div>
+
+                <!-- Question 8-->
+                <div class="page-content QuestionDiv">
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: 0px"><b><span id="Title8">What does the SPF number mean?</span></b></h6>
+                    </div><br>
+                    <p id="Answer8-1">Sunscreens are commonly rated and labeled with a sun protection factor (SPF) that measures the fraction of sunburn-producing UV rays that reach the skin. For example, "SPF 15" means that 1⁄15 of the burning radiation reaches the skin through the recommended thickness of sunscreen.</p>
+                    <a href="https://en.wikipedia.org/wiki/Sunscreen" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">language</i> <span class="Source1">Source</span>
+                    </a>
+                </div>
+
+                <!-- Question 9-->
+                <div class="page-content QuestionDiv">
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: 0px"><b><span id="Title9">Why are UV rays dangerous?</span></b></h6>
+                    </div><br>
+                    <p id="Answer9-1">UVA: the longest waves (315-400nm) penetrate deep into the skin causing skin aging. They don’t make you tan.</p>
+                    <p id="Answer9-2">UVB: the medium waves (280-315nm) can make you tan, but can also be responsible for skin cancer. </p>
+                    <p id="Answer9-3">UVC: the shortest waves (100-280nm) are absorbed in the atmosphere.</p>
+                    <p id="Answer9-4">Every intense sunbathing episode brings you closer to skin aging and overexposure can lead to skin cancer.</p>
+                    <a href="https://www.who.int/uv/faq/whatisuv/en/index2.html" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">language</i> <span class="Source1">Source</span>
+                    </a>
+                </div>
+
+                <!-- Question 10-->
+                <div class="page-content QuestionDiv">
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: 0px"><b><span id="Title10">What is the best UV index for tanning?</span></b></h6>
+                    </div><br>
+                    <p>"<i id="Answer10-1">There is no healthy way to tan. Any tan can increase your risk of developing skin cancer. Getting a tan does very little to protect your skin from the harmful effects of the sun. The idea that there is such a thing as a healthy tan is a myth. Any tan can increase the risk of skin cancer. 
+                        The best thing to avoid skin cancer is to avoid getting tanned.</i>" - NHS</p>
+                    <a href="https://www.nhs.uk/news/cancer/new-nice-guidelines-on-sun-exposure-warn-tanning-is-unsafe/#sunlight-and-vitamin-d" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">language</i> <span class="Source1">Source</span>
+                    </a>
+                </div>
+
+                <!-- Question 11-->
+                <div class="page-content QuestionDiv">
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: 0px"><b><span id="Title11">Do clouds affect UV radiation?</span></b></h6>
+                    </div><br>
+                    <p id="Answer11-1">Clouds do affect UV radiation but they don’t always decrease it. Depending on factors such as the type of cloud and the thickness of the cloud. </p>
+                    <p id="Answer11-2">- UV radiation can penetrate through a thin cloud.</p>
+                    <p id="Answer11-3">- Patchy clouds could also slightly intensify UV levels because radiation can be reflected off the cloud’s edge.</p>
+                    <p id="Answer11-4">- Thicker clouds block part of the UV radiation, but not all.</p>
+                    <a href="https://www.abc.net.au/science/articles/2012/01/24/3413924.htm" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">language</i> <span class="Source1">Source</span>
+                    </a>
+                </div>
+
+                <!-- Question 12-->
+                <div class="page-content QuestionDiv">
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: 0px"><b><span id="Title12">Am I safe out of direct sunlight?</span></b></h6>
+                    </div><br>
+                    <p id="Answer12-1">No. Every material has an albedo (reflectivity). Generally you should be ok if you’re not in direct sunlight unless you’re next to snow or on the beach. Snow is highly reflective and the sea is considered reflective at high angles of incidence.
+                        You can get a noticeable sunburn from sitting under an umbrella in the grass in the middle of the day (sunny or cloudy) after just 35 minutes.</p>
+                    <a href="https://www.statnews.com/2017/01/24/sunscreen-beach-umbrella-sunburn/" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">language</i> <span class="Source1">Source</span>
+                    </a>
+                </div>
+
+                <!-- Question 13-->
+                <div class="page-content QuestionDiv">
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: 0px"><b><span id="Title13">I have high risk of skin cancer, what can I do?</span></b></h6>
+                    </div><br>
+                    <p id="Answer13-1">For people who have a history or high risk of skin cancer, genetic diseases such as albinism or xeroderma pigmentosum or certain immune disorders, SPF 50 may not be enough. You should avoid exposing yourself to the sun as much as possible.</p>
+                    <a href="https://www.skincancer.org/blog/ask-the-expert-does-a-high-spf-protect-my-skin-better/" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">language</i> <span class="Source1">Source</span>
+                    </a>
+                </div>
+
+                <!-- Question 14-->
+                <div class="page-content QuestionDiv">
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: 0px"><b><span id="Title14">How to safely get vitamin D?</span></b></h6>
+                    </div><br>
+                    <p id="Answer14-1">Some UV radiation is essential to the body as it stimulates the production of vitamin D. Vitamin D has an important function in increasing calcium and phosphorus absorption from food and plays a crucial role in skeletal development, immune function and blood cell formation. There is no doubt that a little sunlight is good for you! But 5 to 15 minutes of casual sun exposure of hands, face and arms two to three times a week during the summer months is sufficient to keep your vitamin D levels high.</p>
+                    <a href="https://www.who.int/uv/faq/uvhealtfac/en/index1.html" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">language</i> <span class="Source1">Source</span>
+                    </a>
+                </div>
+
+                <!-- Question 15-->
+                <div class="page-content QuestionDiv">
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: 0px"><b><span id="Title15">I am dark-skinned – do I still need to be careful?</span></b></h6>
+                    </div><br>
+                    <p id="Answer15-1">Yes, you do. Compared to fair-skinned people, dark-skinned people have a much lower risk of developing melanoma or non-melanoma skin cancers. They do not normally have to apply sunscreens and can safely tolerate relatively high levels of UV radiation without getting burnt. But – regardless of skin colour - the risk of eye damage and of harmful effects on the immune system remains. </p>
+                    <a href="https://www.who.int/uv/faq/uvhealtfac/en/index5.html" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">language</i> <span class="Source1">Source</span>
+                    </a>
+                </div>
+
+                <!-- Question 16-->
+                <div class="page-content QuestionDiv">
+                    <div style="display: flex; margin: 0 auto;">
+                        <h6 style="margin: 0px"><b><span id="Title16">What’s the best overall strategy to protect my skin?</span></b></h6>
+                    </div><br>
+                    <p id="Answer16-1">It’s important not to rely on high-SPF sunscreens alone. No single method of sun defense can protect you perfectly. Sunscreen is just one vital part of a strategy that should also include seeking shade and covering up with clothing, including wide-brimmed hats and UV-blocking sunglasses.</p>
+                    <a href="https://www.skincancer.org/blog/ask-the-expert-does-a-high-spf-protect-my-skin-better/" id="SaveButton" style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        <i style="margin-top: -4px;" class="material-icons">language</i> <span class="Source1">Source</span>
+                    </a>
+                </div>
+            </main>
+        </div>
+        <!-- Core -->
+        <script src="assets/js/core/bootstrap.min.js"></script>
+    </body>
+</html>

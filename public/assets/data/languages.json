@@ -231,7 +231,57 @@
         "NotFound": "Page Not Found",
         "Whoops": "Whoops!",
         "SWR": "Something went wrong. The requested content can't be found. Check if you're online or try again later.",
-        "BackToApp": "Back to App"
+        "BackToApp": "Back to App",
+        "FAQs": {
+            "Titles":{
+                "Title1": "Why is my time infinite?",
+                "Title2": "Can I really stay that long in the sun?",
+                "Title3": "Whats the purpose of sunscreen?",
+                "Title4": "Can I stay longer in the sun if I wear higher sunscreen?",
+                "Title5": "How much sunscreen should I wear?",
+                "Title6": "How often should I reapply sunscreen?",
+                "Title7": "Can I tan with sunscreen applied?",
+                "Title8": "What does the SPF number mean?",
+                "Title9": "Why are UV rays dangerous?",
+                "Title10": "What is the best UV index for tanning?",
+                "Title11": "Do clouds affect UV radiation?",
+                "Title12": "Am I safe out of direct sunlight?",
+                "Title13": "I have high risk of skin cancer, what can I do?",
+                "Title14": "How to safely get vitamin D?",
+                "Title15": "I am dark-skinned – do I still need to be careful?",
+                "Title16": "What’s the best overall strategy to protect my skin?"
+            },
+            "Texts":{
+                "Text1_1": "This happens when the UV Index value is zero. If the sun has set, you can stay as long as you want outside.",
+                "Text2_1": "Often times when new users use this app as soon as they add a sunscreen they will notice that their exposure time will skyrocket. The app may even tell you you can stay several hours, if not days in the sun. So is this real? In theory yes, if you had a constantly perfect sunscreen application that would be the case. In reality though, sunscreen fades off with time due to sweating, water, friction, etc... So the answer is ONLY IF YOU REAPPLY SUNSCREEN EVERY 2 HOURS.",
+                "Text3_1": "Sunscreens are used to protect the skin from the harmful effects of the sun. They help to prevent sunburn and premature aging (such as wrinkles, leathery skin). Sunscreens also help to decrease the risk of skin cancer and also of sunburn-like skin reactions (sun sensitivity) caused by some medications (including tetracyclines, sulfa drugs, phenothiazines such as chlorpromazine).",
+                "Text4_1": "Sunscreen should never be used to prolong the duration of sun exposure.",
+                "Text4_2": "- WHO",
+                "Text4_3": "Wearing sunscreen does not mean that you can stay out longer in the sun. Sunscreens cannot protect against all of the sun's radiation.",
+                "Text4_4": "- WebMD",
+                "Text5_1": "Most people wear 25-50% of the recommended amount, which is why undesirable sunburns and tanning can occur despite sunscreen application. To achieve the Sun Protection Factor (SPF, which protects against the sun’s UVB radiation) reflected on a bottle of sunscreen, you should use approximately two milligrams of sunscreen per square centimeter of skin. In practice, this means applying the equivalent of a shot glass.",
+                "Text6_1": "Apply it 30 minutes before sunbathing. Repply it every 2 hours. If you have undergone an activity that has potentially removed it (sweating, swimming, rubbing on a towel) reapply it immediately.",
+                "Text7_1": "You can still get a tan with sunscreen on, because while sun creams block many damaging skin-burning rays, they're not as great at filtering out the milder rays, which penetrate deeper into the skin.",
+                "Text8_1": "Sunscreens are commonly rated and labeled with a sun protection factor (SPF) that measures the fraction of sunburn-producing UV rays that reach the skin. For example, 'SPF 15' means that 1⁄15 of the burning radiation reaches the skin through the recommended thickness of sunscreen.",
+                "Text9_1": "- UVA: the longest waves (315-400nm) penetrate deep into the skin causing skin aging. They don’t make you tan.",
+                "Text9_2": "- UVB: the medium waves (280-315nm) can make you tan, but can also be responsible for skin cancer. ",
+                "Text9_3": "- UVC: the shortest waves (100-280nm) are absorbed in the atmosphere.",
+                "Text9_4": "Every intense sunbathing episode brings you closer to skin aging and overexposure can lead to skin cancer.",
+                "Text10_1": "There is no healthy way to tan. Any tan can increase your risk of developing skin cancer. Getting a tan does very little to protect your skin from the harmful effects of the sun. The idea that there is such a thing as a healthy tan is a myth. Any tan can increase the risk of skin cancer. The best thing to avoid skin cancer is to avoid getting tanned.",
+                "Text11_1": "Clouds do affect UV radiation but they don’t always decrease it. Depending on factors such as the type of cloud and the thickness of the cloud. ",
+                "Text11_2": "- UV radiation can penetrate through a thin cloud.",
+                "Text11_3": "- Patchy clouds could also slightly intensify UV levels because radiation can be reflected off the cloud’s edge.",
+                "Text11_4": "- Thicker clouds block part of the UV radiation, but not all.",
+                "Text12_1": "No. Every material has an albedo (reflectivity). Generally you should be ok if you’re not in direct sunlight unless you’re next to snow or on the beach. Snow is highly reflective and the sea is considered reflective at high angles of incidence. You can get a noticeable sunburn from sitting under an umbrella in the grass in the middle of the day (sunny or cloudy) after just 35 minutes.",
+                "Text13_1": "For people who have a history or high risk of skin cancer, genetic diseases such as albinism or xeroderma pigmentosum or certain immune disorders, SPF 50 may not be enough. You should avoid exposing yourself to the sun as much as possible.",
+                "Text14_1": "Some UV radiation is essential to the body as it stimulates the production of vitamin D. Vitamin D has an important function in increasing calcium and phosphorus absorption from food and plays a crucial role in skeletal development, immune function and blood cell formation. There is no doubt that a little sunlight is good for you! But 5 to 15 minutes of casual sun exposure of hands, face and arms two to three times a week during the summer months is sufficient to keep your vitamin D levels high.",
+                "Text15_1": "Yes, you do. Compared to fair-skinned people, dark-skinned people have a much lower risk of developing melanoma or non-melanoma skin cancers. They do not normally have to apply sunscreens and can safely tolerate relatively high levels of UV radiation without getting burnt. But – regardless of skin colour - the risk of eye damage and of harmful effects on the immune system remains. ",
+                "Text16_1": "It’s important not to rely on high-SPF sunscreens alone. No single method of sun defense can protect you perfectly. Sunscreen is just one vital part of a strategy that should also include seeking shade and covering up with clothing, including wide-brimmed hats and UV-blocking sunglasses."
+            }
+        },
+        "Disclaimer": "Disclaimer",
+        "DisclaimerText": "Daisy does not contain medical advice. The contents of this website, such as text, graphics, images and other material are intended for informational and educational purposes only and not for the purpose of rendering medical advice. The contents of this website are not intended to substitute for professional medical advice, diagnosis or treatment. Please consult your physician for personalized medical advice. Always seek the advice of a physician or other qualified healthcare provider with any questions regarding a medical condition. Never disregard or delay seeking professional medical advice or treatment because of something you have read on here."
+        
         
     },
     "it": {
@@ -468,7 +518,56 @@
         "NotFound": "Pagina Non Trovata",
         "Whoops": "Oops!",
         "SWR": "Qualcosa è andato storto. Il contenuto richiesto non è stato trovato. Verifica se sei online, altrimenti riprova più tardi.",
-        "BackToApp": "Torna all'App"
+        "BackToApp": "Torna all'App",
+        "FAQs": {
+            "Titles":{
+                "Title1": "Perché il mio tempo è infinito?",
+                "Title2": "Posso davvero rimanere così a lungo al sole?",
+                "Title3": "Qual è lo scopo della protezione solare?",
+                "Title4": "Posso rimanere più a lungo al sole se indosso una protezione solare più alta?",
+                "Title5": "Quanta crema solare dovrei indossare?",
+                "Title6": "Ogni quanto devo applicare nuovamente la protezione solare?",
+                "Title7": "Posso abbronzarmi con la protezione solare applicata?",
+                "Title8": "Cosa significa il numero SPF?",
+                "Title9": "Perché i raggi UV sono pericolosi?",
+                "Title10": "Qual è il miglior indice UV per l'abbronzatura?",
+                "Title11": "Le nuvole influenzano la radiazione UV?",
+                "Title12": "Sono al sicuro dalla luce solare diretta?",
+                "Title13": "I have high risk of skin cancer, what can I do?",
+                "Title14": "Come ottenere in sicurezza la vitamina D?",
+                "Title15": "Ho la pelle scura - devo stare attento comunque?",
+                "Title16": "Qual è la migliore strategia per proteggere la mia pelle?"
+            },
+            "Texts":{
+                "Text1_1": "Questo accade quando il valore dell'indice UV è zero. Se il sole è tramontato, puoi rimanere tutto il tempo che desideri all'esterno.",
+                "Text2_1": "Spesso, quando i nuovi utenti utilizzano questa app non appena aggiungono una protezione solare, noteranno che il loro tempo di esposizione salirà alle stelle. L'app potrebbe anche dirti che puoi rimanere diverse ore, se non giorni al sole. Quindi è reale? In teoria sì, se avessi la crema solare costantemente applicata perfettamente sarebbe così. In realtà, la protezione solare svanisce con il tempo a causa della sudorazione, dell'acqua, dell'attrito, ecc ... Quindi la risposta è SOLO SE RIAPPLICHI LA CREMA SOLARE OGNI 2 ORE.",
+                "Text3_1": "Le creme solari sono usate per proteggere la pelle dagli effetti dannosi del sole. Aiutano a prevenire scottature e invecchiamento precoce (come rughe, pelle coriacea). I filtri solari aiutano anche a ridurre il rischio di cancro della pelle e anche di reazioni cutanee simili a scottature solari (sensibilità al sole) causate da alcuni farmaci (tra cui tetracicline, sulfamidici, fenotiazine come la clorpromazina).",
+                "Text4_1": "La protezione solare non dovrebbe mai essere utilizzata per prolungare la durata dell'esposizione solare.",
+                "Text4_2": "- OMS",
+                "Text4_3": "Indossare la protezione solare non significa che puoi stare più a lungo al sole. I filtri solari non possono proteggere da tutte le radiazioni solari.",
+                "Text4_4": "- WebMD",
+                "Text5_1": "La maggior parte delle persone indossa il 25-50% della quantità raccomandata, motivo per cui si possono verificare scottature e abbronzature indesiderate nonostante l'applicazione della protezione solare. Per ottenere il fattore di protezione solare (SPF, che protegge dalle radiazioni UVB del sole) indicato su una bottiglia di crema solare, è necessario utilizzare circa due milligrammi di crema solare per centimetro quadrato di pelle. In pratica, questo significa applicare l'equivalente di un bicchierino.",
+                "Text6_1": "Applicala 30 minuti prima di prendere il sole. Riapplicala ogni 2 ore. Se sei stato coinvolto in un'attività che l'ha potenzialmente rimossa (sudorazione, nuoto, sfregamento su un asciugamano) riapplicala immediatamente.",
+                "Text7_1": "Puoi comunque abbronzarti con la protezione solare, perché mentre le creme solari bloccano molti dannosi raggi brucianti della pelle, non sono così efficaci a filtrare i raggi di lunghezza media, che penetrano più in profondità nella pelle.",
+                "Text8_1": "I filtri solari sono comunemente classificati ed etichettati con un fattore di protezione solare (SPF) che misura la frazione dei raggi UV che produce scottature che raggiungono la pelle. Ad esempio, 'SPF 15' significa che 1⁄15 della radiazione che brucia raggiunge la pelle attraverso lo spessore raccomandato della protezione solare.",
+                "Text9_1": "- UVA: le onde più lunghe (315-400nm) penetrano in profondità nella pelle causando l'invecchiamento cutaneo. Non ti fanno abbronzare.",
+                "Text9_2": "- UVB: le onde medie (280-315nm) possono farti abbronzare, ma possono anche essere responsabili di tumori alla pelle.",
+                "Text9_3": "- UVC: le onde più corte (100-280nm) vengono assorbite nell'atmosfera.",
+                "Text9_4": "Ogni intenso episodio di abbronzatura ti avvicina all'invecchiamento cutaneo e la sovraesposizione può portare al cancro della pelle.",
+                "Text10_1": "Non esiste un modo sano per abbronzarsi. Qualsiasi abbronzatura può aumentare il rischio di sviluppare il cancro della pelle. Abbronzarsi fa ben poco per proteggere la pelle dagli effetti dannosi del sole. L'idea che esista un'abbronzatura sana è un mito. Qualsiasi abbronzatura può aumentare il rischio di cancro della pelle. La cosa migliore per evitare il cancro della pelle è evitare di abbronzarsi.",
+                "Text11_1": "Le nuvole influenzano le radiazioni UV ma non le riducono sempre. A seconda di fattori come il tipo di nuvola e lo spessore della nuvola.",
+                "Text11_2": "- Le radiazioni UV possono penetrare attraverso una nuvola sottile.",
+                "Text11_3": "- Le nuvole irregolari potrebbero anche intensificare leggermente i livelli UV poiché le radiazioni possono essere riflesse dal bordo della nuvola.",
+                "Text11_4": "- Le nuvole più spesse bloccano parte della radiazione UV, ma non tutte.",
+                "Text12_1": "No. Ogni materiale ha un albedo (riflettività). Generalmente dovresti essere a posto se non sei alla luce diretta del sole a meno che tu non sia vicino alla neve o sulla spiaggia. La neve è altamente riflettente e il mare è considerato riflettente ad alti angoli di incidenza. È possibile ottenere una notevole scottatura solare sedendosi sotto un ombrellone nell'erba a metà giornata (sole o nuvoloso) dopo soli 35 minuti.",
+                "Text13_1": "Per le persone che hanno una storia o un alto rischio di cancro della pelle, malattie genetiche come albinismo o xeroderma pigmentoso o alcuni disturbi immunitari, SPF 50 potrebbe non essere sufficiente. Dovresti evitare di esporti al sole il più possibile.",
+                "Text14_1": "Alcune radiazioni UV sono essenziali per il corpo in quanto stimolano la produzione di vitamina D. La vitamina D ha una funzione importante nell'aumentare l'assorbimento di calcio e fosforo dal cibo e svolge un ruolo cruciale nello sviluppo scheletrico, nella funzione immunitaria e nella formazione delle cellule del sangue. Non c'è dubbio che un po 'di luce solare ti faccia bene! Ma dai 5 ai 15 minuti di esposizione solare occasionale di mani, viso e braccia da due a tre volte alla settimana durante i mesi estivi è sufficiente per mantenere alti i livelli di vitamina D.",
+                "Text15_1": "Si. Rispetto alle persone di carnagione chiara, le persone di carnagione scura hanno un rischio molto più basso di sviluppare melanoma o tumori della pelle non melanoma. Normalmente non devono applicare creme solari e possono tranquillamente tollerare livelli relativamente elevati di radiazione UV senza bruciarsi. Ma - indipendentemente dal colore della pelle - rimane il rischio di danni agli occhi e di effetti dannosi sul sistema immunitario.",
+                "Text16_1": "È importante non fare affidamento solo su creme solari ad alto SPF. Nessun singolo metodo di protezione solare può proteggerti perfettamente. La protezione solare è solo una parte vitale di una strategia che dovrebbe includere anche cercare l'ombra e coprirsi con l'abbigliamento, compresi cappelli a tesa larga e occhiali da sole anti-UV."
+            }
+        },
+        "Disclaimer": "Disclaimer",
+        "DisclaimerText": "Daisy non contiene consigli medici. I contenuti di questo sito web, come testo, grafica, immagini e altro materiale sono intesi esclusivamente a scopo informativo e didattico e non allo scopo di fornire consulenza medica. I contenuti di questo sito Web non intendono sostituire la consulenza, la diagnosi o il trattamento medico professionale. Consultare il proprio medico per una consulenza medica personalizzata. Chiedere sempre il parere di un medico o di un altro operatore sanitario qualificato per qualsiasi domanda relativa a una condizione medica. Non trascurare o ritardare mai la ricerca di una consulenza o un trattamento medico professionale a causa di qualcosa che hai letto qui."
         
     }
 }
